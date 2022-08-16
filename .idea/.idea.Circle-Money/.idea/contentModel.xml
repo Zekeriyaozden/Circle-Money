@@ -4,8 +4,10 @@
     <e p="C:\Users\Maleriya\AppData\Local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
     <e p="C:\Users\Maleriya\AppData\Local\JetBrains\Rider2020.3\resharper-host\Local\Transient\Rider\v203\SolutionCaches\_Circle-Money.-1770665962.00" t="ExcludeRecursive" />
     <e p="C:\Users\Maleriya\Desktop\Pigeon Gaming\Circle-Money" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="___www.unityassetcollection.com___.txt" t="Include" />
         <e p="Dreamteck" t="Include">
           <e p="Splines" t="Include">
             <e p="Components" t="Include">
@@ -529,6 +531,310 @@
             </e>
           </e>
         </e>
+        <e p="Lux URP Essentials" t="Include">
+          <e p="changelog.txt" t="Include" />
+          <e p="Demos" t="Include">
+            <e p="Art Assets" t="Include">
+              <e p="Volumetrics" t="Include">
+                <e p="Scripts" t="Include">
+                  <e p="RotateSeeker.cs" t="Include" />
+                </e>
+              </e>
+            </e>
+            <e p="Fonts" t="Include">
+              <e p="ZwriteFont.shader" t="Include" />
+            </e>
+            <e p="Scripts" t="Include">
+              <e p="AnimateSphere.cs" t="Include" />
+              <e p="CheckSettings.cs" t="Include" />
+              <e p="ExtendedFlycam.cs" t="Include" />
+              <e p="Outline Demo" t="Include">
+                <e p="MouseSelect.cs" t="Include" />
+                <e p="ToggleOutlineSelection.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="Lux SRP Grass Displacement" t="Include">
+            <e p="Demo" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="RotateAndMove.cs" t="Include" />
+                <e p="SmoothFollow.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Scripts" t="Include">
+              <e p="ControlDisplacer.cs" t="Include" />
+              <e p="ControlDisplacerParticleSys.cs" t="Include" />
+              <e p="DebugGrassDisplacementTex.cs" t="Include" />
+              <e p="Editor" t="Include">
+                <e p="LayerAttributeDrawer.cs" t="Include" />
+              </e>
+              <e p="GrassDisplacementRenderFeature.cs" t="Include" />
+              <e p="LayerAtributes.cs" t="Include" />
+            </e>
+            <e p="Shaders" t="Include">
+              <e p="Debug" t="Include">
+                <e p="DebugDisplacement.shader" t="Include" />
+              </e>
+              <e p="Simple Displacement FX Debug.shader" t="Include" />
+              <e p="Simple Displacement FX.shader" t="Include" />
+              <e p="Vegetation" t="Include">
+                <e p="Includes" t="Include">
+                  <e p="Lux URP Grass Inputs.hlsl" t="Include" />
+                </e>
+                <e p="Lux URP Grass TextureDisplace.shader" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="Readme.txt" t="Include" />
+          <e p="Scripts" t="Include">
+            <e p="Decals" t="Include">
+              <e p="Decal.cs" t="Include" />
+              <e p="DecalGizmos.cs" t="Include" />
+              <e p="DecalManager.cs" t="Include" />
+              <e p="Editor" t="Include">
+                <e p="DecalEditor.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Editor" t="Include">
+              <e p="LitExtendedShader.cs" t="Include" />
+              <e p="LuxURP_GrassMeshPostprocessor.cs" t="Include" />
+              <e p="LuxURPCameraFadeDrawer.cs" t="Include" />
+              <e p="LuxURPCustomBillboardShaderGUI.cs" t="Include" />
+              <e p="LuxURPCustomGlassShaderGUI.cs" t="Include" />
+              <e p="LuxURPCustomShaderGUI.cs" t="Include" />
+              <e p="LuxURPCustomSingleSidedShaderGUI.cs" t="Include" />
+              <e p="LuxURPCustomSkinShaderGUI.cs" t="Include" />
+              <e p="LuxURPHelpDrawer.cs" t="Include" />
+              <e p="LuxURPParticlesCustomShaderGUI1.cs" t="Include" />
+              <e p="LuxURPUniversalCustomShaderGUI.cs" t="Include" />
+              <e p="LuxURPVectorFourDrawer.cs" t="Include" />
+              <e p="LuxURPVectorThreeDrawer.cs" t="Include" />
+              <e p="LuxURPVectorTwoDrawer.cs" t="Include" />
+              <e p="LuxURPVectorTwoInverseDrawer.cs" t="Include" />
+              <e p="LuxURPWindDistanceFadeDrawer.cs" t="Include" />
+              <e p="LuxURPWindFoliageDrawer.cs" t="Include" />
+              <e p="LuxURPWindGrassDrawer.cs" t="Include" />
+              <e p="MaterialHeaderHelpLuxURPToonURLDecorator.cs" t="Include" />
+              <e p="MaterialHeaderHelpLuxURPURLDecorator.cs" t="Include" />
+            </e>
+            <e p="LuxURP_HelpBtn.cs" t="Include" />
+            <e p="LuxURP_LayerBasedCulling.cs" t="Include" />
+            <e p="LuxURP_Wind.cs" t="Include" />
+            <e p="Procedural Texturing" t="Include">
+              <e p="ApplyProceduralTextureProperties.cs" t="Include" />
+              <e p="Editor" t="Include">
+                <e p="ApplyProceduralTexturePropertiesEditor.cs" t="Include" />
+                <e p="ProceduralTexture2DEditor.cs" t="Include" />
+              </e>
+              <e p="ProceduralTexture2D.cs" t="Include" />
+            </e>
+            <e p="Resources" t="Include">
+              <e p="Lux URP WindComposite.shader" t="Include" />
+            </e>
+            <e p="Terrain Blend" t="Include">
+              <e p="Editor" t="Include">
+                <e p="GetHeightNormalMapEditor.cs" t="Include" />
+              </e>
+              <e p="GetTerrainHeightNormalMap.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Shader Graphs" t="Include">
+            <e p="Editor" t="Include">
+              <e p="LuxToonShaderGUI.cs" t="Include" />
+            </e>
+            <e p="Includes" t="Include">
+              <e p="Lux_Advanced_Parallax.hlsl" t="Include" />
+              <e p="Lux_Camera_Fade.hlsl" t="Include" />
+              <e p="Lux_Improved_Sampling.hlsl" t="Include" />
+              <e p="Lux_Lighting_CharlieSheen.hlsl" t="Include" />
+              <e p="Lux_Lighting_ClearCoat.hlsl" t="Include" />
+              <e p="Lux_Lighting_Flat.hlsl" t="Include" />
+              <e p="Lux_Lighting_GGX_Anisotropic.hlsl" t="Include" />
+              <e p="Lux_Lighting_Skin.hlsl" t="Include" />
+              <e p="Lux_Lighting_Toon.hlsl" t="Include" />
+              <e p="Lux_Lighting_Toon_V2.hlsl" t="Include" />
+              <e p="Lux_Lighting_Transmission.hlsl" t="Include" />
+              <e p="Lux_Lighting_Transparent.hlsl" t="Include" />
+              <e p="Lux_Procedural_Texturing.hlsl" t="Include" />
+              <e p="Lux_Procedural_Texturing_Simple.hlsl" t="Include" />
+            </e>
+          </e>
+          <e p="Shaders" t="Include">
+            <e p="Billboard" t="Include">
+              <e p="Includes" t="Include">
+                <e p="Lux URP Billboard Inputs.hlsl" t="Include" />
+              </e>
+              <e p="Lux URP Billboard.shader" t="Include" />
+            </e>
+            <e p="Clear Coat" t="Include">
+              <e p="Includes" t="Include">
+                <e p="Lux URP Clear Coat Inputs.hlsl" t="Include" />
+              </e>
+              <e p="Lux URP Clear Coat.shader" t="Include" />
+            </e>
+            <e p="Cloth" t="Include">
+              <e p="Includes" t="Include">
+                <e p="Lux URP Cloth Inputs.hlsl" t="Include" />
+              </e>
+              <e p="Lux URP Cloth STL.shader" t="Include" />
+              <e p="Lux URP Cloth.shader" t="Include" />
+            </e>
+            <e p="Decals" t="Include">
+              <e p="Lux URP Lit Decal.shader" t="Include" />
+              <e p="Lux URP Unlit Decal.shader" t="Include" />
+            </e>
+            <e p="Depth Only" t="Include">
+              <e p="Lux URP Depth Only.shader" t="Include" />
+            </e>
+            <e p="Flat Shaded" t="Include">
+              <e p="Includes" t="Include">
+                <e p="Lux URP Flat Shaded Inputs.hlsl" t="Include" />
+              </e>
+              <e p="Lux URP Flat Shaded.shader" t="Include" />
+            </e>
+            <e p="Fuzzy" t="Include">
+              <e p="Includes" t="Include">
+                <e p="Lux URP Simple Fuzz Inputs.hlsl" t="Include" />
+              </e>
+              <e p="Lux URP Simple Fuzz.shader" t="Include" />
+            </e>
+            <e p="Glass" t="Include">
+              <e p="Includes" t="Include">
+                <e p="Lux URP Glass Inputs.hlsl" t="Include" />
+              </e>
+              <e p="Lux URP Glass.shader" t="Include" />
+            </e>
+            <e p="Human" t="Include">
+              <e p="Includes" t="Include">
+                <e p="Lux URP Hair Core.hlsl" t="Include" />
+                <e p="Lux URP Hair Inputs.hlsl" t="Include" />
+                <e p="Lux URP Skin Inputs.hlsl" t="Include" />
+              </e>
+              <e p="Lux URP Hair Blend.shader" t="Include" />
+              <e p="Lux URP Hair.shader" t="Include" />
+              <e p="Lux URP Skin.shader" t="Include" />
+            </e>
+            <e p="Includes" t="Include">
+              <e p="Lux URP Blend Lighting.hlsl" t="Include" />
+              <e p="Lux URP Clear Coat Lighting.hlsl" t="Include" />
+              <e p="Lux URP Cloth Lighting.hlsl" t="Include" />
+              <e p="Lux URP Hair Lighting.hlsl" t="Include" />
+              <e p="Lux URP Simple Fuzz Lighting.hlsl" t="Include" />
+              <e p="Lux URP Skin Lighting.hlsl" t="Include" />
+              <e p="Lux URP Toon Lighting.hlsl" t="Include" />
+              <e p="Lux URP Translucent Lighting.hlsl" t="Include" />
+              <e p="Lux URP Transparent Lighting.hlsl" t="Include" />
+              <e p="Lux URP Tree Creator Lighting.hlsl" t="Include" />
+            </e>
+            <e p="Lit Extended" t="Include">
+              <e p="Editor" t="Include">
+                <e p="LuxUberShaderGUI.cs" t="Include" />
+              </e>
+              <e p="Includes" t="Include">
+                <e p="Lux URP Lit Extended Inputs.hlsl" t="Include" />
+                <e p="Lux URP Lit Extended Lighting.hlsl" t="Include" />
+                <e p="Lux URP Uber Lit Pass.hlsl" t="Include" />
+              </e>
+              <e p="Lux URP Lit Extended Uber.shader" t="Include" />
+              <e p="Lux URP Lit Extended.shader" t="Include" />
+            </e>
+            <e p="Outline" t="Include">
+              <e p="Includes" t="Include">
+                <e p="Lux URP Fast Outlines AlphaTested Inputs.hlsl" t="Include" />
+              </e>
+              <e p="Lux URP Fast Outline AlphaTested.shader" t="Include" />
+              <e p="Lux URP Fast Outline.shader" t="Include" />
+              <e p="Lux URP Toon Outline.shader" t="Include" />
+            </e>
+            <e p="Particles" t="Include">
+              <e p="Includes" t="Include">
+                <e p="Lux URP Particles Simple Lit Forward Pass.hlsl" t="Include" />
+                <e p="Lux URP Particles Simple Lit Inputs.hlsl" t="Include" />
+              </e>
+              <e p="Lux URP Particles Simple Lit Tess.shader" t="Include" />
+              <e p="Lux URP Particles Simple Lit.shader" t="Include" />
+            </e>
+            <e p="Projection" t="Include">
+              <e p="Includes" t="Include">
+                <e p="Top Down URP Inputs.hlsl" t="Include" />
+              </e>
+              <e p="Lux URP Projection Top Down.shader" t="Include" />
+            </e>
+            <e p="Terrain" t="Include">
+              <e p="Includes" t="Include">
+                <e p="TerrainLitInput.hlsl" t="Include" />
+                <e p="TerrainLitMetaPass.hlsl" t="Include" />
+                <e p="TerrainLitPasses.hlsl" t="Include" />
+              </e>
+              <e p="Lux URP Terrain Add.shader" t="Include" />
+              <e p="Lux URP Terrain Base.shader" t="Include" />
+              <e p="Lux URP Terrain BaseMapGen.shader" t="Include" />
+              <e p="Lux URP Terrain.shader" t="Include" />
+            </e>
+            <e p="Terrain Blend" t="Include">
+              <e p="Includes" t="Include">
+                <e p="Lux URP Terrain Blend Inputs.hlsl" t="Include" />
+              </e>
+              <e p="Lux URP Terrain Blend Depth Only.shader" t="Include" />
+              <e p="Lux URP Terrain Blend.shader" t="Include" />
+            </e>
+            <e p="Terrain Mesh" t="Include">
+              <e p="Lux URP MeshTerrain.shader" t="Include" />
+            </e>
+            <e p="Toon" t="Include">
+              <e p="Includes" t="Include">
+                <e p="Lux URP Toon Inputs.hlsl" t="Include" />
+              </e>
+              <e p="Lux URP Toon &amp; Outline.shader" t="Include" />
+              <e p="Lux URP Toon Gradient Sky.shader" t="Include" />
+              <e p="Lux URP Toon.shader" t="Include" />
+            </e>
+            <e p="Transmission" t="Include">
+              <e p="Includes" t="Include">
+                <e p="Lux URP Transmission Inputs.hlsl" t="Include" />
+              </e>
+              <e p="Lux URP Transmission.shader" t="Include" />
+            </e>
+            <e p="Tree Creator" t="Include">
+              <e p="CameraFacingBillboardTree.shader" t="Include" />
+              <e p="Includes" t="Include">
+                <e p="Lux URP Tree Creator Inputs.hlsl" t="Include" />
+                <e p="Lux URP Tree Creator Library.hlsl" t="Include" />
+              </e>
+              <e p="Lux TreeCreatorBarkRendertex.shader" t="Include" />
+              <e p="Lux TreeCreatorLeavesRendertex.shader" t="Include" />
+              <e p="Lux URP Tree Creator Bark Optimized.shader" t="Include" />
+              <e p="Lux URP Tree Creator Bark.shader" t="Include" />
+              <e p="Lux URP Tree Creator Leaves Optimized.shader" t="Include" />
+              <e p="Lux URP Tree Creator Leaves.shader" t="Include" />
+            </e>
+            <e p="Vegetation" t="Include">
+              <e p="Includes" t="Include">
+                <e p="Lux URP Foliage Inputs.hlsl" t="Include" />
+                <e p="Lux URP Grass Inputs.hlsl" t="Include" />
+              </e>
+              <e p="Lux URP Foliage Debug.shader" t="Include" />
+              <e p="Lux URP Foliage.shader" t="Include" />
+              <e p="Lux URP Grass.shader" t="Include" />
+              <e p="Lux URP Wind Visualize.shader" t="Include" />
+            </e>
+            <e p="Versatile Blend" t="Include">
+              <e p="Includes" t="Include">
+                <e p="Lux URP Versatile Blend Inputs.hlsl" t="Include" />
+              </e>
+              <e p="Lux URP Versatile Blend.shader" t="Include" />
+            </e>
+            <e p="Volumetrics" t="Include">
+              <e p="Lux URP FX BoxVolume.shader" t="Include" />
+              <e p="Lux URP FX LightBeam.shader" t="Include" />
+              <e p="Lux URP FX SphereVolume.shader" t="Include" />
+            </e>
+            <e p="Water" t="Include">
+              <e p="Lux URP Water.shader" t="Include" />
+            </e>
+          </e>
+          <e p="Version.txt" t="Include" />
+        </e>
         <e p="Scripts" t="Include">
           <e p="CameraController.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
@@ -538,6 +844,7 @@
           <e p="StackController.cs" t="Include" />
           <e p="StackFactoryBezier.cs" t="Include" />
           <e p="StackFactoryController.cs" t="Include" />
+          <e p="SupplierController.cs" t="Include" />
         </e>
       </e>
       <e p="Circle-Money.sln" t="IncludeFlat" />
