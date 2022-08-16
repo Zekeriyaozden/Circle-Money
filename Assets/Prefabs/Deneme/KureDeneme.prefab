@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8225277072747042686}
   - component: {fileID: 8992020835332633268}
   - component: {fileID: 1468935264063269442}
+  - component: {fileID: 4538338818310205154}
   m_Layer: 0
   m_Name: KureDeneme
   m_TagString: Untagged
@@ -93,7 +94,22 @@ SphereCollider:
   m_GameObject: {fileID: 809937170933918933}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4538338818310205154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 809937170933918933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f66180358ed24644bff1aca5a9a023b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemType: Paint
+  node: {fileID: 0}
+  collected: 0
