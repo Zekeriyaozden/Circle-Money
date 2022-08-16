@@ -7,8 +7,7 @@ public class StackFactoryBezier : MonoBehaviour
 {
     private GameObject gm;
     private float time;
-    public int count;
-    public Vector3 startPosDistance;
+    public Vector3 startPos;
     public Vector3 targetPos;
     private Vector3 startBezPos;
     private Vector3 targetBezPos;
@@ -25,7 +24,7 @@ public class StackFactoryBezier : MonoBehaviour
     
     void Update()
     {
-        secondPosDistance = Vector3.Lerp(startPosDistance, targetPos + new Vector3(0,(float)count * 0.25f,0), 0.5f);
+        secondPosDistance = Vector3.Lerp(startPos, targetPos, 0.5f);
         secondPosDistance += new Vector3(0, 1.2f, 0);
         if (k < 1)
         {
@@ -35,8 +34,8 @@ public class StackFactoryBezier : MonoBehaviour
         {
             k = 1;
         }
-        startBezPos = Vector3.Lerp(startPosDistance, secondPosDistance, k);
-        targetBezPos = Vector3.Lerp(secondPosDistance,targetPos + new Vector3(0,(float)count * 0.25f,0), k);
+        startBezPos = Vector3.Lerp(startPos, secondPosDistance, k);
+        targetBezPos = Vector3.Lerp(secondPosDistance,targetPos, k);
         gameObject.transform.position = Vector3.Lerp(startBezPos, targetBezPos, k);
         
 
