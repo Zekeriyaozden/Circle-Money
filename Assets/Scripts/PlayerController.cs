@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     public GameObject gm;
     public bool isStopped;
     public bool isCorStart;
+    public GameObject collectedParent;
     void Start()
     {
         isCorStart = true;
@@ -57,11 +58,12 @@ public class PlayerController : MonoBehaviour
             }
             GameObject temp = go.transform.GetChild(0).gameObject;
             stackList.Add(go.transform.GetChild(0).gameObject);
-            go.transform.GetChild(0).parent = gameObject.transform;
+            go.transform.GetChild(0).parent = collectedParent.transform;
             temp.AddComponent<ItemBezier>().startPosDistance = temp.transform.position;
             int TempFlt = (stackList.Count) - 1;
             temp.GetComponent<ItemBezier>().targetPos = gm.GetComponent<GameManager>().PlayerReferance.transform;
             temp.GetComponent<ItemBezier>().count = TempFlt;
+            gm.GetComponent<GameManager>().stackSize = stackList.Count;
         }
     } 
 

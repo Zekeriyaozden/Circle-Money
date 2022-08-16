@@ -42,6 +42,17 @@ public class ItemBezier : MonoBehaviour
 
         if (k == 1)
         {
+            int tempInt = gm.GetComponent<GameManager>().Player.GetComponent<PlayerController>().stackList
+                .IndexOf(gameObject);
+            if (tempInt > 1)
+            {
+                gameObject.GetComponent<ItemController>().node = gm.GetComponent<GameManager>().Player.GetComponent<PlayerController>().stackList[tempInt-1];   
+            }
+            else
+            {
+                gameObject.GetComponent<ItemController>().node = gm.GetComponent<GameManager>().PlayerReferance;
+            }
+            gameObject.GetComponent<ItemController>().collected = true;
             gameObject.GetComponent<ItemBezier>().enabled = false;
         }
 
