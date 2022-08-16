@@ -33,7 +33,6 @@ public class StackFactoryController : MonoBehaviour
          {
             break;
          }
-         yield return new WaitForSeconds(.4f);
          if (pc.stackList.Count > 0)
          {
             bool piece = true;
@@ -80,13 +79,46 @@ public class StackFactoryController : MonoBehaviour
             
             if (paintList.Count < gm.GetComponent<GameManager>().maxPaintRequire && piece)
             {
-               
+               for (int i = 0; i < pc.stackList.Count; i++)
+               {
+                  if (pc.stackList[i].GetComponent<ItemController>().itemType == "Paint" && piece)
+                  {
+                     paintList.Add(pc.stackList[i]);
+                     pc.stackList[i].GetComponent<ItemController>().collected = false;
+                     int tempIndex = pc.stackList.IndexOf(pc.stackList[i]);
+                     if (tempIndex == 0)
+                     {
+                        pc.stackList[1].GetComponent<ItemController>().node =
+                           gm.GetComponent<GameManager>().PlayerReferance.gameObject;
+                     }
+                     else
+                     {
+                        if (pc.stackList.Count == tempIndex + 1)
+                        {
+                           
+                        }
+                        else
+                        {
+                           pc.stackList[tempIndex + 1].GetComponent<ItemController>().node =
+                              pc.stackList[tempIndex - 1];
+                        }
+                     }
+                     GameObject tempObj = pc.stackList[i];
+                     pc.stackList.Remove(tempObj);
+                     tempObj.AddComponent<StackFactoryBezier>().startPos = tempObj.transform.position;
+                     tempObj.GetComponent<StackFactoryBezier>().targetPos =
+                        paintReferanceList[paintList.IndexOf(tempObj)].transform.position;
+                     i = pc.stackList.Count + 20;
+                     piece = false;
+                  }
+               }
             }
             else
             {
                //todo maxPaint
             }
          }
+         yield return new WaitForSeconds(.4f);
          if (!isStopped)
          {
             break;
@@ -100,8 +132,10 @@ public class StackFactoryController : MonoBehaviour
       {
          if (isStopped && isCorStart)
          {
+            Debug.Log("entered");
             StartCoroutine(stackEffect(other.gameObject));
             isCorStart = false;
+            gm.GetComponent<GameManager>().Player.GetComponent<PlayerController>().isCorStart = false;
          }
       }
    }
