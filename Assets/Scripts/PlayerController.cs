@@ -10,8 +10,8 @@ public class PlayerController : MonoBehaviour
     public float followSpeed;
     public List<GameObject> stackList;
     public GameObject gm;
-    private bool isStopped;
-    private bool isCorStart;
+    public bool isStopped;
+    public bool isCorStart;
     void Start()
     {
         isCorStart = true;
@@ -44,16 +44,24 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator stackEffect(GameObject go)
     {
-        for (int i = 0; i < go.transform.childCount; i++)
+        while (0 < go.transform.childCount)
         {
+            if (gm.GetComponent<GameManager>().MaxStackSize <= stackList.Count)
+            {
+                break;
+            }
             yield return new WaitForSeconds(.2f);
             if (!isStopped)
             {
                 break;
             }
-            go.transform.GetChild(i).parent = gameObject.transform;
-            stackList.Add(go);
-            //go.transform.localPosition = 
+            GameObject temp = go.transform.GetChild(0).gameObject;
+            stackList.Add(go.transform.GetChild(0).gameObject);
+            go.transform.GetChild(0).parent = gameObject.transform;
+            temp.AddComponent<ItemBezier>().startPosDistance = temp.transform.position;
+            int TempFlt = (stackList.Count) - 1;
+            temp.GetComponent<ItemBezier>().targetPos = gm.GetComponent<GameManager>().PlayerReferance.transform;
+            temp.GetComponent<ItemBezier>().count = TempFlt;
         }
     } 
 

@@ -245,6 +245,7 @@
         <e p="Scripts" t="Include">
           <e p="CameraController.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
+          <e p="ItemBezier.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
           <e p="StackController.cs" t="Include" />
         </e>

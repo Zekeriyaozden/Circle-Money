@@ -5,6 +5,9 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public GameObject Player;
+    public GameObject PlayerReferance;
+    public float bezierTime;
+    [HideInInspector]
     public bool isPlayerStopped;
     public int stackSize;
     public int MaxStackSize;
