@@ -65,7 +65,9 @@ public class StackFactoryController : MonoBehaviour
                      }
                      GameObject tempObj = pc.stackList[i];
                      pc.stackList.Remove(tempObj);
-                     
+                     tempObj.AddComponent<StackFactoryBezier>().startPos = tempObj.transform.position;
+                     tempObj.GetComponent<StackFactoryBezier>().targetPos =
+                        pieceReferanceList[pieceList.IndexOf(tempObj)].transform.position;
                      i = pc.stackList.Count + 20;
                      piece = false;
                   }
