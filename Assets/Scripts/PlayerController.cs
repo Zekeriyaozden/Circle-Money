@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private IEnumerator stackEffect(GameObject go)
+    private IEnumerator stackEffect(GameObject go,GameObject supplierList)
     {
         while (0 < go.transform.childCount)
         {
@@ -51,14 +51,16 @@ public class PlayerController : MonoBehaviour
             {
                 break;
             }
-            yield return new WaitForSeconds(.2f);
+            yield return new WaitForSeconds(.4f);
             if (!isStopped)
             {
                 break;
             }
-            GameObject temp = go.transform.GetChild(0).gameObject;
-            stackList.Add(go.transform.GetChild(0).gameObject);
-            go.transform.GetChild(0).parent = collectedParent.transform;
+            int tempInt = go.transform.childCount - 1;
+            GameObject temp = go.transform.GetChild(tempInt).gameObject;
+            supplierList.GetComponent<SupplierController>().itemsStack.Remove(temp);
+            stackList.Add(go.transform.GetChild(tempInt).gameObject);
+            go.transform.GetChild(tempInt).parent = collectedParent.transform;
             temp.AddComponent<ItemBezier>().startPosDistance = temp.transform.position;
             int TempFlt = (stackList.Count) - 1;
             temp.GetComponent<ItemBezier>().targetPos = gm.GetComponent<GameManager>().PlayerReferance.transform;
@@ -73,7 +75,7 @@ public class PlayerController : MonoBehaviour
         {
             if (isStopped && isCorStart)
             {
-                StartCoroutine(stackEffect(other.gameObject.GetComponent<StackController>().stackController));
+                StartCoroutine(stackEffect(other.gameObject.GetComponent<StackController>().stackController,other.gameObject.GetComponent<StackController>().supplierController));
                 isCorStart = false;
             }
         }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class StackController : MonoBehaviour
 {
     public GameObject stackController;
+    public GameObject supplierController;
     void Start()
     {
            

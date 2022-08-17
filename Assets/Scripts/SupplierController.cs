@@ -10,6 +10,7 @@ public class SupplierController : MonoBehaviour
     public Transform stackReferance;
     public bool canStop;
     public List<GameObject> items;
+    public List<GameObject> itemsStack;
     public bool isPaint;
     public int stackSize;
     public int suplySize;
@@ -35,12 +36,13 @@ public class SupplierController : MonoBehaviour
             yield return new WaitForSeconds(.4f);
             if (items.Count>0)
             {
-                if (suplySize < suplySizeMax)
+                if (itemsStack.Count < suplySizeMax)
                 {
+                    itemsStack.Add(items[items.Count - 1]);
                     items[items.Count - 1].AddComponent<SupplierBezier>();
                     items[items.Count - 1].GetComponent<SupplierBezier>().startPos = items[items.Count - 1].transform.position;
                     items[items.Count - 1].GetComponent<SupplierBezier>().parentObj = storage;
-                    float temp = (float) (suplySize);
+                    float temp = (float) (itemsStack.Count-1);
                     float tempKalan = (int) temp % 5;
                     int tempDevide = (int) (temp / 5);
                     items[items.Count - 1].GetComponent<SupplierBezier>().targetPos = stackReferance.position +
@@ -50,7 +52,6 @@ public class SupplierController : MonoBehaviour
             }
             else
             {
-                Debug.Log("ent");
                 break;
             }
         }
@@ -59,7 +60,6 @@ public class SupplierController : MonoBehaviour
     }
     void Update()
     {
-        suplySize = storage.transform.childCount;
         if (sfl.GetPercent() > (double) 0.47 && sfl.GetPercent() < (double) 0.53 && canStop)
         {
             sfl.follow = false;
@@ -72,7 +72,6 @@ public class SupplierController : MonoBehaviour
         }
         else if (sfl.GetPercent() > (double) 0.95 || sfl.GetPercent() < (double) 0.05)
         {
-            Debug.Log("d");
             while (items.Count < stackSize)
             {
                 if (isPaint)
