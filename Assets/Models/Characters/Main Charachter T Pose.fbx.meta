@@ -1,20 +1,11 @@
 fileFormatVersion: 2
-guid: b95e4b37e1c45084fac0509e1e76afe1
+guid: 18fed525e3063964b869fd67ac7a50d2
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable:
   - first:
-      74: -4791504522942941401
-    second: Armature|Armature|mixamo.com|Layer0
-  - first:
-      74: 6165553400957861818
-    second: Armature|Armature|mixamo.com|Layer0.001
-  - first:
-      74: 3591740854655688942
-    second: Armature|Armature|mixamo.com|Layer0.002
-  - first:
-      74: 85483252243113165
-    second: Armature|Armature|mixamo.com|Layer0.003
+      74: -203655887218126122
+    second: mixamo.com
   externalObjects: {}
   materials:
     materialImportMode: 2
