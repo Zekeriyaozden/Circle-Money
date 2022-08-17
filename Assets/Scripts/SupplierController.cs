@@ -17,12 +17,14 @@ public class SupplierController : MonoBehaviour
     public int suplySizeMax;
     private GameManager gm;
     private bool corFlag;
+    private Animator animator;
     void Start()
     {
         corFlag = true;
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         canStop = true;
         sfl = gameObject.GetComponent<SplineFollower>();
+        animator = gameObject.GetComponent<Animator>();
     }
 
     private IEnumerator Stack()
@@ -60,9 +62,18 @@ public class SupplierController : MonoBehaviour
     }
     void Update()
     {
+        if (items.Count > 0)
+        {
+            animator.SetBool("isWBox",true);
+        }
+        else
+        {
+            animator.SetBool("isWBox",false);
+        }
         if (sfl.GetPercent() > (double) 0.47 && sfl.GetPercent() < (double) 0.53 && canStop)
         {
             sfl.follow = false;
+            animator.SetBool("isRunning",false);
             if (corFlag)
             {
                 Debug.Log("ent");
@@ -96,6 +107,7 @@ public class SupplierController : MonoBehaviour
         else
         {
             sfl.follow = true;
+            animator.SetBool("isRunning",true);
         }
     }
 }
