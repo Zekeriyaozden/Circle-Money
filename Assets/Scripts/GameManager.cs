@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     //----------------------------------------
     public int maxPaintRequire;
     public int maxPieceRequire;
+    public GameObject stackItemPiecePref;
+    public GameObject stackItemPaintPref;
     
     
     void Start()

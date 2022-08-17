@@ -6,19 +6,93 @@ using UnityEngine;
 public class SupplierController : MonoBehaviour
 {
     private SplineFollower sfl;
+    public GameObject storage;
+    public Transform stackReferance;
     public bool canStop;
+    public List<GameObject> items;
+    public bool isPaint;
+    public int stackSize;
+    public int suplySize;
+    public int suplySizeMax;
+    private GameManager gm;
+    private bool corFlag;
     void Start()
     {
+        corFlag = true;
+        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+        canStop = true;
         sfl = gameObject.GetComponent<SplineFollower>();
     }
 
-    // Update is called once per frame
+    private IEnumerator Stack()
+    {
+        while (true)
+        {
+            if (items.Count == 0)
+            {
+                break;
+            }
+            yield return new WaitForSeconds(.4f);
+            if (items.Count>0)
+            {
+                if (suplySize < suplySizeMax)
+                {
+                    items[items.Count - 1].AddComponent<SupplierBezier>();
+                    items[items.Count - 1].GetComponent<SupplierBezier>().startPos = items[items.Count - 1].transform.position;
+                    items[items.Count - 1].GetComponent<SupplierBezier>().parentObj = storage;
+                    float temp = (float) (suplySize);
+                    float tempKalan = (int) temp % 5;
+                    int tempDevide = (int) (temp / 5);
+                    items[items.Count - 1].GetComponent<SupplierBezier>().targetPos = stackReferance.position +
+                                                                        new Vector3(0.3f * tempKalan, 0.3f * tempDevide , 0);
+                    items.RemoveAt(items.Count - 1);
+                }
+            }
+            else
+            {
+                Debug.Log("ent");
+                break;
+            }
+        }
+        canStop = false;
+        corFlag = true;
+    }
     void Update()
     {
-        Debug.Log(sfl.GetPercent());
+        suplySize = storage.transform.childCount;
         if (sfl.GetPercent() > (double) 0.47 && sfl.GetPercent() < (double) 0.53 && canStop)
         {
             sfl.follow = false;
+            if (corFlag)
+            {
+                Debug.Log("ent");
+                corFlag = false;
+                StartCoroutine(Stack());
+            }
+        }
+        else if (sfl.GetPercent() > (double) 0.95 || sfl.GetPercent() < (double) 0.05)
+        {
+            Debug.Log("d");
+            while (items.Count < stackSize)
+            {
+                if (isPaint)
+                {
+                    GameObject temp = Instantiate(gm.stackItemPaintPref);
+                    temp.transform.position =
+                        gameObject.transform.GetChild(0).transform.position + new Vector3(0, .3f * items.Count, 0);
+                    items.Add(temp);
+                    temp.transform.SetParent(gameObject.transform);
+                }
+                else
+                {
+                    GameObject temp = Instantiate(gm.stackItemPiecePref);
+                    temp.transform.position =
+                        gameObject.transform.GetChild(0).transform.position + new Vector3(0, .3f * items.Count, 0);
+                    items.Add(temp);
+                    temp.transform.SetParent(gameObject.transform);
+                }
+            }
+            canStop = true;
         }
         else
         {

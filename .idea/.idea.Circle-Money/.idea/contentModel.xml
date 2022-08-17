@@ -844,6 +844,7 @@
           <e p="StackController.cs" t="Include" />
           <e p="StackFactoryBezier.cs" t="Include" />
           <e p="StackFactoryController.cs" t="Include" />
+          <e p="SupplierBezier.cs" t="Include" />
           <e p="SupplierController.cs" t="Include" />
         </e>
       </e>
