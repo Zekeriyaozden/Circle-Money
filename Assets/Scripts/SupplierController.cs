@@ -46,7 +46,7 @@ public class SupplierController : MonoBehaviour
                     float tempKalan = (int) temp % 5;
                     int tempDevide = (int) (temp / 5);
                     items[items.Count - 1].GetComponent<SupplierBezier>().targetPos = stackReferance.position +
-                                                                        new Vector3(0.3f * tempKalan, 0.3f * tempDevide , 0);
+                                                                        new Vector3(0.5f * tempKalan, 0.5f * tempDevide , 0);
                     items.RemoveAt(items.Count - 1);
                 }
             }
@@ -78,7 +78,7 @@ public class SupplierController : MonoBehaviour
                 {
                     GameObject temp = Instantiate(gm.stackItemPaintPref);
                     temp.transform.position =
-                        gameObject.transform.GetChild(0).transform.position + new Vector3(0, .3f * items.Count, 0);
+                        gameObject.transform.GetChild(0).transform.position + new Vector3(0, .5f * items.Count, 0);
                     items.Add(temp);
                     temp.transform.SetParent(gameObject.transform);
                 }
@@ -86,7 +86,7 @@ public class SupplierController : MonoBehaviour
                 {
                     GameObject temp = Instantiate(gm.stackItemPiecePref);
                     temp.transform.position =
-                        gameObject.transform.GetChild(0).transform.position + new Vector3(0, .3f * items.Count, 0);
+                        gameObject.transform.GetChild(0).transform.position + new Vector3(0, .5f * items.Count, 0);
                     items.Add(temp);
                     temp.transform.SetParent(gameObject.transform);
                 }

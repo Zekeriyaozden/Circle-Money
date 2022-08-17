@@ -13,17 +13,30 @@ public class PlayerController : MonoBehaviour
     public bool isStopped;
     public bool isCorStart;
     public GameObject collectedParent;
+    private Animator animator;
     void Start()
     {
+        animator = gameObject.GetComponent<Animator>();
         isCorStart = true;
         gm = GameObject.Find("GameManager");
         sf = GetComponent<SplineFollower>();
         sf.followSpeed = followSpeed;
+        animator.SetBool("isWBox",true);
+        animator.SetBool("isRunning",false);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (stackList.Count > 0)
+        {
+            animator.SetBool("isWBox",true);
+        }
+        else
+        {
+            animator.SetBool("isWBox",false);
+        }
+        
         
         sf.followSpeed = followSpeed;
         
@@ -32,6 +45,7 @@ public class PlayerController : MonoBehaviour
             gm.GetComponent<GameManager>().isPlayerStopped = false;
             sf.follow = true;
             isStopped = false;
+            animator.SetBool("isRunning",true);
             StopAllCoroutines();
             isCorStart = true;
         }
@@ -39,6 +53,7 @@ public class PlayerController : MonoBehaviour
         {
             gm.GetComponent<GameManager>().isPlayerStopped = true;
             sf.follow = false;
+            animator.SetBool("isRunning",false);
             isStopped = true;
         }
     }
@@ -56,13 +71,16 @@ public class PlayerController : MonoBehaviour
             {
                 break;
             }
+
+            //Debug.Log("VAR");
             int tempInt = go.transform.childCount - 1;
             GameObject temp = go.transform.GetChild(tempInt).gameObject;
             supplierList.GetComponent<SupplierController>().itemsStack.Remove(temp);
             stackList.Add(go.transform.GetChild(tempInt).gameObject);
             go.transform.GetChild(tempInt).parent = collectedParent.transform;
             temp.AddComponent<ItemBezier>().startPosDistance = temp.transform.position;
-            int TempFlt = (stackList.Count) - 1;
+            int TempFlt = (stackList.Count);
+            //Debug.Log(TempFlt);
             temp.GetComponent<ItemBezier>().targetPos = gm.GetComponent<GameManager>().PlayerReferance.transform;
             temp.GetComponent<ItemBezier>().count = TempFlt;
             gm.GetComponent<GameManager>().stackSize = stackList.Count;

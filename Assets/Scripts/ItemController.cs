@@ -17,11 +17,13 @@ public class ItemController : MonoBehaviour
     // gameObject.transform.position = new Vector3((Mathf.Lerp( gameObject.transform.position.x,node.gameObject.transform.position.x ,Time.deltaTime * lerpSpeed)), parent.transform.position.y + distanceY ,parent.transform.position.z);
     void Update()
     {
+
         if (collected)
         {
+//            Debug.Log(node.transform.position.y + 0.5f);
             gameObject.transform.position =
                 new Vector3((Mathf.Lerp(gameObject.transform.position.x, node.transform.position.x, Time.deltaTime * lerpSpeed)),
-                    (Mathf.Lerp(gameObject.transform.position.y, node.transform.position.y + 0.31f, Time.deltaTime * lerpSpeed)),
+                    (Mathf.Lerp(gameObject.transform.position.y, node.transform.position.y + 0.5f, Time.deltaTime * lerpSpeed)),
                     (Mathf.Lerp(gameObject.transform.position.z, node.transform.position.z, Time.deltaTime * lerpSpeed)));
         }
         
