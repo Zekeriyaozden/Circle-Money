@@ -6,9 +6,8 @@ using UnityEngine;
 public class StackFactoryController : MonoBehaviour
 {
    public List<GameObject> paintList;
-   public List<GameObject> paintReferanceList;
    public List<GameObject> pieceList;
-   public List<GameObject> pieceReferanceList;
+   public GameObject referance;
    private bool isStopped;
    private bool isCorStart;
    private GameObject gm;
@@ -66,7 +65,7 @@ public class StackFactoryController : MonoBehaviour
                      pc.stackList.Remove(tempObj);
                      tempObj.AddComponent<StackFactoryBezier>().startPos = tempObj.transform.position;
                      tempObj.GetComponent<StackFactoryBezier>().targetPos =
-                        pieceReferanceList[pieceList.IndexOf(tempObj)].transform.position;
+                        referance.transform.position;
                      i = pc.stackList.Count + 20;
                      piece = false;
                   }
@@ -107,7 +106,7 @@ public class StackFactoryController : MonoBehaviour
                      pc.stackList.Remove(tempObj);
                      tempObj.AddComponent<StackFactoryBezier>().startPos = tempObj.transform.position;
                      tempObj.GetComponent<StackFactoryBezier>().targetPos =
-                        paintReferanceList[paintList.IndexOf(tempObj)].transform.position;
+                        referance.transform.position;
                      i = pc.stackList.Count + 20;
                      piece = false;
                   }

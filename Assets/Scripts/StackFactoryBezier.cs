@@ -25,7 +25,7 @@ public class StackFactoryBezier : MonoBehaviour
     void Update()
     {
         secondPosDistance = Vector3.Lerp(startPos, targetPos, 0.5f);
-        secondPosDistance += new Vector3(0, 1.2f, 0);
+        secondPosDistance += new Vector3(0, 3f, 0);
         if (k < 1)
         {
             k += Time.deltaTime / time;

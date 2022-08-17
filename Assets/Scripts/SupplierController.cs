@@ -18,6 +18,7 @@ public class SupplierController : MonoBehaviour
     private GameManager gm;
     private bool corFlag;
     private Animator animator;
+    public bool isVert;
     void Start()
     {
         corFlag = true;
@@ -47,8 +48,17 @@ public class SupplierController : MonoBehaviour
                     float temp = (float) (itemsStack.Count-1);
                     float tempKalan = (int) temp % 5;
                     int tempDevide = (int) (temp / 5);
-                    items[items.Count - 1].GetComponent<SupplierBezier>().targetPos = stackReferance.position +
-                                                                        new Vector3(0.5f * tempKalan, 0.5f * tempDevide , 0);
+                    if (isVert)
+                    {
+                        items[items.Count - 1].GetComponent<SupplierBezier>().targetPos = stackReferance.position +
+                            new Vector3(0.5f * tempKalan, 0 , -0.5f * tempDevide);
+                    }
+                    else
+                    {
+                        items[items.Count - 1].GetComponent<SupplierBezier>().targetPos = stackReferance.position +
+                            new Vector3(0.5f * tempDevide, 0 , 0.5f * tempKalan);
+                    }
+
                     items.RemoveAt(items.Count - 1);
                 }
             }
