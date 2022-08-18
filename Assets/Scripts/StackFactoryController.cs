@@ -37,8 +37,9 @@ public class StackFactoryController : MonoBehaviour
             bool piece = true;
             if (pieceList.Count < gm.GetComponent<GameManager>().maxPieceRequire)
             {
-               for (int i = 0; i < pc.stackList.Count; i++)
+               for (int i = pc.stackList.Count-1; i >= 0 ; i--)
                {
+                  Debug.Log(i + "--" + pc.stackList.Count);
                   if (pc.stackList[i].GetComponent<ItemController>().itemType == "Piece" && piece)
                   {
                      pieceList.Add(pc.stackList[i]);
@@ -46,8 +47,12 @@ public class StackFactoryController : MonoBehaviour
                      int tempIndex = pc.stackList.IndexOf(pc.stackList[i]);
                      if (tempIndex == 0)
                      {
-                        pc.stackList[1].GetComponent<ItemController>().node =
-                           gm.GetComponent<GameManager>().PlayerReferance.gameObject;
+                        if (pc.stackList.Count > 1)
+                        {
+                           pc.stackList[1].GetComponent<ItemController>().node =
+                              gm.GetComponent<GameManager>().PlayerReferance.gameObject;
+                        }
+
                      }
                      else
                      {
@@ -66,7 +71,8 @@ public class StackFactoryController : MonoBehaviour
                      tempObj.AddComponent<StackFactoryBezier>().startPos = tempObj.transform.position;
                      tempObj.GetComponent<StackFactoryBezier>().targetPos =
                         referance.transform.position;
-                     i = pc.stackList.Count + 20;
+                     //i = pc.stackList.Count + 20;
+                     
                      piece = false;
                   }
                }
@@ -78,7 +84,7 @@ public class StackFactoryController : MonoBehaviour
             
             if (paintList.Count < gm.GetComponent<GameManager>().maxPaintRequire && piece)
             {
-               for (int i = 0; i < pc.stackList.Count; i++)
+               for (int i = pc.stackList.Count-1; i >= 0 ; i--)
                {
                   if (pc.stackList[i].GetComponent<ItemController>().itemType == "Paint" && piece)
                   {
@@ -87,8 +93,11 @@ public class StackFactoryController : MonoBehaviour
                      int tempIndex = pc.stackList.IndexOf(pc.stackList[i]);
                      if (tempIndex == 0)
                      {
-                        pc.stackList[1].GetComponent<ItemController>().node =
-                           gm.GetComponent<GameManager>().PlayerReferance.gameObject;
+                        if (pc.stackList.Count > 1)
+                        {
+                           pc.stackList[1].GetComponent<ItemController>().node =
+                              gm.GetComponent<GameManager>().PlayerReferance.gameObject;
+                        }
                      }
                      else
                      {
@@ -107,7 +116,7 @@ public class StackFactoryController : MonoBehaviour
                      tempObj.AddComponent<StackFactoryBezier>().startPos = tempObj.transform.position;
                      tempObj.GetComponent<StackFactoryBezier>().targetPos =
                         referance.transform.position;
-                     i = pc.stackList.Count + 20;
+                     //i = pc.stackList.Count + 20;
                      piece = false;
                   }
                }
