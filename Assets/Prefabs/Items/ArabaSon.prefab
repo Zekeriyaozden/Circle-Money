@@ -210,13 +210,13 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2917416012693167587, guid: b0bed506bf179b54e9cc96e20255874f, type: 3}
   - {fileID: 2100000, guid: fb670b097d5cec843a1ecec2f3e0ac16, type: 2}
-  - {fileID: 4930302652693223145, guid: b0bed506bf179b54e9cc96e20255874f, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: -1001825288428411851, guid: b0bed506bf179b54e9cc96e20255874f, type: 3}
+  - {fileID: 2100000, guid: e82a255dca1678e4e8c3fd6e94c29fab, type: 2}
+  - {fileID: 2100000, guid: f20fa167110606d4f894243ac59592e0, type: 2}
+  - {fileID: 2100000, guid: cfed453a229cea749ba78fe074f839bf, type: 2}
+  - {fileID: 2100000, guid: 83f04e4311f835c4b8609829e2905aef, type: 2}
+  - {fileID: 2100000, guid: a7815d5082c49b841acdc67f8808be7c, type: 2}
+  - {fileID: 2100000, guid: 4dd2605094578c64b8686a92f08819d8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1538,7 +1538,7 @@ GameObject:
   - component: {fileID: 8559811850096590791}
   - component: {fileID: 8160582978808774753}
   m_Layer: 0
-  m_Name: ArabaAndac
+  m_Name: ArabaSon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
