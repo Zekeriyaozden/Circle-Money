@@ -1,8 +1,11 @@
 fileFormatVersion: 2
-guid: 0e826be08b7c0cf4481ca7270590c4d5
+guid: 7fbfc77f90604d34f8a82f7804d85e83
 ModelImporter:
   serializedVersion: 21202
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: 2126731918636730873
+    second: CarAnim
   externalObjects: {}
   materials:
     materialImportMode: 2
