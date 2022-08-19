@@ -835,6 +835,9 @@
           </e>
           <e p="Version.txt" t="Include" />
         </e>
+        <e p="Scenes" t="Include">
+          <e p="ReverseAnimationContext.cs" t="Include" />
+        </e>
         <e p="Scripts" t="Include">
           <e p="CameraController.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />

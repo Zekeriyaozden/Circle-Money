@@ -33,6 +33,7 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/SupplierController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/StackFactoryController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/StackFactoryBezier.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scenes/ReverseAnimationContext.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2DO9am8jkQT6TAKD6NJepPTwRmZ" />
@@ -79,6 +80,7 @@
       <workItem from="1660576934476" duration="3404000" />
       <workItem from="1660644076070" duration="13969000" />
       <workItem from="1660733432629" duration="16363000" />
+      <workItem from="1660834633160" duration="1297000" />
     </task>
     <servers />
   </component>
