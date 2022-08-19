@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     public int maxPieceRequire;
     public GameObject stackItemPiecePref;
     public GameObject stackItemPaintPref;
+    public float carAnimSpeed;
     
     
     void Start()
