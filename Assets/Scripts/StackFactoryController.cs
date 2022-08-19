@@ -5,11 +5,13 @@ using UnityEngine;
 
 public class StackFactoryController : MonoBehaviour
 {
+   public Material mt;
    public List<GameObject> paintList;
    public List<GameObject> pieceList;
    public GameObject referance;
    public GameObject carReferance;
    public GameObject carPrefab;
+   public GameObject CurrentCar;
    private bool isStopped;
    private bool isCorStart;
    private bool tempFlag;
@@ -17,6 +19,8 @@ public class StackFactoryController : MonoBehaviour
 
    private void Start()
    {
+
+      CurrentCar = null;
       gm = GameObject.Find("GameManager").GetComponent<GameManager>();
       tempFlag = true;
    }
@@ -29,10 +33,17 @@ public class StackFactoryController : MonoBehaviour
          {
             if (tempFlag)
             {
+               Material mtr = Instantiate(mt);
+               mtr.SetFloat("_Ring",1f);
                GameObject gObj = Instantiate(carPrefab, transform.parent);
+               Material[] mtls = gObj.transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().materials;
+               mtls[1] = mtr;
+               gObj.transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().materials = mtls;
                gObj.transform.position = carReferance.transform.position;
                gObj.transform.eulerAngles = new Vector3(0, 270f, 0);
                gObj.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+               CurrentCar = gObj;
+               StartCoroutine(tempFlagControl(mtr));
                tempFlag = false;
             }
          }
@@ -41,13 +52,34 @@ public class StackFactoryController : MonoBehaviour
       isStopped = gm.isPlayerStopped;
    }
 
-   private IEnumerator tempFlagControl()
+   private IEnumerator paintToCar(Material mt)
    {
-      tempFlag = false;
-      yield return new WaitForSeconds(5f);
-      paintList.Clear();
-      pieceList.Clear();
-      tempFlag = true;
+      yield return new WaitForSeconds(.8f);
+      float k = 0;
+      for (int i = 1; i < 200; i++)
+      {
+         k = (float)i / 200;
+         yield return new WaitForSeconds(4f / 200f);
+         mt.SetFloat("_Ring",1+( k * (2.35f)));
+      }
+   }
+   
+
+   private IEnumerator tempFlagControl(Material mt)
+   {
+      while (true)
+      {
+         yield return new WaitForSeconds(.1f);
+         if (CurrentCar.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("CarAnim"))
+         {
+            continue;
+         }
+         else
+         {
+            StartCoroutine(paintToCar(mt));
+            break;
+         }
+      }
    }
 
    private IEnumerator stackEffect(GameObject player)
