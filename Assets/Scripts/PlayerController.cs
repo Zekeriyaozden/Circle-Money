@@ -14,8 +14,10 @@ public class PlayerController : MonoBehaviour
     public bool isCorStart;
     public GameObject collectedParent;
     private Animator animator;
+    public float fsd;
     void Start()
     {
+       // fsd = (float) sf.GetPercent();
         animator = gameObject.GetComponent<Animator>();
         isCorStart = true;
         gm = GameObject.Find("GameManager");
@@ -28,6 +30,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if (stackList.Count > 0)
         {
             animator.SetBool("isWBox",true);
