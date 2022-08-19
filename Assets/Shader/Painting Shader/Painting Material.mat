@@ -50,8 +50,8 @@ Material:
     - _Metallic: 0
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Ring: 3.35
-    - _Smoothness: 1.04
+    - _Ring: 1
+    - _Smoothness: 0.25
     m_Colors:
     - _Inside_Color: {r: 0.9339623, g: 0, b: 0, a: 0}
     - _MainColor: {r: 0.7830189, g: 0.7343052, b: 0.18762901, a: 0}
