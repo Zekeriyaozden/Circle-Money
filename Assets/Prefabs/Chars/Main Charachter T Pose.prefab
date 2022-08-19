@@ -376,14 +376,14 @@ SkinnedMeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 3780671244086486322, guid: 18fed525e3063964b869fd67ac7a50d2, type: 3}
-  - {fileID: 4874126678125670354, guid: 18fed525e3063964b869fd67ac7a50d2, type: 3}
-  - {fileID: -6478536213147159724, guid: 18fed525e3063964b869fd67ac7a50d2, type: 3}
-  - {fileID: 9185737683893222716, guid: 18fed525e3063964b869fd67ac7a50d2, type: 3}
-  - {fileID: -3522955778539423533, guid: 18fed525e3063964b869fd67ac7a50d2, type: 3}
-  - {fileID: -3846018093981099296, guid: 18fed525e3063964b869fd67ac7a50d2, type: 3}
+  - {fileID: 2100000, guid: 25f2c073b8d775f4fabfa7f46ad1fd55, type: 2}
+  - {fileID: 2100000, guid: c50d9fd4200246a40beab7f370a952fa, type: 2}
+  - {fileID: 2100000, guid: bc50b09e1720ea2499dacae5facedfe5, type: 2}
+  - {fileID: 2100000, guid: aef58587678b83041acf48d60079ae75, type: 2}
+  - {fileID: 2100000, guid: 1b65865638a84fe41a6e7b02b8526701, type: 2}
   - {fileID: -5605289326131794027, guid: 18fed525e3063964b869fd67ac7a50d2, type: 3}
   - {fileID: 1886820026795636259, guid: 18fed525e3063964b869fd67ac7a50d2, type: 3}
-  - {fileID: 880774007180850119, guid: 18fed525e3063964b869fd67ac7a50d2, type: 3}
+  - {fileID: 2100000, guid: 4e79d9ddf87ea7c4799977394974258b, type: 2}
   - {fileID: 637949407474519127, guid: 18fed525e3063964b869fd67ac7a50d2, type: 3}
   - {fileID: 99656467281103303, guid: 18fed525e3063964b869fd67ac7a50d2, type: 3}
   - {fileID: 3016479151454471876, guid: 18fed525e3063964b869fd67ac7a50d2, type: 3}
@@ -756,8 +756,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6532008773388385154}
-  m_LocalRotation: {x: 0, y: 0.7074709, z: 0, w: 0.70674247}
-  m_LocalPosition: {x: -10, y: 0, z: -10}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -785,6 +785,7 @@ MonoBehaviour:
   isStopped: 0
   isCorStart: 0
   collectedParent: {fileID: 0}
+  fsd: 0
 --- !u!114 &5903528564849697081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -871,18 +872,18 @@ MonoBehaviour:
   targetRigidbody2D: {fileID: 0}
   targetTransform: {fileID: 5903528564849697080}
   _result:
-    position: {x: -10, y: 0, z: -10}
-    up: {x: 0, y: 5, z: 0}
-    forward: {x: 0.99999946, y: 0, z: -0.0010301691}
-    color: {r: 1, g: 1, b: 1, a: 1}
-    size: 1
+    position: {x: 0, y: 0, z: 0}
+    up: {x: 0, y: 0, z: 0}
+    forward: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    size: 0
     percent: 0
   _finalResult:
-    position: {x: -10, y: 0, z: -10}
-    up: {x: 0, y: 5, z: 0}
-    forward: {x: 0.99999946, y: 0, z: -0.0010301691}
-    color: {r: 1, g: 1, b: 1, a: 1}
-    size: 1
+    position: {x: 0, y: 0, z: 0}
+    up: {x: 0, y: 0, z: 0}
+    forward: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    size: 0
     percent: 0
   wrapMode: 1
   followMode: 0
