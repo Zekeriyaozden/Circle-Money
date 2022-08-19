@@ -18,7 +18,7 @@ public class CostumerController : MonoBehaviour
     {
         SplinePositioner sP = obj.GetComponent<SplinePositioner>();
         float k = 0;
-        Animator anim = gameObject.GetComponent<Animator>();
+        Animator anim = obj.GetComponent<Animator>();
         anim.SetBool("Walk",true);
         anim.SetBool("Idle",false);
         for (int i = 0; i < 80; i++)
