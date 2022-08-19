@@ -8,6 +8,7 @@ public class StackFactoryController : MonoBehaviour
    public Material mt;
    public List<GameObject> paintList;
    public List<GameObject> pieceList;
+   public List<GameObject> workers;
    public GameObject referance;
    public GameObject carReferance;
    public GameObject carPrefab;
@@ -33,6 +34,12 @@ public class StackFactoryController : MonoBehaviour
          {
             if (tempFlag)
             {
+               for (int i = 0; i < workers.Count; i++)
+               {
+                  workers[i].GetComponent<Animator>().SetBool("WorkingCar",true);
+                  workers[i].GetComponent<Animator>().SetBool("WorkingPaint",false);
+                  workers[i].GetComponent<Animator>().SetBool("Idle",false);
+               }
                Material mtr = Instantiate(mt);
                mtr.SetFloat("_Ring",1f);
                GameObject gObj = Instantiate(carPrefab, transform.parent);
@@ -55,12 +62,24 @@ public class StackFactoryController : MonoBehaviour
    private IEnumerator paintToCar(Material mt)
    {
       yield return new WaitForSeconds(.8f);
+      for (int i = 0; i < workers.Count; i++)
+      {
+         workers[i].GetComponent<Animator>().SetBool("WorkingCar",false);
+         workers[i].GetComponent<Animator>().SetBool("WorkingPaint",true);
+         workers[i].GetComponent<Animator>().SetBool("Idle",false);
+      }  
       float k = 0;
       for (int i = 1; i < 200; i++)
       {
          k = (float)i / 200;
          yield return new WaitForSeconds(4f / 200f);
          mt.SetFloat("_Ring",1+( k * (2.35f)));
+      }
+      for (int i = 0; i < workers.Count; i++)
+      {
+         workers[i].GetComponent<Animator>().SetBool("WorkingCar",false);
+         workers[i].GetComponent<Animator>().SetBool("WorkingPaint",false);
+         workers[i].GetComponent<Animator>().SetBool("Idle",true);
       }
    }
    
