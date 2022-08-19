@@ -8,19 +8,46 @@ public class StackFactoryController : MonoBehaviour
    public List<GameObject> paintList;
    public List<GameObject> pieceList;
    public GameObject referance;
+   public GameObject carReferance;
+   public GameObject carPrefab;
    private bool isStopped;
    private bool isCorStart;
-   private GameObject gm;
+   private bool tempFlag;
+   private GameManager gm;
 
    private void Start()
    {
-      gm = GameObject.Find("GameManager").gameObject;
+      gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+      tempFlag = true;
    }
 
    private void Update()
    {
-      isCorStart = gm.GetComponent<GameManager>().Player.GetComponent<PlayerController>().isCorStart;
-      isStopped = gm.GetComponent<GameManager>().isPlayerStopped;
+      if (gm.maxPaintRequire <= paintList.Count)
+      {
+         if (gm.maxPieceRequire <= pieceList.Count)
+         {
+            if (tempFlag)
+            {
+               GameObject gObj = Instantiate(carPrefab, transform.parent);
+               gObj.transform.position = carReferance.transform.position;
+               gObj.transform.eulerAngles = new Vector3(0, 270f, 0);
+               gObj.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+               tempFlag = false;
+            }
+         }
+      }
+      isCorStart = gm.Player.GetComponent<PlayerController>().isCorStart;
+      isStopped = gm.isPlayerStopped;
+   }
+
+   private IEnumerator tempFlagControl()
+   {
+      tempFlag = false;
+      yield return new WaitForSeconds(5f);
+      paintList.Clear();
+      pieceList.Clear();
+      tempFlag = true;
    }
 
    private IEnumerator stackEffect(GameObject player)
@@ -35,7 +62,7 @@ public class StackFactoryController : MonoBehaviour
          if (pc.stackList.Count > 0)
          {
             bool piece = true;
-            if (pieceList.Count < gm.GetComponent<GameManager>().maxPieceRequire)
+            if (pieceList.Count < gm.maxPieceRequire)
             {
                for (int i = pc.stackList.Count-1; i >= 0 ; i--)
                {
@@ -50,7 +77,7 @@ public class StackFactoryController : MonoBehaviour
                         if (pc.stackList.Count > 1)
                         {
                            pc.stackList[1].GetComponent<ItemController>().node =
-                              gm.GetComponent<GameManager>().PlayerReferance.gameObject;
+                              gm.PlayerReferance.gameObject;
                         }
 
                      }
@@ -82,7 +109,7 @@ public class StackFactoryController : MonoBehaviour
                //todo maxPaint
             }
             
-            if (paintList.Count < gm.GetComponent<GameManager>().maxPaintRequire && piece)
+            if (paintList.Count < gm.maxPaintRequire && piece)
             {
                for (int i = pc.stackList.Count-1; i >= 0 ; i--)
                {
@@ -96,7 +123,7 @@ public class StackFactoryController : MonoBehaviour
                         if (pc.stackList.Count > 1)
                         {
                            pc.stackList[1].GetComponent<ItemController>().node =
-                              gm.GetComponent<GameManager>().PlayerReferance.gameObject;
+                              gm.PlayerReferance.gameObject;
                         }
                      }
                      else
@@ -143,7 +170,7 @@ public class StackFactoryController : MonoBehaviour
             Debug.Log("entered");
             StartCoroutine(stackEffect(other.gameObject));
             isCorStart = false;
-            gm.GetComponent<GameManager>().Player.GetComponent<PlayerController>().isCorStart = false;
+            gm.Player.GetComponent<PlayerController>().isCorStart = false;
          }
       }
    }
