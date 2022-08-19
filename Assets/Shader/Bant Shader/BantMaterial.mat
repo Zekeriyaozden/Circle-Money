@@ -47,7 +47,7 @@ Material:
     - _QueueOffset: 0
     m_Colors:
     - _BantSpeed: {r: 0, g: 2.5, b: 0, a: 0}
-    - _BantTilling: {r: 1, g: 10.8, b: 0, a: 0}
+    - _BantTilling: {r: 1, g: -13.76, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &976072996654420691
 MonoBehaviour:

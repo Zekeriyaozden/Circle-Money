@@ -18,6 +18,8 @@ public class StackFactoryController : MonoBehaviour
    private bool isCorStart;
    private bool tempFlag;
    private GameManager gm;
+   public SplineComputer sc;
+   public CostumerController cCont;
 
    private void Start()
    {
@@ -59,6 +61,57 @@ public class StackFactoryController : MonoBehaviour
       isStopped = gm.isPlayerStopped;
    }
 
+   private IEnumerator carControl2(GameObject car)
+   {
+      car.GetComponent<SplineFollower>().enabled = false;
+      Vector3 v = cCont.costumerPath.transform.position;
+      float k = 0;
+      Vector3 pos = car.transform.position;
+      for (int i = 0; i <= 60; i++)
+      {
+         k = (float) i / 60f;
+         yield return new WaitForSeconds(.3f / 60);
+         car.gameObject.transform.position = Vector3.Lerp(pos, v, k);
+      }
+      
+      StartCoroutine(costumerControl(car));
+   }
+   
+
+   private IEnumerator costumerControl(GameObject car)
+   {
+      GameObject tempObj = cCont.costumerList[0];
+      Vector3 cosPos = tempObj.transform.position;
+      float k = 0;
+      Vector3 carPos = car.transform.position;
+      for (int i = 0; i <= 60; i++)
+      {
+         k = (float) i / 60f;
+         yield return new WaitForSeconds(.3f / 60);
+         tempObj.gameObject.transform.position = Vector3.Lerp(cosPos,carPos , k);
+      }
+      cCont.turnControl();
+   }
+
+   private IEnumerator carController(GameObject obj)
+   {
+      SplineFollower sF = obj.GetComponent<SplineFollower>();
+      sF.followSpeed = 1;
+      sF.wrapMode = SplineFollower.Wrap.Default;
+      while (true)
+      {
+         yield return new WaitForSeconds(.2f);
+         if (sF.GetPercent() > .98)
+         {
+            //cCont.costumerList[0];
+            yield return new WaitForSeconds(.5f);
+            StartCoroutine(carControl2(obj));
+            //cCont.turnControl();
+            break;
+         }
+      }
+   }
+
    private IEnumerator paintToCar(Material mt)
    {
       yield return new WaitForSeconds(.8f);
@@ -81,9 +134,15 @@ public class StackFactoryController : MonoBehaviour
          workers[i].GetComponent<Animator>().SetBool("WorkingPaint",false);
          workers[i].GetComponent<Animator>().SetBool("Idle",true);
       }
-   }
-   
 
+      SplineFollower sf = CurrentCar.AddComponent<SplineFollower>();
+      sf.spline = sc;
+      StartCoroutine(carController(CurrentCar));
+      CurrentCar = null;
+      paintList.Clear();
+      pieceList.Clear();
+      tempFlag = true;
+   }
    private IEnumerator tempFlagControl(Material mt)
    {
       while (true)
@@ -100,7 +159,6 @@ public class StackFactoryController : MonoBehaviour
          }
       }
    }
-
    private IEnumerator stackEffect(GameObject player)
    {
       PlayerController pc = player.GetComponent<PlayerController>();
@@ -211,7 +269,6 @@ public class StackFactoryController : MonoBehaviour
          }
       }
    }
-
    private void OnTriggerStay(Collider other)
    {
       if (other.tag == "Player")
@@ -225,4 +282,5 @@ public class StackFactoryController : MonoBehaviour
          }
       }
    }
+   
 }
