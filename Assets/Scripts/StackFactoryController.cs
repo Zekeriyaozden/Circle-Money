@@ -96,7 +96,7 @@ public class StackFactoryController : MonoBehaviour
    private IEnumerator carController(GameObject obj)
    {
       SplineFollower sF = obj.GetComponent<SplineFollower>();
-      sF.followSpeed = 1;
+      sF.followSpeed = 4.8f;
       sF.wrapMode = SplineFollower.Wrap.Default;
       while (true)
       {
