@@ -484,18 +484,18 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -6087771358165109452, guid: 4c6ca1b667cdfb644b18ffe9a0a34652, type: 3}
-  - {fileID: 4874126678125670354, guid: 4c6ca1b667cdfb644b18ffe9a0a34652, type: 3}
-  - {fileID: -8274133419916619345, guid: 4c6ca1b667cdfb644b18ffe9a0a34652, type: 3}
+  - {fileID: 2100000, guid: 43c66725e3a64ca44a48aa54a3056a3b, type: 2}
+  - {fileID: 2100000, guid: b4778d80305bf5749af64a596b4802ad, type: 2}
+  - {fileID: 2100000, guid: 6b41420a42152fd4390054ac6fc8199b, type: 2}
   - {fileID: -6478536213147159724, guid: 4c6ca1b667cdfb644b18ffe9a0a34652, type: 3}
-  - {fileID: -6629797300637803691, guid: 4c6ca1b667cdfb644b18ffe9a0a34652, type: 3}
-  - {fileID: -2813467912831258332, guid: 4c6ca1b667cdfb644b18ffe9a0a34652, type: 3}
-  - {fileID: 1886820026795636259, guid: 4c6ca1b667cdfb644b18ffe9a0a34652, type: 3}
+  - {fileID: 2100000, guid: 05186e0bac37e6640b0c51fa20a031d1, type: 2}
+  - {fileID: 2100000, guid: 911a1899655e8d34abe54affec8434b4, type: 2}
+  - {fileID: 2100000, guid: fe4edbb1dd0a26b4188fa5769d976469, type: 2}
   - {fileID: 99656467281103303, guid: 4c6ca1b667cdfb644b18ffe9a0a34652, type: 3}
   - {fileID: 3016479151454471876, guid: 4c6ca1b667cdfb644b18ffe9a0a34652, type: 3}
-  - {fileID: 880774007180850119, guid: 4c6ca1b667cdfb644b18ffe9a0a34652, type: 3}
-  - {fileID: 2839812842092981165, guid: 4c6ca1b667cdfb644b18ffe9a0a34652, type: 3}
-  - {fileID: 3780671244086486322, guid: 4c6ca1b667cdfb644b18ffe9a0a34652, type: 3}
+  - {fileID: 2100000, guid: 5c1558dae8454204eb677ace985a293b, type: 2}
+  - {fileID: 2100000, guid: cb14678ee6bc299498464ba83dd9e831, type: 2}
+  - {fileID: 2100000, guid: 1bafdc2a939e7d24b8cdd1726080c1db, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1485,8 +1485,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2231706743160437639}
-  m_LocalRotation: {x: 0, y: 0.121301696, z: 0, w: 0.9926157}
-  m_LocalPosition: {x: -10.038722, y: 37.44185, z: 10.573129}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 37.44185, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -1582,18 +1582,18 @@ MonoBehaviour:
   targetRigidbody2D: {fileID: 0}
   targetTransform: {fileID: 2231706743160437659}
   _result:
-    position: {x: -10.038722, y: -0.828598, z: 10.573129}
-    up: {x: 0, y: 1, z: 0}
-    forward: {x: 0.24081197, y: 0, z: 0.9705719}
-    color: {r: 1, g: 1, b: 1, a: 1}
-    size: 1
+    position: {x: 0, y: 0, z: 0}
+    up: {x: 0, y: 0, z: 0}
+    forward: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    size: 0
     percent: 0
   _finalResult:
-    position: {x: -10.038722, y: -0.828598, z: 10.573129}
-    up: {x: 0, y: 1, z: 0}
-    forward: {x: 0.24081197, y: 0, z: 0.9705719}
-    color: {r: 1, g: 1, b: 1, a: 1}
-    size: 1
+    position: {x: 0, y: 0, z: 0}
+    up: {x: 0, y: 0, z: 0}
+    forward: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    size: 0
     percent: 0
   wrapMode: 1
   followMode: 0

@@ -681,15 +681,15 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 3780671244086486322, guid: 3d7388a19d96e5847a52b8885697f5d1, type: 3}
-  - {fileID: 4874126678125670354, guid: 3d7388a19d96e5847a52b8885697f5d1, type: 3}
-  - {fileID: -6478536213147159724, guid: 3d7388a19d96e5847a52b8885697f5d1, type: 3}
-  - {fileID: 9185737683893222716, guid: 3d7388a19d96e5847a52b8885697f5d1, type: 3}
-  - {fileID: -3522955778539423533, guid: 3d7388a19d96e5847a52b8885697f5d1, type: 3}
-  - {fileID: -3846018093981099296, guid: 3d7388a19d96e5847a52b8885697f5d1, type: 3}
+  - {fileID: 2100000, guid: 5f2ba30865cfa0f45a66a8f5e0010be0, type: 2}
+  - {fileID: 2100000, guid: 8abf946ced1702949899c37b5e0d1bbb, type: 2}
+  - {fileID: 2100000, guid: 49d2dbb19c3cb4e44bd87cf3a1c1bedc, type: 2}
+  - {fileID: 2100000, guid: 00b8656ab1961ba41b503a1c643981c8, type: 2}
+  - {fileID: 2100000, guid: 9bf7a42a6a6d230499ab0dc23d0e7025, type: 2}
+  - {fileID: 2100000, guid: cba5b309ad5c5714d8168beeb55b2323, type: 2}
   - {fileID: -5605289326131794027, guid: 3d7388a19d96e5847a52b8885697f5d1, type: 3}
-  - {fileID: 1886820026795636259, guid: 3d7388a19d96e5847a52b8885697f5d1, type: 3}
-  - {fileID: 880774007180850119, guid: 3d7388a19d96e5847a52b8885697f5d1, type: 3}
+  - {fileID: 2100000, guid: 5e2897e69577bb84081e722e125b17b0, type: 2}
+  - {fileID: 2100000, guid: 00f7e55de7e39ff4faebe27f34e7a55e, type: 2}
   - {fileID: 637949407474519127, guid: 3d7388a19d96e5847a52b8885697f5d1, type: 3}
   - {fileID: 99656467281103303, guid: 3d7388a19d96e5847a52b8885697f5d1, type: 3}
   - {fileID: 3016479151454471876, guid: 3d7388a19d96e5847a52b8885697f5d1, type: 3}
