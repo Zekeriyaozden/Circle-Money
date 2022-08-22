@@ -23,15 +23,17 @@ public class ItemController : MonoBehaviour
             if (node.gameObject.tag == "Ref")
             {
                 transform.position = node.transform.position + new Vector3(0,0.5f,0);
+                gameObject.transform.eulerAngles = node.transform.eulerAngles;
             }
             else
             {
                 gameObject.transform.position =
                     new Vector3(
-                        Mathf.Lerp(transform.position.x,node.transform.position.x,Time.deltaTime * lerpSpeed),
+                        Mathf.Lerp(transform.position.x,node.transform.position.x,Time.unscaledDeltaTime * lerpSpeed),
                         node.transform.position.y,
-                        Mathf.Lerp(transform.position.z,node.transform.position.z,Time.deltaTime * lerpSpeed)) +
+                        Mathf.Lerp(transform.position.z,node.transform.position.z,Time.unscaledDeltaTime * lerpSpeed)) +
                     new Vector3(0, 0.5f, 0);
+                gameObject.transform.eulerAngles = node.transform.eulerAngles;
             }
 
         }
