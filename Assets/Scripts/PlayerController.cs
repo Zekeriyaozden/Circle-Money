@@ -85,12 +85,13 @@ public class PlayerController : MonoBehaviour
             int tempInt = go.transform.childCount - 1;
             GameObject temp = go.transform.GetChild(tempInt).gameObject;
             supplierList.GetComponent<SupplierController>().itemsStack.Remove(temp);
-            stackList.Add(go.transform.GetChild(tempInt).gameObject);
             go.transform.GetChild(tempInt).parent = collectedParent.transform;
             temp.AddComponent<ItemBezier>().startPosDistance = temp.transform.position;
             int TempFlt = (stackList.Count);
             temp.GetComponent<ItemBezier>().targetPos = gm.GetComponent<GameManager>().PlayerReferance.transform;
             temp.GetComponent<ItemBezier>().count = TempFlt;
+            temp.GetComponent<ItemBezier>().pc = gameObject.GetComponent<PlayerController>();
+            //stackList.Add(go.transform.GetChild(tempInt).gameObject);
             gm.GetComponent<GameManager>().stackSize = stackList.Count;
         }
     } 

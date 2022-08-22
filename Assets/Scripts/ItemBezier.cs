@@ -14,6 +14,7 @@ public class ItemBezier : MonoBehaviour
     private Vector3 targetBezPos;
     private Vector3 secondPosDistance;
     private float k;
+    public PlayerController pc;
     void Start()
     {
         gm = GameObject.Find("GameManager");
@@ -42,6 +43,7 @@ public class ItemBezier : MonoBehaviour
 
         if (k == 1)
         {
+            pc.stackList.Add(gameObject);
             int tempInt = gm.GetComponent<GameManager>().Player.GetComponent<PlayerController>().stackList
                 .IndexOf(gameObject);
             if (tempInt > 0)

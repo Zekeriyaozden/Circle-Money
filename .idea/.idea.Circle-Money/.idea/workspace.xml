@@ -27,7 +27,6 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/CameraController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/SupplierBezier.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/StackController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/ItemBezier.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/StackFactoryBezier.cs" />
       <option value="$PROJECT_DIR$/Assets/Scenes/ReverseAnimationContext.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ReverseAnimationContext.cs" />
@@ -38,6 +37,7 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/ItemController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/LermMechanism.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/SupplierController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/ItemBezier.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
     </changedPaths>
   </component>
@@ -90,7 +90,7 @@
       <workItem from="1660991830729" duration="594000" />
       <workItem from="1660995286168" duration="3089000" />
       <workItem from="1661154486146" duration="11250000" />
-      <workItem from="1661178100034" duration="4758000" />
+      <workItem from="1661178100034" duration="5964000" />
     </task>
     <servers />
   </component>
