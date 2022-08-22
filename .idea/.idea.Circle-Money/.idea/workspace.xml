@@ -33,11 +33,12 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/ReverseAnimationContext.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/StackFactoryController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CostumerController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/SupplierController.cs" />
       <option value="$PROJECT_DIR$/Assets/Joystick Pack/Examples/JoystickPlayerExample.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/ItemController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/ItemController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/LermMechanism.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/SupplierController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2DO9am8jkQT6TAKD6NJepPTwRmZ" />
@@ -88,7 +89,8 @@
       <workItem from="1660905889881" duration="15698000" />
       <workItem from="1660991830729" duration="594000" />
       <workItem from="1660995286168" duration="3089000" />
-      <workItem from="1661154486146" duration="9606000" />
+      <workItem from="1661154486146" duration="11250000" />
+      <workItem from="1661178100034" duration="4758000" />
     </task>
     <servers />
   </component>

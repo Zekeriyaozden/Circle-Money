@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using Dreamteck.Splines;
 using UnityEngine;
 
@@ -17,6 +18,7 @@ public class PlayerController : MonoBehaviour
     public bool isCorStart;
     public GameObject collectedParent;
     private Animator animator;
+    public float _dirTemp;
     void Start()
     {
        // fsd = (float) sf.GetPercent();
@@ -31,16 +33,16 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        
         direction = Vector3.forward * variableJoystick.Vertical + Vector3.right * variableJoystick.Horizontal;
-        //rb.AddForce(direction * speed * Time.fixedDeltaTime, ForceMode.VelocityChange);
-        gameObject.transform.position += direction * speed;
         Vector3 dir = gameObject.transform.position + direction;
-        gameObject.transform.LookAt(dir);
-        if (direction != Vector3.zero)
+        _dirTemp = direction.magnitude;
+        if (direction.magnitude > 0.2f)
         {
+            gameObject.transform.DOLookAt(dir, .3f);
+            transform.Translate(Vector3.forward * speed * direction.magnitude,Space.Self);
             animator.speed = Mathf.Clamp(direction.magnitude, 0.6f, 1f);
             gm.GetComponent<GameManager>().isPlayerStopped = false;
-            //sf.follow = true;
             isStopped = false;
             animator.SetBool("isRunning",true);
             StopAllCoroutines();
@@ -49,7 +51,6 @@ public class PlayerController : MonoBehaviour
         else
         {
             gm.GetComponent<GameManager>().isPlayerStopped = true;
-            //sf.follow = false;
             animator.SetBool("isRunning",false);
             isStopped = true;
         }

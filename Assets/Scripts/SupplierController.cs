@@ -85,7 +85,6 @@ public class SupplierController : MonoBehaviour
         }
         if (sfl.GetPercent() > (double) 0.47 && sfl.GetPercent() < (double) 0.53 && canStop)
         {
-            Debug.Log("tr");
             sfl.follow = false;
             animator.SetBool("isRunning",false);
             if (corFlag)
