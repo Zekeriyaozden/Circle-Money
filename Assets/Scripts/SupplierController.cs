@@ -13,10 +13,9 @@ public class SupplierController : MonoBehaviour
     public List<GameObject> itemsStack;
     public bool isPaint;
     public int stackSize;
-    public int suplySize;
     public int suplySizeMax;
     private GameManager gm;
-    private bool corFlag;
+    public bool corFlag;
     private Animator animator;
     public bool isVert;
     void Start()
@@ -32,6 +31,7 @@ public class SupplierController : MonoBehaviour
     {
         while (true)
         {
+            Debug.Log("SS--");
             if (items.Count == 0)
             {
                 break;
@@ -39,6 +39,7 @@ public class SupplierController : MonoBehaviour
             yield return new WaitForSeconds(.4f);
             if (items.Count>0)
             {
+                Debug.Log("--ss--");
                 if (itemsStack.Count < suplySizeMax)
                 {
                     itemsStack.Add(items[items.Count - 1]);
@@ -78,10 +79,13 @@ public class SupplierController : MonoBehaviour
         }
         else
         {
+            corFlag = true;
+            canStop = false;
             animator.SetBool("isWBox",false);
         }
         if (sfl.GetPercent() > (double) 0.47 && sfl.GetPercent() < (double) 0.53 && canStop)
         {
+            Debug.Log("tr");
             sfl.follow = false;
             animator.SetBool("isRunning",false);
             if (corFlag)

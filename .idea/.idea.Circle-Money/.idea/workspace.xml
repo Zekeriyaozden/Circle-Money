@@ -27,16 +27,17 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/CameraController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/SupplierBezier.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/StackController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/ItemController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ItemBezier.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/SupplierController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/StackFactoryBezier.cs" />
       <option value="$PROJECT_DIR$/Assets/Scenes/ReverseAnimationContext.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ReverseAnimationContext.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/StackFactoryController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CostumerController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/SupplierController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Joystick Pack/Examples/JoystickPlayerExample.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/ItemController.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2DO9am8jkQT6TAKD6NJepPTwRmZ" />
@@ -84,7 +85,10 @@
       <workItem from="1660644076070" duration="13969000" />
       <workItem from="1660733432629" duration="16363000" />
       <workItem from="1660834633160" duration="1297000" />
-      <workItem from="1660905889881" duration="14957000" />
+      <workItem from="1660905889881" duration="15698000" />
+      <workItem from="1660991830729" duration="594000" />
+      <workItem from="1660995286168" duration="3089000" />
+      <workItem from="1661154486146" duration="8257000" />
     </task>
     <servers />
   </component>
