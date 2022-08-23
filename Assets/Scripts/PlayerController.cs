@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     public GameObject gm;
     public bool isStopped;
     public bool isCorStart;
+    public bool isCorStartHire;
     public GameObject collectedParent;
     private Animator animator;
     public float _dirTemp;
@@ -24,6 +25,7 @@ public class PlayerController : MonoBehaviour
        // fsd = (float) sf.GetPercent();
         animator = gameObject.GetComponent<Animator>();
         isCorStart = true;
+        isCorStartHire = true;
         gm = GameObject.Find("GameManager");
         //sf = GetComponent<SplineFollower>();
         //sf.followSpeed = followSpeed;
@@ -47,6 +49,7 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("isRunning",true);
             StopAllCoroutines();
             isCorStart = true;
+            isCorStartHire = true;
         }
         else
         {
@@ -95,6 +98,33 @@ public class PlayerController : MonoBehaviour
             gm.GetComponent<GameManager>().stackSize = stackList.Count;
         }
     } 
+    //----------------------HIRE--------------------------------//
+    private IEnumerator hireWorkerCor(GameObject obj)
+    {
+        Debug.Log("Enter");
+        while (true)
+        {
+            if (gm.GetComponent<GameManager>().MaxStackSize <= stackList.Count)
+            {
+                break;
+            }
+            yield return new WaitForSeconds(.4f);
+            if (!isStopped)
+            {
+                break;
+            }
+        
+            if (obj.transform.childCount > 1)
+            {
+                GameObject worker = obj.transform.GetChild(obj.transform.childCount - 1).gameObject;   
+                worker.transform.SetParent(null);
+                worker.AddComponent<HiredWorkerController>().targetTransform = gameObject.transform;
+                
+
+            }
+        }
+    }
+    //----------------------------------------------------------//
 
     private void OnTriggerStay(Collider other)
     {
@@ -104,6 +134,15 @@ public class PlayerController : MonoBehaviour
             {
                 StartCoroutine(stackEffect(other.gameObject.GetComponent<StackController>().stackController,other.gameObject.GetComponent<StackController>().supplierController));
                 isCorStart = false;
+            }
+        }
+
+        if (other.tag == "Hire")
+        {
+            if (isStopped && isCorStartHire)
+            {
+                StartCoroutine(hireWorkerCor(other.gameObject));
+                isCorStartHire = false;
             }
         }
     }

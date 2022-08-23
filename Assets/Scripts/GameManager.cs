@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     public int stackSize;
     public int MaxStackSize;
     //----------------------------------------
+    public float workerHiredSpeed;
+    //----------------------------------------
     public int maxPaintRequire;
     public int maxPieceRequire;
     public GameObject stackItemPiecePref;

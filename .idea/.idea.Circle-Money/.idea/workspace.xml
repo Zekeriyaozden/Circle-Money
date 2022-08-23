@@ -17,6 +17,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SupplierController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/StackFactoryController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CostumerController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/HiredWorkerController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Word-Race/Assets/Scripts/LattersController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/StackController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ItemBezier.cs" root0="FORCE_HIGHLIGHTING" />
@@ -33,12 +34,13 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/StackFactoryController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CostumerController.cs" />
       <option value="$PROJECT_DIR$/Assets/Joystick Pack/Examples/JoystickPlayerExample.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ItemController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/LermMechanism.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/SupplierController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ItemBezier.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/HiredWorkerController.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2DO9am8jkQT6TAKD6NJepPTwRmZ" />
@@ -90,7 +92,9 @@
       <workItem from="1660991830729" duration="594000" />
       <workItem from="1660995286168" duration="3089000" />
       <workItem from="1661154486146" duration="11250000" />
-      <workItem from="1661178100034" duration="5964000" />
+      <workItem from="1661178100034" duration="6530000" />
+      <workItem from="1661251623599" duration="1245000" />
+      <workItem from="1661266376012" duration="4193000" />
     </task>
     <servers />
   </component>

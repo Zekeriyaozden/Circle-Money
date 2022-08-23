@@ -917,6 +917,7 @@
           <e p="CameraController.cs" t="Include" />
           <e p="CostumerController.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
+          <e p="HiredWorkerController.cs" t="Include" />
           <e p="ItemBezier.cs" t="Include" />
           <e p="ItemController.cs" t="Include" />
           <e p="LermMechanism.cs" t="Include" />
