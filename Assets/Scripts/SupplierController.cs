@@ -31,7 +31,6 @@ public class SupplierController : MonoBehaviour
     {
         while (true)
         {
-            Debug.Log("SS--");
             if (items.Count == 0)
             {
                 break;
@@ -39,7 +38,6 @@ public class SupplierController : MonoBehaviour
             yield return new WaitForSeconds(.4f);
             if (items.Count>0)
             {
-                Debug.Log("--ss--");
                 if (itemsStack.Count < suplySizeMax)
                 {
                     itemsStack.Add(items[items.Count - 1]);
@@ -89,7 +87,6 @@ public class SupplierController : MonoBehaviour
             animator.SetBool("isRunning",false);
             if (corFlag)
             {
-                Debug.Log("ent");
                 corFlag = false;
                 StartCoroutine(Stack());
             }

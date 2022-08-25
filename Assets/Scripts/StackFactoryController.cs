@@ -175,7 +175,6 @@ public class StackFactoryController : MonoBehaviour
             {
                for (int i = pc.stackList.Count-1; i >= 0 ; i--)
                {
-                  Debug.Log(i + "--" + pc.stackList.Count);
                   if (pc.stackList[i].GetComponent<ItemController>().itemType == "Piece" && piece)
                   {
                      pieceList.Add(pc.stackList[i]);
