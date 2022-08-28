@@ -118,9 +118,6 @@ public class PlayerController : MonoBehaviour
             {
                 GameObject worker = obj.transform.GetChild(obj.transform.childCount - 1).gameObject;   
                 worker.transform.SetParent(null);
-                worker.AddComponent<HiredWorkerController>().targetTransform = gameObject.transform;
-                
-
             }
         }
     }

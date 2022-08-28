@@ -6,62 +6,99 @@ using UnityEngine;
 public class SplineFollowerDeneme : MonoBehaviour
 {
     private SplineFollower sf;
+    private bool instantFlag;
+    public bool isHiring;
+    private bool FirstSplineFlag;
+    private GameManager gm;
+    public double doubleStart;
+    private Animator anim;
     void Start()
     {
+        anim = GetComponent<Animator>();
+        instantFlag = true;
+        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+        FirstSplineFlag = true;
+        isHiring = false;
         sf = GetComponent<SplineFollower>();
+        doubleStart = (double)(1.0d / (double)(sf.spline.pointCount - 1));
         sf.onNode += OnNodePassed;
     }
 
+    private void moveTheSpline(SplineTracer.NodeConnection nodeConnection,int index)
+    {
+        Debug.Log(2);
+        double nodePercent = (double) nodeConnection.point / (sf.spline.pointCount - 1);
+        double followerPercent = sf.UnclipPercent(sf.result.percent);
+        float distancePastNode = sf.spline.CalculateLength(nodePercent, followerPercent);
+        Node.Connection[] connections = nodeConnection.node.GetConnections();
+        sf.spline = connections[index].spline;
+        double newNodePercent = (double) connections[index].pointIndex / (connections[index].spline.pointCount - 1);
+        double newPercent = connections[index].spline.Travel(newNodePercent, distancePastNode, sf.direction);
+        sf.SetPercent(newPercent);
+    }
+    
+    
+    
     private void OnNodePassed(List<SplineTracer.NodeConnection> passed)
     {
         SplineTracer.NodeConnection nodeConnection = passed[0];
-        if (nodeConnection.node.name == "Node")
+        if (nodeConnection.node.name == "NodeFirstFull")
         {
-            Debug.Log(nodeConnection.node.name + " at point " + nodeConnection.point);
-            Node.Connection[] connections = nodeConnection.node.GetConnections();
-            SplinePoint a = nodeConnection.node.GetPoint(0, false);
-            Debug.Log(a.position);
-            int temp = 0;
-            for (int i = 0; i < connections[0].spline.pointCount; i++)
+            if (gm.hiredWorker[0] > 5)
             {
-         
-                if (connections[0].spline.GetPoint(i).position == a.position)
-                {
-                    temp = i;
-                    Debug.Log(temp);
-                    break;
-                }
+                moveTheSpline(nodeConnection,1);
             }
-            sf.spline = connections[0].spline;
-            sf.SetPercent(sf.spline.GetPointPercent(temp)+0.001d);
-            Debug.Log(nodeConnection.node.name + " at point " + nodeConnection.point);
+            else
+            {
+                gm.hiredWorker[0]++;
+                moveTheSpline(nodeConnection,0);
+            }
         }
-        else if (nodeConnection.node.name == "Node 1")
+        else if (nodeConnection.node.name == "NodeSecondFull")
         {
-            Node.Connection[] connections = nodeConnection.node.GetConnections();
-            Debug.Log(nodeConnection.node.name + " at point " + nodeConnection.point);
-            SplinePoint a = nodeConnection.node.GetPoint(1, false);
-            int temp = 0;
-            Debug.Log("-s-s-s-s-s-s--ss");
-            for (int i = 0; i < connections[1].spline.pointCount; i++)
+            if (gm.hiredWorker[1] > 5)
             {
-                Debug.Log(connections[1].spline.GetPoint(i).position + "--" + a.position);
-                if (connections[1].spline.GetPoint(i).position == a.position)
-                {
-                    temp = i;
-                    break;
-                }
+                moveTheSpline(nodeConnection,1);
             }
-            sf.spline = connections[1].spline;
-            sf.SetPercent(sf.spline.GetPointPercent(temp)+0.001d);
+            else
+            {
+                gm.hiredWorker[1]++;
+                moveTheSpline(nodeConnection,0);
+            }
         }
         
 
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
+        if (sf.follow)
+        {
+            anim.SetBool("Idle",false);
+            anim.SetBool("Walk",true);
+        }
+        else
+        {
+            anim.SetBool("Idle",true);
+            anim.SetBool("Walk",false);
+        }
+        if (FirstSplineFlag && sf.spline.name == "PathFirst" && !isHiring)
+        {
+            if (sf.GetPercent() > doubleStart)
+            {
+                sf.follow = false;
+                FirstSplineFlag = false;
+            }
+        }
+        if (instantFlag && isHiring)
+        {
+            GameObject obj = Instantiate(gm.WorkerPrefabs, transform.parent);
+            obj.GetComponent<SplineFollower>().spline = gm.firstSpline;
+            gm.hireCor.GetComponent<HireController>().notHiredList.Add(obj);
+            sf.follow = true;
+            instantFlag = false;
+        }
         
     }
 }

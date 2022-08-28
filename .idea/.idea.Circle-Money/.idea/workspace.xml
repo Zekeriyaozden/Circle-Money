@@ -36,12 +36,13 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/ItemController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/LermMechanism.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ItemBezier.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/HiredWorkerController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/SupplierController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/SplineFollowerDeneme.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/StackFactoryController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/HiredWorkerController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/HireController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/SplineFollowerDeneme.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2DO9am8jkQT6TAKD6NJepPTwRmZ" />
@@ -98,6 +99,8 @@
       <workItem from="1661266376012" duration="4781000" />
       <workItem from="1661339542959" duration="6890000" />
       <workItem from="1661421181026" duration="3980000" />
+      <workItem from="1661512291307" duration="12537000" />
+      <workItem from="1661675379896" duration="2787000" />
     </task>
     <servers />
   </component>

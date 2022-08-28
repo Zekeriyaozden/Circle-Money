@@ -2,12 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using DG.Tweening;
+using Dreamteck.Splines;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public List<int> hiredWorker;
+    public SplineComputer firstSpline;
     public GameObject Player;
     public GameObject PlayerReferance;
+    public GameObject WorkerPrefabs;
+    public GameObject hireCor;
     public float lerpSpeed;
     public float bezierTime;
     [HideInInspector]
