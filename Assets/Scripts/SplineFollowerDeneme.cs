@@ -12,8 +12,12 @@ public class SplineFollowerDeneme : MonoBehaviour
     private GameManager gm;
     public double doubleStart;
     private Animator anim;
+    private bool workingFlag;
+    private bool idleFlag;
     void Start()
     {
+        idleFlag = false;
+        workingFlag = true;
         anim = GetComponent<Animator>();
         instantFlag = true;
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
@@ -65,6 +69,36 @@ public class SplineFollowerDeneme : MonoBehaviour
                 moveTheSpline(nodeConnection,0);
             }
         }
+        else if (nodeConnection.node.name == "Factory0Node")
+        {
+            if (workingFlag)
+            {
+                gm.WorkingWorker[0]++;
+                workingFlag = false;
+            }
+            moveTheSpline(nodeConnection,gm.WorkingWorker[0]);
+            idleFlag = true;
+        }
+        else if (nodeConnection.node.name == "Factory1Node")
+        {
+            if (workingFlag)
+            {
+                gm.WorkingWorker[1]++;
+                workingFlag = false;
+            }
+            moveTheSpline(nodeConnection,gm.WorkingWorker[1]);
+            idleFlag = true;
+        }
+        else if (nodeConnection.node.name == "Factory2Node")
+        {
+            if (workingFlag)
+            {
+                gm.WorkingWorker[2]++;
+                workingFlag = false;
+            }
+            moveTheSpline(nodeConnection,gm.WorkingWorker[2]);
+            idleFlag = true;
+        }
         
 
     }
@@ -81,6 +115,11 @@ public class SplineFollowerDeneme : MonoBehaviour
         {
             anim.SetBool("Idle",true);
             anim.SetBool("Walk",false);
+        }
+
+        if (sf.GetPercent() > 0.99d && idleFlag)
+        {
+            sf.follow = false;
         }
         if (FirstSplineFlag && sf.spline.name == "PathFirst" && !isHiring)
         {

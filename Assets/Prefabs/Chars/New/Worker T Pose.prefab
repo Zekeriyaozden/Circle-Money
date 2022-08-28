@@ -440,7 +440,7 @@ MonoBehaviour:
   _follow: 1
   _startPosition: 0
   preserveUniformSpeedWithOffset: 0
-  _followSpeed: 1.63
+  _followSpeed: 3.04
   _followDuration: 1
   _speedModifier:
     blend: 1

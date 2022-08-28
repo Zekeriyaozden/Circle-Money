@@ -8,6 +8,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public List<int> hiredWorker;
+    public List<int> WorkingWorker;
     public SplineComputer firstSpline;
     public GameObject Player;
     public GameObject PlayerReferance;
