@@ -3,15 +3,19 @@ using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using Dreamteck.Splines;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
     //private SplineFollower sf;
     public float speed;
+    public float speedOfCar;
     public DynamicJoystick variableJoystick;
     public Vector3 direction;
     public float followSpeed;
+    public bool inCar;
+    public bool driveCar;
     public List<GameObject> stackList;
     public GameObject gm;
     public bool isStopped;
@@ -19,9 +23,13 @@ public class PlayerController : MonoBehaviour
     public bool isCorStartHire;
     public GameObject collectedParent;
     private Animator animator;
+    public float lerpSpeed;
     public float _dirTemp;
     void Start()
     {
+        speedOfCar = 0;
+        driveCar = false;
+        inCar = false;
        // fsd = (float) sf.GetPercent();
         animator = gameObject.GetComponent<Animator>();
         isCorStart = true;
@@ -39,23 +47,65 @@ public class PlayerController : MonoBehaviour
         direction = Vector3.forward * variableJoystick.Vertical + Vector3.right * variableJoystick.Horizontal;
         Vector3 dir = gameObject.transform.position + direction;
         _dirTemp = direction.magnitude;
-        if (direction.magnitude > 0.2f)
+        if (!inCar)
         {
-            gameObject.transform.DOLookAt(dir, .3f);
-            transform.Translate(Vector3.forward * speed * direction.magnitude,Space.Self);
-            animator.speed = Mathf.Clamp(direction.magnitude, 0.6f, 1f);
-            gm.GetComponent<GameManager>().isPlayerStopped = false;
-            isStopped = false;
-            animator.SetBool("isRunning",true);
-            StopAllCoroutines();
-            isCorStart = true;
-            isCorStartHire = true;
+            if (direction.magnitude > 0.2f)
+            {
+                gameObject.transform.DOLookAt(dir, .3f);
+                transform.Translate(Vector3.forward * speed * direction.magnitude,Space.Self);
+                animator.speed = Mathf.Clamp(direction.magnitude, 0.6f, 1f);
+                gm.GetComponent<GameManager>().isPlayerStopped = false;
+                isStopped = false;
+                animator.SetBool("isRunning",true);
+                StopAllCoroutines();
+                isCorStart = true;
+                isCorStartHire = true;
+            }
+            else
+            {
+                gm.GetComponent<GameManager>().isPlayerStopped = true;
+                animator.SetBool("isRunning",false);
+                isStopped = true;
+            }
         }
-        else
+
+        if (driveCar)
         {
-            gm.GetComponent<GameManager>().isPlayerStopped = true;
-            animator.SetBool("isRunning",false);
-            isStopped = true;
+            if (direction.magnitude > 0.2f)
+            {
+                if (speedOfCar < .1)
+                {
+                    speedOfCar = .12f;
+                }
+                if (speedOfCar < 0.32f)
+                {
+                    if (speedOfCar > .24f)
+                    {
+                        speedOfCar += Time.deltaTime/5f;
+                    }
+                    else
+                    {
+                        speedOfCar += Time.deltaTime/50f;
+                    }
+                }
+                dir = transform.parent.position + direction;
+                transform.parent.DOLookAt(dir, .224f/speedOfCar);
+                
+                transform.parent.Translate(Vector3.forward * speedOfCar * direction.magnitude,Space.Self);  
+            }
+            else
+            {
+                if (speedOfCar > 0)
+                {
+                    speedOfCar -= Time.deltaTime/2f;
+                }
+                else
+                {
+                    speedOfCar = 0;
+                }
+                transform.parent.Translate(Vector3.forward * speedOfCar,Space.Self);  
+            }
+            
         }
     }
 
@@ -101,7 +151,6 @@ public class PlayerController : MonoBehaviour
     //----------------------HIRE--------------------------------//
     private IEnumerator hireWorkerCor(GameObject obj)
     {
-        Debug.Log("Enter");
         while (true)
         {
             if (gm.GetComponent<GameManager>().MaxStackSize <= stackList.Count)
@@ -121,7 +170,69 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+
     //----------------------------------------------------------//
+    
+    //----------------------Get In The Car----------------------//
+    private IEnumerator getInTheCar(GameObject carChild)
+    {
+        Vector3 target;
+        Vector3 middlev3;
+        Vector3 main;
+        Vector3 mainToMiddle;
+        Vector3 middleToTarget;
+        main = transform.position;
+        target = carChild.transform.position;
+        middlev3 = carChild.transform.GetChild(0).position;
+        inCar = true;
+        float k = 0;
+        Debug.Log("enterGetInTheCar");
+        Vector3 eulerMain = transform.eulerAngles;
+        Vector3 carsEuler = carChild.transform.parent.eulerAngles;
+        animator.SetBool("isRunning",false);
+        while (true)
+        {
+            yield return new WaitForEndOfFrame();
+            if (k < 1)
+            {
+                k += Time.deltaTime * lerpSpeed;
+            }
+
+            if (k >= 1)
+            {
+                break;
+            }
+
+            if (eulerMain.y > carsEuler.y)
+            {
+                transform.eulerAngles = Vector3.Lerp(eulerMain, carsEuler+new Vector3(0,360f,0), k);
+            }
+            else
+            {
+                transform.eulerAngles = Vector3.Lerp(eulerMain, carsEuler, k);
+            }
+
+            mainToMiddle = Vector3.Lerp(main, middlev3, k);
+            middleToTarget = Vector3.Lerp(middlev3, target, k);
+            transform.position = Vector3.Lerp(mainToMiddle,middleToTarget,k);
+        }
+        transform.parent = carChild.transform.parent;
+        driveCar = true;
+    }
+    
+    //----------------------------------------------------------//
+    
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "CarTake")
+        {
+            if (!inCar)
+            {
+                StartCoroutine(getInTheCar(other.transform.parent.gameObject));
+                other.gameObject.GetComponent<MeshRenderer>().enabled = false;
+            }
+        }
+    }
 
     private void OnTriggerStay(Collider other)
     {

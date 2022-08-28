@@ -8,6 +8,7 @@ TagManager:
   - StackController
   - FactoryControl
   - Hire
+  - CarTake
   layers:
   - Default
   - TransparentFX
