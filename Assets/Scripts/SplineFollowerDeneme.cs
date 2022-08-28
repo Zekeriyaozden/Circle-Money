@@ -26,7 +26,6 @@ public class SplineFollowerDeneme : MonoBehaviour
 
     private void moveTheSpline(SplineTracer.NodeConnection nodeConnection,int index)
     {
-        Debug.Log(2);
         double nodePercent = (double) nodeConnection.point / (sf.spline.pointCount - 1);
         double followerPercent = sf.UnclipPercent(sf.result.percent);
         float distancePastNode = sf.spline.CalculateLength(nodePercent, followerPercent);

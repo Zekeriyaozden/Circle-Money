@@ -27,9 +27,10 @@ public class HireController : MonoBehaviour
         Debug.Log("else");
         while (triggerFlag)
         {
-            yield return new WaitForSeconds(4f);
+            yield return new WaitForSecondsRealtime(4f);
             if (notHiredList.Count > 0 && triggerFlag)
             {
+                Debug.Log("enter");
                 notHiredList[0].gameObject.GetComponent<SplineFollowerDeneme>().isHiring = true;
                 GameObject temp = notHiredList[0];
                 notHiredList.Remove(temp);
