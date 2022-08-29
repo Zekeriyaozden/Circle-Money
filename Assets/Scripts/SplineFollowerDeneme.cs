@@ -117,7 +117,7 @@ public class SplineFollowerDeneme : MonoBehaviour
             anim.SetBool("Walk",false);
         }
 
-        if (sf.GetPercent() > 0.99d && idleFlag)
+        if (sf.GetPercent() > 0.99d && idleFlag &&  sf.spline.name != "PathFirst")
         {
             sf.follow = false;
         }

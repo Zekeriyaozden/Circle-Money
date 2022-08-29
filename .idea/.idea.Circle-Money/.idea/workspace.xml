@@ -18,6 +18,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/StackFactoryController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CostumerController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/HiredWorkerController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/FactoryController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Word-Race/Assets/Scripts/LattersController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/StackController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ItemBezier.cs" root0="FORCE_HIGHLIGHTING" />
@@ -30,18 +31,19 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/StackController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/StackFactoryBezier.cs" />
       <option value="$PROJECT_DIR$/Assets/Scenes/ReverseAnimationContext.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/ReverseAnimationContext.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CostumerController.cs" />
       <option value="$PROJECT_DIR$/Assets/Joystick Pack/Examples/JoystickPlayerExample.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ItemController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/LermMechanism.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ItemBezier.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/SupplierController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/StackFactoryController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/HiredWorkerController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/HireController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/StackFactoryController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/ReverseAnimationContext.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/HireController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/SplineFollowerDeneme.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/FactoryController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
     </changedPaths>
   </component>
@@ -101,6 +103,7 @@
       <workItem from="1661421181026" duration="3980000" />
       <workItem from="1661512291307" duration="12537000" />
       <workItem from="1661675379896" duration="16793000" />
+      <workItem from="1661768866386" duration="6557000" />
     </task>
     <servers />
   </component>
