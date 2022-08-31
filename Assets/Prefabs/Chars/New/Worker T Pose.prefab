@@ -311,8 +311,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2321205499055960285}
-  m_LocalRotation: {x: 0, y: 0.017571563, z: 0, w: 0.9998456}
-  m_LocalPosition: {x: -21.091206, y: -9.854612, z: 84.70439}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -9.854612, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -421,18 +421,18 @@ MonoBehaviour:
   targetRigidbody2D: {fileID: 0}
   targetTransform: {fileID: 3133736468478536295}
   _result:
-    position: {x: -21.091206, y: 0, z: 84.70439}
-    up: {x: 0, y: 1, z: 0}
-    forward: {x: 0.0351377, y: 0, z: 0.9993825}
-    color: {r: 1, g: 1, b: 1, a: 1}
-    size: 1
+    position: {x: 0, y: 0, z: 0}
+    up: {x: 0, y: 0, z: 0}
+    forward: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    size: 0
     percent: 0
   _finalResult:
-    position: {x: -21.091206, y: 0, z: 84.70439}
-    up: {x: 0, y: 1, z: 0}
-    forward: {x: 0.0351377, y: 0, z: 0.9993825}
-    color: {r: 1, g: 1, b: 1, a: 1}
-    size: 1
+    position: {x: 0, y: 0, z: 0}
+    up: {x: 0, y: 0, z: 0}
+    forward: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    size: 0
     percent: 0
   wrapMode: 0
   followMode: 0
@@ -1038,10 +1038,10 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 3016479151454471876, guid: 0a02cce210ba70a4094418492dd8be6f, type: 3}
-  - {fileID: 1886820026795636259, guid: 0a02cce210ba70a4094418492dd8be6f, type: 3}
-  - {fileID: -6478536213147159724, guid: 0a02cce210ba70a4094418492dd8be6f, type: 3}
-  - {fileID: -5605289326131794027, guid: 0a02cce210ba70a4094418492dd8be6f, type: 3}
+  - {fileID: 2100000, guid: 19014a6fecb56f446917c41206dbc4b2, type: 2}
+  - {fileID: 2100000, guid: 00ebdbf993770984da035556d7232048, type: 2}
+  - {fileID: 2100000, guid: 5fda6a0d531f0294c9ac1ad3836c9f4d, type: 2}
+  - {fileID: 2100000, guid: 00f7e55de7e39ff4faebe27f34e7a55e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

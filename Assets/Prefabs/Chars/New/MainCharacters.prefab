@@ -178,11 +178,11 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 6699446615349125189, guid: 97dd5de0ee809a24fb5eceae77a30766, type: 3}
-  - {fileID: -6087771358165109452, guid: 97dd5de0ee809a24fb5eceae77a30766, type: 3}
-  - {fileID: -6478536213147159724, guid: 97dd5de0ee809a24fb5eceae77a30766, type: 3}
-  - {fileID: 880774007180850119, guid: 97dd5de0ee809a24fb5eceae77a30766, type: 3}
-  - {fileID: -3846018093981099296, guid: 97dd5de0ee809a24fb5eceae77a30766, type: 3}
+  - {fileID: 2100000, guid: aef58587678b83041acf48d60079ae75, type: 2}
+  - {fileID: 2100000, guid: 2e37e04a43fb9b64a892e230c968fa39, type: 2}
+  - {fileID: 2100000, guid: 25f2c073b8d775f4fabfa7f46ad1fd55, type: 2}
+  - {fileID: 2100000, guid: 1b65865638a84fe41a6e7b02b8526701, type: 2}
+  - {fileID: 2100000, guid: 4b4660d5354f14041aae37604c3e5c5a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -830,15 +830,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.2
+  speedOfCar: 0
   variableJoystick: {fileID: 0}
   direction: {x: 0, y: 0, z: 0}
   followSpeed: 10
+  inCar: 0
+  driveCar: 0
   stackList: []
   gm: {fileID: 0}
   isStopped: 0
   isCorStart: 0
   isCorStartHire: 0
   collectedParent: {fileID: 0}
+  lerpSpeed: 0
   _dirTemp: 0
 --- !u!1 &7476160769782462985
 GameObject:
