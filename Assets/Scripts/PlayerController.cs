@@ -25,8 +25,12 @@ public class PlayerController : MonoBehaviour
     private Animator animator;
     public float lerpSpeed;
     public float _dirTemp;
+    private Vector3 v3Last;
+    private bool UICore;
     void Start()
     {
+        UICore = true;
+        v3Last = new Vector3(0, 0, 0);
         speedOfCar = 0;
         driveCar = false;
         inCar = false;
@@ -90,11 +94,13 @@ public class PlayerController : MonoBehaviour
                 }
                 dir = transform.parent.position + direction;
                 transform.parent.DOLookAt(dir, .224f/speedOfCar);
-                
-                transform.parent.Translate(Vector3.forward * speedOfCar * direction.magnitude,Space.Self);  
+                transform.parent.Translate(Vector3.forward * speedOfCar * direction.magnitude,Space.Self);
+                v3Last = dir;
             }
             else
             {
+                //transform.parent.eulerAngles = Vector3.zero;
+                Debug.Log(transform.parent.eulerAngles);
                 if (speedOfCar > 0)
                 {
                     speedOfCar -= Time.deltaTime/2f;
@@ -217,25 +223,71 @@ public class PlayerController : MonoBehaviour
             transform.position = Vector3.Lerp(mainToMiddle,middleToTarget,k);
         }
         transform.parent = carChild.transform.parent;
+        carChild.transform.parent.gameObject.GetComponent<CarController>().ridingCar = true;
         driveCar = true;
+    }
+
+
+
+    private IEnumerator CarUI(GameObject other)
+    {
+        float k = 0;
+        while (true)
+        {
+            yield return new WaitForEndOfFrame();
+            Debug.Log("kHere");
+            if (UICore)
+            {
+                break;
+            }
+        }
+        Debug.Log("lll");
+        StartCoroutine(getInTheCar(other.transform.parent.gameObject));
+        other.gameObject.GetComponent<MeshRenderer>().enabled = false;
     }
     
     //----------------------------------------------------------//
+
+    
+    private IEnumerator deneme()
+    {
+        while (true)
+        {
+            yield return new WaitForEndOfFrame();
+            Debug.Log("endOfFrame");
+        }
+    }
     
     private void OnTriggerEnter(Collider other)
     {
+        StartCoroutine(deneme());
+    }
+    
+    
+    private void OnTriggerExit(Collider other)
+    {
+        Debug.Log("Exit");
         if (other.tag == "CarTake")
         {
             if (!inCar)
             {
-                StartCoroutine(getInTheCar(other.transform.parent.gameObject));
-                other.gameObject.GetComponent<MeshRenderer>().enabled = false;
+                //StopCoroutine(CarUI(other.gameObject));
             }
         }
     }
 
     private void OnTriggerStay(Collider other)
     {
+        if (other.tag == "CarTake")
+        {
+            if (!inCar && UICore)
+            {
+                UICore = false;
+                Debug.Log("VAR");
+                StartCoroutine(deneme());
+            }
+        }
+        
         if (other.tag == "StackController")
         {
             if (isStopped && isCorStart)

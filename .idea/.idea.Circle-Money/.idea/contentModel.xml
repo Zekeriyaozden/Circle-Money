@@ -1083,6 +1083,7 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="CameraController.cs" t="Include" />
+          <e p="CarController.cs" t="Include" />
           <e p="CostumerController.cs" t="Include" />
           <e p="FactoryController.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />

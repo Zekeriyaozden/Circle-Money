@@ -11,18 +11,19 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/HiredWorkerController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Word-Race/Assets/Scripts/LattersController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ItemBezier.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/StackFactoryBezier.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ItemController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CameraController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SupplierController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/StackFactoryController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CostumerController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/HiredWorkerController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/FactoryController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../Word-Race/Assets/Scripts/LattersController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/StackController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ItemBezier.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SupplierBezier.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CarController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -43,6 +44,8 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/ReverseAnimationContext.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/HireController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/SplineFollowerDeneme.cs" />
+      <option value="$PROJECT_DIR$/Assets/NiceVibrations/Common/Scripts/Editor/MMNVBuildPostProcessor.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/CarController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/FactoryController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
     </changedPaths>
@@ -103,7 +106,9 @@
       <workItem from="1661421181026" duration="3980000" />
       <workItem from="1661512291307" duration="12537000" />
       <workItem from="1661675379896" duration="16793000" />
-      <workItem from="1661768866386" duration="6557000" />
+      <workItem from="1661768866386" duration="7882000" />
+      <workItem from="1661850874362" duration="2428000" />
+      <workItem from="1661950126626" duration="8339000" />
     </task>
     <servers />
   </component>
@@ -114,5 +119,24 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/FactoryController.cs</url>
+          <line>21</line>
+          <properties documentPath="C:\Users\Maleriya\Desktop\Pigeon Gaming\Circle-Money\Assets\Scripts\FactoryController.cs" initialLine="21" containingFunctionPresentation="method 'Start'">
+            <startOffsets>
+              <option value="582" />
+            </startOffsets>
+            <endOffsets>
+              <option value="583" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -61,6 +61,7 @@ public class FactoryController : MonoBehaviour
                 break;
             }
         }
+        obj.GetComponent<CarController>().isCarReady = true;
         MakeCarFlag = true;
     }
     
@@ -93,7 +94,15 @@ public class FactoryController : MonoBehaviour
     
     void Update()
     {
-        if (MakeCarFlag && gm.WorkingWorker[0] > 2)
+        if (AfterMaking != null)
+        {
+            if (AfterMaking.GetComponent<CarController>().ridingCar)
+            {
+                AfterMaking.transform.parent = null;
+                AfterMaking = null;
+            }
+        }
+        if (MakeCarFlag && gm.WorkingWorker[0] > 0)
         {
             makeCar();
             MakeCarFlag = false;
