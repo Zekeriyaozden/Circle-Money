@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2197327702276569875}
   - component: {fileID: 3013368238267364534}
   - component: {fileID: 1023818204625895548}
+  - component: {fileID: 1080694039728722829}
   m_Layer: 0
   m_Name: Traffic Light
   m_TagString: Untagged
@@ -86,3 +87,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1080694039728722829
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1528313790966374825}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.6197038, y: 6.2461267, z: 1.4298859}
+  m_Center: {x: 0.009744048, y: 3.1230633, z: -0.0010309219}

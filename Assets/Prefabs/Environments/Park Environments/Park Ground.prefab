@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2610178816168085118}
   - component: {fileID: 1411575398478498267}
   - component: {fileID: 3779112799258361105}
+  - component: {fileID: 3834138430333654789}
   m_Layer: 0
   m_Name: Park Ground
   m_TagString: Untagged
@@ -84,3 +85,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3834138430333654789
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3419049472188128452}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.6410808, y: 0.020680133, z: 2.0000005}
+  m_Center: {x: 0, y: 0.010340067, z: 0}

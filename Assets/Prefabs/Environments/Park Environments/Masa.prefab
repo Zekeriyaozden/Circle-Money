@@ -261,6 +261,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7042738378616377412}
+  - component: {fileID: 3923001098965550182}
   m_Layer: 0
   m_Name: Masa
   m_TagString: Untagged
@@ -286,3 +287,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3923001098965550182
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7707635409169206014}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.766159, y: 1.0309854, z: 3.1070023}
+  m_Center: {x: 0.0051651, y: 0.46994272, z: 0.0103263855}
