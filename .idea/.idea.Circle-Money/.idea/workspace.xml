@@ -12,6 +12,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/HiredWorkerController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/DenemeSpl.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Word-Race/Assets/Scripts/LattersController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ItemBezier.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/StackFactoryBezier.cs" root0="FORCE_HIGHLIGHTING" />
@@ -50,6 +51,8 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/FactoryController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CarGetIn.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/ChibiController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/DenemeSpl.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2DO9am8jkQT6TAKD6NJepPTwRmZ" />
@@ -111,7 +114,7 @@
       <workItem from="1661768866386" duration="7882000" />
       <workItem from="1661850874362" duration="2428000" />
       <workItem from="1661950126626" duration="8339000" />
-      <workItem from="1662036102237" duration="6136000" />
+      <workItem from="1662036102237" duration="10381000" />
     </task>
     <servers />
   </component>

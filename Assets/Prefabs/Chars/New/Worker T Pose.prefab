@@ -436,7 +436,7 @@ MonoBehaviour:
     percent: 0
   wrapMode: 0
   followMode: 0
-  autoStartPosition: 1
+  autoStartPosition: 0
   _follow: 1
   _startPosition: 0
   preserveUniformSpeedWithOffset: 0
