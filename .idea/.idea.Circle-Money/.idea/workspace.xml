@@ -22,6 +22,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CostumerController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/FactoryController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/StackController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CarGetIn.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SupplierBezier.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CarController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -48,6 +49,7 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/CarController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/FactoryController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/CarGetIn.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2DO9am8jkQT6TAKD6NJepPTwRmZ" />
@@ -109,6 +111,7 @@
       <workItem from="1661768866386" duration="7882000" />
       <workItem from="1661850874362" duration="2428000" />
       <workItem from="1661950126626" duration="8339000" />
+      <workItem from="1662036102237" duration="6136000" />
     </task>
     <servers />
   </component>

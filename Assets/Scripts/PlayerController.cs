@@ -159,6 +159,7 @@ public class PlayerController : MonoBehaviour
     {
         while (true)
         {
+            Debug.Log("Hired");
             if (gm.GetComponent<GameManager>().MaxStackSize <= stackList.Count)
             {
                 break;
@@ -196,6 +197,7 @@ public class PlayerController : MonoBehaviour
         Vector3 eulerMain = transform.eulerAngles;
         Vector3 carsEuler = carChild.transform.parent.eulerAngles;
         animator.SetBool("isRunning",false);
+        Vector3 startScale = transform.localScale;
         while (true)
         {
             yield return new WaitForEndOfFrame();
@@ -218,6 +220,10 @@ public class PlayerController : MonoBehaviour
                 transform.eulerAngles = Vector3.Lerp(eulerMain, carsEuler, k);
             }
 
+            if (k > .8f)
+            {
+                transform.localScale = Vector3.Lerp(startScale,new Vector3(0,0,0),k);
+            }
             mainToMiddle = Vector3.Lerp(main, middlev3, k);
             middleToTarget = Vector3.Lerp(middlev3, target, k);
             transform.position = Vector3.Lerp(mainToMiddle,middleToTarget,k);
@@ -229,38 +235,22 @@ public class PlayerController : MonoBehaviour
 
 
 
-    private IEnumerator CarUI(GameObject other)
+    public void getCarIn(GameObject other)
     {
-        float k = 0;
-        while (true)
+        if (!inCar)
         {
-            yield return new WaitForEndOfFrame();
-            Debug.Log("kHere");
-            if (UICore)
-            {
-                break;
-            }
+            StartCoroutine(getInTheCar(other.transform.parent.gameObject));
+            other.gameObject.GetComponent<MeshRenderer>().enabled = false;
         }
-        Debug.Log("lll");
-        StartCoroutine(getInTheCar(other.transform.parent.gameObject));
-        other.gameObject.GetComponent<MeshRenderer>().enabled = false;
     }
     
     //----------------------------------------------------------//
-
     
-    private IEnumerator deneme()
-    {
-        while (true)
-        {
-            yield return new WaitForEndOfFrame();
-            Debug.Log("endOfFrame");
-        }
-    }
+    
     
     private void OnTriggerEnter(Collider other)
     {
-        StartCoroutine(deneme());
+        //StartCoroutine(deneme());
     }
     
     
@@ -280,12 +270,7 @@ public class PlayerController : MonoBehaviour
     {
         if (other.tag == "CarTake")
         {
-            if (!inCar && UICore)
-            {
-                UICore = false;
-                Debug.Log("VAR");
-                StartCoroutine(deneme());
-            }
+
         }
         
         if (other.tag == "StackController")
