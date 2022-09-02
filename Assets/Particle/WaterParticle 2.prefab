@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 19800130}
   - component: {fileID: 19959454}
   m_Layer: 0
-  m_Name: WaterGeysir
+  m_Name: WaterParticle 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
