@@ -30,6 +30,7 @@ public class ChibiController : MonoBehaviour
 
             if (chb != null)
             {
+                chb.GetComponent<DenemeSpl>().isInStart = true;
                 chb.transform.position = Vector3.zero;
                 int _splIndex = splIndex % splines.Count; 
                 SplineFollower sf = chb.GetComponent<SplineFollower>();
@@ -37,13 +38,15 @@ public class ChibiController : MonoBehaviour
                 splIndex++;
             }
         }
+        StartCoroutine(chib());
     }
 
     private IEnumerator chib()
     {
         int splIndex = 0;
-        for (int i = 0; i < 60; i++)
+        for (int i = 0; i >= 0; i++)
         {
+            Debug.Log("Enter");
             yield return new WaitForSeconds(2f);
             GameObject chb = null;
             if (i % 3 == 0)
@@ -60,6 +63,7 @@ public class ChibiController : MonoBehaviour
 
             if (chb != null)
             {
+                chb.GetComponent<DenemeSpl>().isInStart = false;
                 chb.transform.position = Vector3.zero;
                 int _splIndex = splIndex % splines.Count; 
                 SplineFollower sf = chb.GetComponent<SplineFollower>();

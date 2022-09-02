@@ -274,7 +274,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ccd07e3fa8f10de4192e7dbd0d680138, type: 2}
+  - {fileID: 2100000, guid: 6c9cf5846fc9942439fd085be5e1f30b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -793,7 +793,7 @@ GameObject:
   - component: {fileID: 4193957378941305984}
   - component: {fileID: 3123943898944665546}
   m_Layer: 0
-  m_Name: Chibi T Pose
+  m_Name: Chibi T Pose 1
   m_TagString: Chibi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -967,7 +967,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   db: 0
   isInStart: 0
-  color: Red
+  color: Blue
 --- !u!65 &4193957378941305984
 BoxCollider:
   m_ObjectHideFlags: 0

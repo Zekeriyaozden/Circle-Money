@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CarController : MonoBehaviour
@@ -7,8 +9,16 @@ public class CarController : MonoBehaviour
     public bool ridingCar;
     public bool isCarReady;
     public GameObject readyObject;
+    private float numberOfChibi;
+    private float numberOfChibiRed;
+    private float numberOfChibiGreen;
+    private float numberOfChibiBlue;
+    private Color clr;
+    private Material mt;
     void Start()
     {
+        mt = transform.GetChild(2).GetComponent<SkinnedMeshRenderer>().materials[0];
+        numberOfChibi = numberOfChibiBlue = numberOfChibiGreen = numberOfChibiRed = 0f;
         ridingCar = false;
     }
 
@@ -18,6 +28,41 @@ public class CarController : MonoBehaviour
         if (isCarReady)
         {
             readyObject.SetActive(true);
+        }
+    }
+
+    private void fillTheCar(string ind)
+    {
+        numberOfChibi++;
+        if (ind == "Red")
+        {
+            numberOfChibiRed++;
+        }else if (ind == "Green")
+        {
+            numberOfChibiGreen++;
+        }
+        else if(ind == "Blue")
+        {
+            numberOfChibiBlue++;
+        }
+
+        clr = new Color(numberOfChibiRed/numberOfChibi,numberOfChibiGreen/numberOfChibi,numberOfChibiBlue/numberOfChibi);
+        mt.color = clr;
+        Material[] materials = gameObject.transform.GetChild(2).GetComponent<SkinnedMeshRenderer>().materials;
+        materials[0] = mt;
+        gameObject.transform.GetChild(2).GetComponent<SkinnedMeshRenderer>().materials = materials;
+    }
+    
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Chibi")
+        {
+            if (ridingCar)
+            {
+                fillTheCar(other.gameObject.GetComponent<DenemeSpl>().color);
+                Destroy(other.gameObject);
+            }
         }
     }
 }

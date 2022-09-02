@@ -99,8 +99,7 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                //transform.parent.eulerAngles = Vector3.zero;
-                Debug.Log(transform.parent.eulerAngles);
+               
                 if (speedOfCar > 0)
                 {
                     speedOfCar -= Time.deltaTime/2f;
@@ -250,7 +249,7 @@ public class PlayerController : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        //StartCoroutine(deneme());
+        
     }
     
     

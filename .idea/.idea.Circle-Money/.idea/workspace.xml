@@ -47,12 +47,12 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/HireController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/SplineFollowerDeneme.cs" />
       <option value="$PROJECT_DIR$/Assets/NiceVibrations/Common/Scripts/Editor/MMNVBuildPostProcessor.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/CarController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/FactoryController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CarGetIn.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ChibiController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/DenemeSpl.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/CarController.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2DO9am8jkQT6TAKD6NJepPTwRmZ" />
@@ -114,7 +114,8 @@
       <workItem from="1661768866386" duration="7882000" />
       <workItem from="1661850874362" duration="2428000" />
       <workItem from="1661950126626" duration="8339000" />
-      <workItem from="1662036102237" duration="10381000" />
+      <workItem from="1662036102237" duration="10861000" />
+      <workItem from="1662114899580" duration="3404000" />
     </task>
     <servers />
   </component>

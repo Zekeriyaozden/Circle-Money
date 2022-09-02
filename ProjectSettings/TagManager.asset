@@ -9,6 +9,7 @@ TagManager:
   - FactoryControl
   - Hire
   - CarTake
+  - Chibi
   layers:
   - Default
   - TransparentFX

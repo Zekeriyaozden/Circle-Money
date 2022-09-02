@@ -10,6 +10,8 @@ public class DenemeSpl : MonoBehaviour
     private bool percent;
     private SplineFollower sf;
     public double db;
+    public bool isInStart;
+    public string color;
     void Start()
     {
         percent = true;
@@ -30,9 +32,10 @@ public class DenemeSpl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (percent)
+        if (percent && isInStart)
         {
-            sf.SetPercent(db);            
+            Debug.Log(gameObject.name);
+            sf.SetPercent(db);      
             percent = false;
         }
         else
