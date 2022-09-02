@@ -800,7 +800,7 @@ PlayerSettings:
   webGLDecompressionFallback: 0
   scriptingDefineSymbols:
     Android: DREAMTECK_SPLINES;MOREMOUNTAINS_NICEVIBRATIONS
-    Standalone: DREAMTECK_SPLINES
+    Standalone: DREAMTECK_SPLINES;MOREMOUNTAINS_NICEVIBRATIONS
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}
