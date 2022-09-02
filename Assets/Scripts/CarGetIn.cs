@@ -39,6 +39,7 @@ public class CarGetIn : MonoBehaviour
         {
             Debug.Log("Break");
             player.GetComponent<PlayerController>().getCarIn(gameObject);
+            transform.parent.parent.gameObject.GetComponent<CarController>().Main = player.gameObject;
         }
     }
 

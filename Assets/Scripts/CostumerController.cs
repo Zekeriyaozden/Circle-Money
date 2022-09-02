@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Dreamteck.Splines;
@@ -5,62 +6,80 @@ using UnityEngine;
 
 public class CostumerController : MonoBehaviour
 {
-    public List<GameObject> costumerList;
-    public List<GameObject> nodeList;
-    public GameObject costumerPrefabs;
-    public GameObject costumerPath;
-    void Start()
+    public List<GameObject> customers;
+    public GameObject customerPref;
+    private bool flagCar;
+    private bool carEnumFlag;
+    private void Start()
+    {
+        flagCar = true;
+        carEnumFlag = true;
+        for (int i = 0; i < customers.Count; i++)
+        {
+            customers[i].GetComponent<CustomerBehavController>().target = 0.9d - (0.2d * i);
+        }
+    }
+
+    private void Update()
     {
         
     }
 
-    IEnumerator objControl(float start, float finish,GameObject obj,bool turnControl=false)
+    private IEnumerator car()
     {
-        SplinePositioner sP = obj.GetComponent<SplinePositioner>();
-        sP.spline = gameObject.GetComponent<SplineComputer>();
         float k = 0;
-        Animator anim = obj.GetComponent<Animator>();
-        anim.SetBool("Walk",true);
-        anim.SetBool("Idle",false);
-        if (turnControl == false)
+        while (true)
         {
-            Debug.Log(sP.GetPercent());
-        }
-        for (int i = 0; i < 80; i++)
-        {
-            k += i * 0.2f / 80f;
-            yield return new WaitForSeconds(.6f / 80f);
-            double percent = (double) Mathf.Lerp(start, finish, k);
-            sP.SetPercent(percent);
-        }
-        anim.SetBool("Walk",false);
-        anim.SetBool("Idle",true);
-
-        if (turnControl)
-        {
-            if (costumerList.IndexOf(obj) < costumerList.Count - 1)
+            if (k < 1)
             {
-                StartCoroutine(objControl(start - 0.2f, start, costumerList[costumerList.IndexOf(obj) + 1], true));
+                k += Time.deltaTime / 2f;
             }
             else
             {
-                GameObject temp = costumerList[0];
-                costumerList.Remove(temp);
-                GameObject gObjIns = Instantiate(costumerPrefabs, transform);
-                gObjIns.GetComponent<SplinePositioner>().spline = gameObject.GetComponent<SplineComputer>();
-                costumerList.Add(gObjIns);
-                StartCoroutine(objControl(0, 0.2f, gObjIns, false));
+                break;
             }
+            yield return new WaitForEndOfFrame();
+            if (!carEnumFlag)
+            {
+                break;
+            }
+        }
+        if (carEnumFlag)
+        {
+            GameObject cs = customers[0];
+            customers.RemoveAt(0);  
+            Destroy(cs);
+            StartCoroutine(customerTarget());
         }
     }
 
-    public void turnControl()
+    private IEnumerator customerTarget()
     {
-        StartCoroutine(objControl(.8f, 1f, costumerList[1],true));
+        for (int i = 0; i < customers.Count; i++)
+        {
+            yield return new WaitForSeconds(.2f);
+            customers[i].GetComponent<CustomerBehavController>().target = 0.9d - (0.2d * i);
+        }
     }
-    void Update()
-    {
 
-        
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Car")
+        {
+            carEnumFlag = false;
+            flagCar = true;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Car")
+        {
+            if (flagCar)
+            {
+                StartCoroutine(car());
+                flagCar = false;
+            }
+        }
     }
 }

@@ -11,6 +11,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CustomerBehavController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/HiredWorkerController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/DenemeSpl.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Word-Race/Assets/Scripts/LattersController.cs" root0="SKIP_HIGHLIGHTING" />
@@ -34,7 +35,6 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/StackController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/StackFactoryBezier.cs" />
       <option value="$PROJECT_DIR$/Assets/Scenes/ReverseAnimationContext.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/CostumerController.cs" />
       <option value="$PROJECT_DIR$/Assets/Joystick Pack/Examples/JoystickPlayerExample.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ItemController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/LermMechanism.cs" />
@@ -42,17 +42,19 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/SupplierController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/HiredWorkerController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/StackFactoryController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ReverseAnimationContext.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/HireController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/SplineFollowerDeneme.cs" />
       <option value="$PROJECT_DIR$/Assets/NiceVibrations/Common/Scripts/Editor/MMNVBuildPostProcessor.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/FactoryController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/CarGetIn.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ChibiController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/DenemeSpl.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/StackFactoryController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/CostumerController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/CustomerBehavController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CarController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/CarGetIn.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2DO9am8jkQT6TAKD6NJepPTwRmZ" />
@@ -115,7 +117,7 @@
       <workItem from="1661850874362" duration="2428000" />
       <workItem from="1661950126626" duration="8339000" />
       <workItem from="1662036102237" duration="10861000" />
-      <workItem from="1662114899580" duration="3404000" />
+      <workItem from="1662114899580" duration="9360000" />
     </task>
     <servers />
   </component>

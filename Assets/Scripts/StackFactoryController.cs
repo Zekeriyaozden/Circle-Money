@@ -28,138 +28,16 @@ public class StackFactoryController : MonoBehaviour
       tempFlag = true;
    }
 
-   private void Update()
-   {
-      if (gm.maxPaintRequire <= paintList.Count)
-      {
-         if (gm.maxPieceRequire <= pieceList.Count)
-         {
-            if (tempFlag)
-            {
-               for (int i = 0; i < workers.Count; i++)
-               {
-                  workers[i].GetComponent<Animator>().SetBool("WorkingCar",true);
-                  workers[i].GetComponent<Animator>().SetBool("WorkingPaint",false);
-                  workers[i].GetComponent<Animator>().SetBool("Idle",false);
-               }
-               Material mtr = Instantiate(mt);
-               mtr.SetFloat("_Ring",1f);
-               GameObject gObj = Instantiate(carPrefab, transform.parent);
-               Material[] mtls = gObj.transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().materials;
-               mtls[1] = mtr;
-               gObj.transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().materials = mtls;
-               gObj.transform.position = carReferance.transform.position;
-               gObj.transform.eulerAngles = new Vector3(0, 270f, 0);
-               gObj.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
-               CurrentCar = gObj;
-               StartCoroutine(tempFlagControl(mtr));
-               tempFlag = false;
-            }
-         }
-      }
-      isCorStart = gm.Player.GetComponent<PlayerController>().isCorStart;
-      isStopped = gm.isPlayerStopped;
-   }
 
-   private IEnumerator carControl2(GameObject car)
-   {
-      car.GetComponent<SplineFollower>().enabled = false;
-      Vector3 v = cCont.costumerPath.transform.position;
-      float k = 0;
-      Vector3 pos = car.transform.position;
-      for (int i = 0; i <= 60; i++)
-      {
-         k = (float) i / 60f;
-         yield return new WaitForSeconds(.3f / 60);
-         car.gameObject.transform.position = Vector3.Lerp(pos, v, k);
-      }
-      
-      StartCoroutine(costumerControl(car));
-   }
+
+
    
 
-   private IEnumerator costumerControl(GameObject car)
-   {
-      GameObject tempObj = cCont.costumerList[0];
-      Vector3 cosPos = tempObj.transform.position;
-      float k = 0;
-      Vector3 carPos = car.transform.position;
-      for (int i = 0; i <= 60; i++)
-      {
-         k = (float) i / 60f;
-         yield return new WaitForSeconds(.3f / 60);
-         tempObj.gameObject.transform.position = Vector3.Lerp(cosPos,carPos , k);
-      }
-      cCont.turnControl();
-   }
 
-   private IEnumerator carController(GameObject obj)
-   {
-      SplineFollower sF = obj.GetComponent<SplineFollower>();
-      sF.followSpeed = 4.8f;
-      sF.wrapMode = SplineFollower.Wrap.Default;
-      while (true)
-      {
-         yield return new WaitForSeconds(.2f);
-         if (sF.GetPercent() > .98)
-         {
-            //cCont.costumerList[0];
-            yield return new WaitForSeconds(.5f);
-            StartCoroutine(carControl2(obj));
-            //cCont.turnControl();
-            break;
-         }
-      }
-   }
 
-   private IEnumerator paintToCar(Material mt)
-   {
-      yield return new WaitForSeconds(.8f);
-      for (int i = 0; i < workers.Count; i++)
-      {
-         workers[i].GetComponent<Animator>().SetBool("WorkingCar",false);
-         workers[i].GetComponent<Animator>().SetBool("WorkingPaint",true);
-         workers[i].GetComponent<Animator>().SetBool("Idle",false);
-      }  
-      float k = 0;
-      for (int i = 1; i < 200; i++)
-      {
-         k = (float)i / 200;
-         yield return new WaitForSeconds(4f / 200f);
-         mt.SetFloat("_Ring",1+( k * (2.35f)));
-      }
-      for (int i = 0; i < workers.Count; i++)
-      {
-         workers[i].GetComponent<Animator>().SetBool("WorkingCar",false);
-         workers[i].GetComponent<Animator>().SetBool("WorkingPaint",false);
-         workers[i].GetComponent<Animator>().SetBool("Idle",true);
-      }
 
-      SplineFollower sf = CurrentCar.AddComponent<SplineFollower>();
-      sf.spline = sc;
-      StartCoroutine(carController(CurrentCar));
-      CurrentCar = null;
-      paintList.Clear();
-      pieceList.Clear();
-      tempFlag = true;
-   }
-   private IEnumerator tempFlagControl(Material mt)
-   {
-      while (true)
-      {
-         yield return new WaitForSeconds(.1f);
-         if (CurrentCar.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("CarAnim"))
-         {
-            continue;
-         }
-         else
-         {
-            StartCoroutine(paintToCar(mt));
-            break;
-         }
-      }
-   }
-   private IEnumerator stackEffect(GameObject player)
+
+private IEnumerator stackEffect(GameObject player)
    {
       PlayerController pc = player.GetComponent<PlayerController>();
       while (true)

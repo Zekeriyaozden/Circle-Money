@@ -242,6 +242,13 @@ public class PlayerController : MonoBehaviour
             other.gameObject.GetComponent<MeshRenderer>().enabled = false;
         }
     }
+
+
+    /*public IEnumerator getOffCar()
+    {
+        transform.SetParent(null);
+        
+    }*/
     
     //----------------------------------------------------------//
     

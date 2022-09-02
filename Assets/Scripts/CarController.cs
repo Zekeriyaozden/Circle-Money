@@ -9,12 +9,13 @@ public class CarController : MonoBehaviour
     public bool ridingCar;
     public bool isCarReady;
     public GameObject readyObject;
-    private float numberOfChibi;
-    private float numberOfChibiRed;
-    private float numberOfChibiGreen;
-    private float numberOfChibiBlue;
+    public float numberOfChibi;
+    public float numberOfChibiRed;
+    public float numberOfChibiGreen;
+    public float numberOfChibiBlue;
     private Color clr;
     private Material mt;
+    public GameObject Main;
     void Start()
     {
         mt = transform.GetChild(2).GetComponent<SkinnedMeshRenderer>().materials[0];
@@ -33,6 +34,11 @@ public class CarController : MonoBehaviour
 
     private void fillTheCar(string ind)
     {
+        if (numberOfChibiBlue + numberOfChibiGreen + numberOfChibiRed > 45)
+        {
+            numberOfChibi = 3;
+            numberOfChibiBlue = numberOfChibiGreen = numberOfChibiRed = 1;
+        }
         numberOfChibi++;
         if (ind == "Red")
         {
