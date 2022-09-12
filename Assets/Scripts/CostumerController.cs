@@ -77,6 +77,7 @@ public class CostumerController : MonoBehaviour
         {
             if (flagCar)
             {
+                Debug.Log("carEnter");
                 StartCoroutine(car());
                 flagCar = false;
             }

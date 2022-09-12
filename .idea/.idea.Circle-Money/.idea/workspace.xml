@@ -53,8 +53,8 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/CostumerController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CustomerBehavController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CarController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/CarGetIn.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/CarGetIn.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2DO9am8jkQT6TAKD6NJepPTwRmZ" />
@@ -118,6 +118,8 @@
       <workItem from="1661950126626" duration="8339000" />
       <workItem from="1662036102237" duration="10861000" />
       <workItem from="1662114899580" duration="9360000" />
+      <workItem from="1662333171802" duration="994000" />
+      <workItem from="1662977441376" duration="453000" />
     </task>
     <servers />
   </component>

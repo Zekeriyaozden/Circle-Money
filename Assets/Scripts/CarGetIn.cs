@@ -2,12 +2,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CarGetIn : MonoBehaviour
 {
+    public GameObject image;
+    private Image slide;
     private bool UIFlag;
     void Start()
     {
+        transform.GetChild(0).localPosition = new Vector3(transform.GetChild(0).localPosition.x,0.5f, transform.GetChild(0).localPosition.z);
+        slide = image.GetComponent<Image>();
         transform.position = new Vector3(transform.position.x, 0.001f, transform.position.z);
         UIFlag = true;
     }
@@ -24,7 +29,6 @@ public class CarGetIn : MonoBehaviour
         while (!UIFlag)
         {
             yield return new WaitForEndOfFrame();
-            Debug.Log("EndOfFrame");
             if (k < 1f)
             {
                 k += Time.deltaTime / 2f;
@@ -33,6 +37,7 @@ public class CarGetIn : MonoBehaviour
             {
                 break;
             }
+            slide.fillAmount = k;
         }
 
         if (!UIFlag)
@@ -40,6 +45,11 @@ public class CarGetIn : MonoBehaviour
             Debug.Log("Break");
             player.GetComponent<PlayerController>().getCarIn(gameObject);
             transform.parent.parent.gameObject.GetComponent<CarController>().Main = player.gameObject;
+            gameObject.SetActive(false);
+        }
+        else
+        {
+            slide.fillAmount = 0;
         }
     }
 
