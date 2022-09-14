@@ -138,6 +138,10 @@ public class CostumerController : MonoBehaviour
             yield return new WaitForSeconds(.2f);
             customers[i].GetComponent<CustomerBehavController>().target = 0.9d - (0.2d * i);
         }
+        GameObject cus = Instantiate(customerPref, customers[0].transform.parent);
+        cus.GetComponent<SplineFollower>().spline = customers[0].GetComponent<SplineFollower>().spline;
+        cus.GetComponent<CustomerBehavController>().target = 0.1d;
+        cus.transform.eulerAngles = customers[0].transform.eulerAngles;
     }
 
     private void OnTriggerExit(Collider other)

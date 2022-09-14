@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FactoryController : MonoBehaviour
 {
+    public int indexOfFactory;
     public float lerpSpeed;
     public GameObject carReferance;
     public GameObject carParent;
@@ -102,7 +103,7 @@ public class FactoryController : MonoBehaviour
                 AfterMaking = null;
             }
         }
-        if (MakeCarFlag && gm.WorkingWorker[0] > 0)
+        if (MakeCarFlag && gm.WorkingWorker[indexOfFactory] > 0)
         {
             makeCar();
             MakeCarFlag = false;

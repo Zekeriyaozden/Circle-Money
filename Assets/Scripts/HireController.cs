@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HireController : MonoBehaviour
 {
@@ -9,9 +10,13 @@ public class HireController : MonoBehaviour
     private GameManager gm;
     private bool triggerFlag;
     private bool corFlag;
-    // Start is called before the first frame update
+    private bool hireDecrease;
+    public GameObject image;
+    private Image slide;
     void Start()
     {
+        hireDecrease = true;
+        slide = image.GetComponent<Image>();
         corFlag = true;
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
@@ -26,7 +31,14 @@ public class HireController : MonoBehaviour
     {
         while (triggerFlag)
         {
-            yield return new WaitForSecondsRealtime(4f);
+            float k = slide.fillAmount;
+            while (k < 1 && triggerFlag)
+            {
+                yield return new WaitForEndOfFrame();
+                k += Time.deltaTime / 5f;
+                slide.fillAmount = k;
+            }
+            slide.fillAmount = 0f;
             if (notHiredList.Count > 0 && triggerFlag)
             {
                 notHiredList[0].gameObject.GetComponent<SplineFollowerDeneme>().isHiring = true;
@@ -35,12 +47,24 @@ public class HireController : MonoBehaviour
             }   
         }
     }
+
+    private IEnumerator decreaseUI()
+    {
+        float k = slide.fillAmount;
+        while (k > 0 && hireDecrease)
+        {
+            yield return new WaitForEndOfFrame();
+            k -= Time.deltaTime / 3f;
+            slide.fillAmount = k;
+        }
+    }
     
 
     private void OnTriggerStay(Collider other)
     {
         if (other.tag == "Player")
         {
+            hireDecrease = false;
             triggerFlag = true;
             if (corFlag)
             {
@@ -52,7 +76,12 @@ public class HireController : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        triggerFlag = false;
-        corFlag = true;
+        if (other.tag == "Player")
+        {
+            hireDecrease = true;
+            triggerFlag = false;
+            corFlag = true;
+            StartCoroutine(decreaseUI());
+        }
     }
 }
