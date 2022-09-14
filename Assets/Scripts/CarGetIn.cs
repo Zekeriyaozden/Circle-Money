@@ -9,8 +9,10 @@ public class CarGetIn : MonoBehaviour
     public GameObject image;
     private Image slide;
     private bool UIFlag;
+    private bool decreaseFlag;
     void Start()
     {
+        decreaseFlag = true;
         transform.GetChild(0).localPosition = new Vector3(transform.GetChild(0).localPosition.x,0.5f, transform.GetChild(0).localPosition.z);
         slide = image.GetComponent<Image>();
         transform.position = new Vector3(transform.position.x, 0.001f, transform.position.z);
@@ -46,9 +48,16 @@ public class CarGetIn : MonoBehaviour
             transform.parent.parent.gameObject.GetComponent<CarController>().Main = player.gameObject;
             gameObject.SetActive(false);
         }
-        else
+    }
+
+    private IEnumerator fillDecrease()
+    {
+        float k = slide.fillAmount;
+        while (k > 0 && decreaseFlag)
         {
-            slide.fillAmount = 0;
+            k -= Time.deltaTime / 2f;
+            yield return new WaitForEndOfFrame();
+            slide.fillAmount = k;
         }
     }
 
@@ -59,6 +68,7 @@ public class CarGetIn : MonoBehaviour
         {
             if (UIFlag)
             {
+                decreaseFlag = false;
                 UIFlag = false;
                 StartCoroutine(UIGetIn(other.gameObject));
             }    
@@ -69,6 +79,8 @@ public class CarGetIn : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            decreaseFlag = true;
+            StartCoroutine(fillDecrease());
             UIFlag = true;
         }
     }
