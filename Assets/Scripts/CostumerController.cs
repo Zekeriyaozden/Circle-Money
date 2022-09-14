@@ -2,10 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Dreamteck.Splines;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CostumerController : MonoBehaviour
 {
+    public SplineComputer splineCarPath;
     private GameManager gm;
     public List<GameObject> customers;
     public GameObject customerPref;
@@ -13,6 +15,7 @@ public class CostumerController : MonoBehaviour
     private bool carEnumFlag;
     private void Start()
     {
+
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         flagCar = true;
         carEnumFlag = true;
@@ -110,18 +113,22 @@ public class CostumerController : MonoBehaviour
         }
         car.GetComponent<CarController>().delivered = false;
         cs.transform.localScale = Vector3.zero;
+        carDriveAI(car,cs);
     }
 
-    private IEnumerator carDriveAI(GameObject car,GameObject cs)
+    private void carDriveAI(GameObject car,GameObject cs)
     {
-        
-        float k = 0;
-        while (k<1)
-        {
-            k+=Time.deltaTime / 8f;
-            yield return new WaitForEndOfFrame();
-            
-        }
+        cs.transform.SetParent(car.transform);
+        SplinePoint[] pnt = splineCarPath.GetPoints();
+        splineCarPath.gameObject.transform.GetChild(0).position = car.transform.position;
+        splineCarPath.gameObject.transform.GetChild(0).eulerAngles = new Vector3(0,car.transform.eulerAngles.y,0);
+        pnt[0].position = car.transform.position;
+        pnt[1].position = splineCarPath.gameObject.transform.GetChild(0).GetChild(0).position;
+        splineCarPath.SetPoints(pnt);
+        SplineFollower sf = car.AddComponent<SplineFollower>();
+        sf.spline = splineCarPath;
+        sf.followSpeed = 3f;
+        gm.car = null;
     }
 
     private IEnumerator customerTarget()
