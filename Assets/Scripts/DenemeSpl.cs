@@ -34,7 +34,6 @@ public class DenemeSpl : MonoBehaviour
     {
         if (percent && isInStart)
         {
-            Debug.Log(gameObject.name);
             sf.SetPercent(db);      
             percent = false;
         }

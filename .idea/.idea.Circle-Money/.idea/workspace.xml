@@ -41,19 +41,19 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/ItemBezier.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/SupplierController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/HiredWorkerController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ReverseAnimationContext.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/HireController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/SplineFollowerDeneme.cs" />
       <option value="$PROJECT_DIR$/Assets/NiceVibrations/Common/Scripts/Editor/MMNVBuildPostProcessor.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/FactoryController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/ChibiController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/DenemeSpl.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/StackFactoryController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CustomerBehavController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/CarController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/DenemeSpl.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/ChibiController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CarGetIn.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/CarController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CostumerController.cs" />
     </changedPaths>
   </component>
@@ -120,6 +120,8 @@
       <workItem from="1662114899580" duration="9360000" />
       <workItem from="1662333171802" duration="994000" />
       <workItem from="1662977441376" duration="1086000" />
+      <workItem from="1663067486567" duration="4254000" />
+      <workItem from="1663076616433" duration="7180000" />
     </task>
     <servers />
   </component>

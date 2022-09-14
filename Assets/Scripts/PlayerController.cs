@@ -192,7 +192,6 @@ public class PlayerController : MonoBehaviour
         middlev3 = carChild.transform.GetChild(0).position;
         inCar = true;
         float k = 0;
-        Debug.Log("enterGetInTheCar");
         Vector3 eulerMain = transform.eulerAngles;
         Vector3 carsEuler = carChild.transform.parent.eulerAngles;
         animator.SetBool("isRunning",false);
@@ -228,6 +227,7 @@ public class PlayerController : MonoBehaviour
             transform.position = Vector3.Lerp(mainToMiddle,middleToTarget,k);
         }
         transform.parent = carChild.transform.parent;
+        gm.GetComponent<GameManager>().car = transform.parent.gameObject;
         carChild.transform.parent.gameObject.GetComponent<CarController>().ridingCar = true;
         driveCar = true;
     }

@@ -7,6 +7,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public GameObject car;
+    //---------------------------------------
     public List<int> hiredWorker;
     public List<int> WorkingWorker;
     public SplineComputer firstSpline;

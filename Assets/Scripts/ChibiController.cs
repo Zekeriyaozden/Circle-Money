@@ -46,7 +46,6 @@ public class ChibiController : MonoBehaviour
         int splIndex = 0;
         for (int i = 0; i >= 0; i++)
         {
-            Debug.Log("Enter");
             yield return new WaitForSeconds(2f);
             GameObject chb = null;
             if (i % 3 == 0)

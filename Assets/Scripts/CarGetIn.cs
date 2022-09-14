@@ -42,7 +42,6 @@ public class CarGetIn : MonoBehaviour
 
         if (!UIFlag)
         {
-            Debug.Log("Break");
             player.GetComponent<PlayerController>().getCarIn(gameObject);
             transform.parent.parent.gameObject.GetComponent<CarController>().Main = player.gameObject;
             gameObject.SetActive(false);
