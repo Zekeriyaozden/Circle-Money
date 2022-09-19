@@ -35,9 +35,9 @@ public class CarController : MonoBehaviour
         }
     }
 
-    private void fillTheCar(string ind)
+    public void fillTheCar(string ind)
     {
-        if (delivered)
+        if (!delivered)
         {
             if (numberOfChibiBlue + numberOfChibiGreen + numberOfChibiRed > 45)
             {
@@ -62,19 +62,6 @@ public class CarController : MonoBehaviour
             Material[] materials = gameObject.transform.GetChild(2).GetComponent<SkinnedMeshRenderer>().materials;
             materials[0] = mt;
             gameObject.transform.GetChild(2).GetComponent<SkinnedMeshRenderer>().materials = materials;   
-        }
-    }
-    
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Chibi")
-        {
-            if (ridingCar)
-            {
-                fillTheCar(other.gameObject.GetComponent<DenemeSpl>().color);
-                Destroy(other.gameObject);
-            }
         }
     }
 }

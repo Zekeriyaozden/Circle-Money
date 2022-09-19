@@ -1097,6 +1097,7 @@
           <e p="ItemController.cs" t="Include" />
           <e p="LermMechanism.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
+          <e p="RagdollController.cs" t="Include" />
           <e p="ReverseAnimationContext.cs" t="Include" />
           <e p="SplineFollowerDeneme.cs" t="Include" />
           <e p="StackController.cs" t="Include" />

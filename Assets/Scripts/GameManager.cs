@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
     public GameObject stackItemPiecePref;
     public GameObject stackItemPaintPref;
     public float carAnimSpeed;
+    public CharacterJoint ch;
     
     
     void Start()
