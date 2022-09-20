@@ -82,7 +82,7 @@ public class DenemeSpl : MonoBehaviour
             float k = 0;
             car = gm.car;
             k += Time.deltaTime;
-            doll.GetComponent<Rigidbody>().AddForce((doll.gameObject.transform.position - car.transform.position + new Vector3(0,1f,0)) * (1000f / 0.32f) * (gm.Player.gameObject.GetComponent<PlayerController>().speedOfCar) , ForceMode.Force);
+            doll.GetComponent<Rigidbody>().AddForce((doll.gameObject.transform.position - car.transform.position + new Vector3(0,1f,0)) * (1000f / 0.32f) * (gm.Player.gameObject.GetComponent<PlayerController>().speedOfCar / 500f) , ForceMode.Force);
             StartCoroutine(chibiDestroy());
         }
         else

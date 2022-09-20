@@ -46,7 +46,6 @@
       <option value="$PROJECT_DIR$/Assets/NiceVibrations/Common/Scripts/Editor/MMNVBuildPostProcessor.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/StackFactoryController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CustomerBehavController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CarGetIn.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/FactoryController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CostumerController.cs" />
@@ -57,6 +56,7 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/SplineFollowerDeneme.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/DenemeSpl.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2DO9am8jkQT6TAKD6NJepPTwRmZ" />
@@ -130,7 +130,8 @@
       <workItem from="1663507131414" duration="12147000" />
       <workItem from="1663533218204" duration="1343000" />
       <workItem from="1663572999131" duration="9000000" />
-      <workItem from="1663672328112" duration="2678000" />
+      <workItem from="1663672328112" duration="4519000" />
+      <workItem from="1663684325180" duration="9327000" />
     </task>
     <servers />
   </component>

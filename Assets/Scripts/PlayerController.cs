@@ -8,7 +8,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    //private SplineFollower sf;
+    private float k;
     public float speed;
     public float speedOfCar;
     public DynamicJoystick variableJoystick;
@@ -25,12 +25,23 @@ public class PlayerController : MonoBehaviour
     private Animator animator;
     public float lerpSpeed;
     public float _dirTemp;
-    private Vector3 v3Last;
     private bool UICore;
+    public Vector3 trySomething;
+    //--------------Car------------//
+    // Settings
+    public float MoveSpeed = 50;
+    public float MaxSpeed = 15;
+    public float Drag = 0.98f;
+    public float SteerAngle = 10f;
+    public float Traction = 1;
+    // Variables
+    private Vector3 MoveForce;
+    private Vector3 MoveForceFlag;
+    public float denemeangle;
+    //-----------------------------//
     void Start()
     {
         UICore = true;
-        v3Last = new Vector3(0, 0, 0);
         speedOfCar = 0;
         driveCar = false;
         inCar = false;
@@ -44,7 +55,7 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("isWBox",true);
         animator.SetBool("isRunning",false);
     }
-
+    
     private void FixedUpdate()
     {
         
@@ -73,6 +84,9 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+
+        
+    /*
         if (driveCar)
         {
             if (direction.magnitude > 0.2f)
@@ -112,10 +126,166 @@ public class PlayerController : MonoBehaviour
             }
             
         }
+     */
+ 
+    }
+
+    private float findJoysticAngle(float a,float b)
+    {
+        float _a = Mathf.Abs(a);
+        float _b = Mathf.Abs(b);
+        float angle =  (180 / Mathf.PI) * Mathf.Atan(_a/_b);
+        denemeangle = angle;
+        if (b > 0 && a > 0)
+        {
+            return  angle;
+        }
+        else if(a > 0 && b < 0)
+        {
+            return 180f - angle;
+        }
+        else if(b < 0 && a < 0)
+        {
+            Debug.Log(angle);
+            return 180f + angle;
+        }
+        else if(a < 0 && b > 0)
+        {
+            return 360f - angle;
+        }
+        else if(a == 0)
+        {
+            if (b > 0)
+            {
+                return 0f;
+            }
+            else
+            {
+                return 180f;
+            }
+        }
+        else if (b == 0)
+        {
+            if (a > 0)
+            {
+                return 90f;
+            }
+            else
+            {
+                return 270f;
+            }
+        }
+        else
+        {
+            return -500;
+        }
     }
 
     void Update()
     {
+        trySomething = variableJoystick.Direction;
+        speedOfCar = MoveForce.magnitude * 8f;
+        if (driveCar)
+        {
+            if (transform.parent.transform.eulerAngles.y > 360f)
+            {
+                transform.parent.transform.eulerAngles = transform.parent.transform.eulerAngles - new Vector3(0, 360f, 0);
+            }
+
+            if (transform.parent.transform.eulerAngles.y < 0)
+            {
+                transform.parent.transform.eulerAngles = transform.parent.transform.eulerAngles + new Vector3(0, 360f, 0);
+            }
+           // Moving
+
+           if (trySomething.magnitude > 0.2f)
+           {
+               k = 0;
+               MoveForce += transform.parent.forward * MoveSpeed * trySomething.magnitude * Time.deltaTime;
+               transform.parent.position += MoveForce * Time.deltaTime;
+               MoveForceFlag = MoveForce;
+           }
+           else
+           {
+               if (k < 1)
+               {
+                   k += Time.deltaTime / 0.5f;
+               }
+               else
+               {
+                   k = 1;
+               }
+
+               MoveForce = Vector3.Lerp(MoveForceFlag, Vector3.zero, k);
+               transform.parent.position += MoveForce * Time.deltaTime;
+           }
+           
+           // Steering
+           _dirTemp = findJoysticAngle(trySomething.x, trySomething.y);
+           if (trySomething.magnitude > 0.2f )
+           {
+               if (Mathf.Abs(transform.parent.eulerAngles.y - _dirTemp) < 3f)
+               {
+                   if (transform.parent.eulerAngles.y > _dirTemp)
+                   {
+                       if (transform.parent.eulerAngles.y - 180 > _dirTemp)
+                       {
+                           transform.parent.Rotate(Vector3.up * 1 * MoveForce.magnitude * SteerAngle/5000f * Time.deltaTime);
+                       }
+                       else
+                       {
+                           transform.parent.Rotate(Vector3.up * -1 * MoveForce.magnitude * SteerAngle/5000f * Time.deltaTime);
+                       }
+                   }
+                   else
+                   {
+                       if (_dirTemp - 180 > transform.parent.eulerAngles.y)
+                       {
+                           transform.parent.Rotate(Vector3.up * -1 * MoveForce.magnitude * SteerAngle/5000f * Time.deltaTime);
+                       }
+                       else
+                       {
+                           transform.parent.Rotate(Vector3.up * 1 * MoveForce.magnitude * SteerAngle/5000f * Time.deltaTime);
+                       }
+                   }
+               }
+               else
+               {
+                   if (transform.parent.eulerAngles.y > _dirTemp)
+                   {
+                       if (transform.parent.eulerAngles.y - 180 > _dirTemp)
+                       {
+                           transform.parent.Rotate(Vector3.up * 1 * MoveForce.magnitude * SteerAngle * Time.deltaTime);
+                       }
+                       else
+                       {
+                           transform.parent.Rotate(Vector3.up * -1 * MoveForce.magnitude * SteerAngle * Time.deltaTime);
+                       }
+                   }
+                   else
+                   {
+                       if (_dirTemp - 180 > transform.parent.eulerAngles.y)
+                       {
+                           transform.parent.Rotate(Vector3.up * -1 * MoveForce.magnitude * SteerAngle * Time.deltaTime);
+                       }
+                       else
+                       {
+                           transform.parent.Rotate(Vector3.up * 1 * MoveForce.magnitude * SteerAngle * Time.deltaTime);
+                       }
+                   }
+               }
+           }
+           
+           // Drag and max speed limit
+           MoveForce *= Drag;
+           MoveForce = Vector3.ClampMagnitude(MoveForce, MaxSpeed);
+   
+           // Traction
+           Debug.DrawRay(transform.parent.position, MoveForce.normalized * 3);
+           Debug.DrawRay(transform.parent.position, transform.parent.forward * 3, Color.blue);
+           MoveForce = Vector3.Lerp(MoveForce.normalized, transform.parent.forward, Traction * Time.deltaTime) * MoveForce.magnitude;
+        }
+        
         
         if (stackList.Count > 0)
         {
