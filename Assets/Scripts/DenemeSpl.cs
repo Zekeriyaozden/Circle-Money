@@ -2,11 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Dreamteck.Splines;
+using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class DenemeSpl : MonoBehaviour
 {
+    public GameObject chibimat;
     private bool percent;
     private SplineFollower sf;
     public double db;
@@ -57,19 +60,34 @@ public class DenemeSpl : MonoBehaviour
         hitCar();
     }
 
+    private IEnumerator chibiDestroy()
+    {
+        yield return new WaitForSecondsRealtime(5f);
+        Destroy(gameObject);
+    }
+
+    private void changeColorToDead()
+    {
+        GameObject ss = Instantiate(gm.chibiHitParticle,transform.position,quaternion.identity);
+        Material[] mat = new Material[1];
+        mat[0] = gm.chibiDead;
+        chibimat.GetComponent<SkinnedMeshRenderer>().materials = mat;
+    }
+
     private void hitCar()
     {
+        changeColorToDead();
         if (gm.car != null)
         {
             float k = 0;
             car = gm.car;
             k += Time.deltaTime;
-            doll.GetComponent<Rigidbody>().AddForce((doll.gameObject.transform.position - car.transform.position + new Vector3(0,1f,0)) * (1200f / 0.32f) * (gm.Player.gameObject.GetComponent<PlayerController>().speedOfCar) , ForceMode.Force);
-            Debug.Log("hit");
+            doll.GetComponent<Rigidbody>().AddForce((doll.gameObject.transform.position - car.transform.position + new Vector3(0,1f,0)) * (1000f / 0.32f) * (gm.Player.gameObject.GetComponent<PlayerController>().speedOfCar) , ForceMode.Force);
+            StartCoroutine(chibiDestroy());
         }
         else
         {
-            Debug.Log("STT");
+            StartCoroutine(chibiDestroy());
         }
     }
     
@@ -78,6 +96,7 @@ public class DenemeSpl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (inSpline)
         {
             if (percent && isInStart)

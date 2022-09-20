@@ -1627,6 +1627,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 991a550016615f5418dabbcbca89e773, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chibimat: {fileID: 1769529246428305258}
   db: 0
   isInStart: 0
   color: Red

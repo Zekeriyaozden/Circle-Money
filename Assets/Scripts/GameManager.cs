@@ -8,6 +8,8 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public GameObject car;
+    public Material chibiDead;
+    public GameObject chibiHitParticle;
     //---------------------------------------
     public List<int> hiredWorker;
     public List<int> WorkingWorker;
