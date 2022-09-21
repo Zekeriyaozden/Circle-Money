@@ -48,15 +48,15 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/CustomerBehavController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CarGetIn.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/FactoryController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/CostumerController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/HireController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ChibiController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/RagdollController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CarController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/SplineFollowerDeneme.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/DenemeSpl.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/CostumerController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2DO9am8jkQT6TAKD6NJepPTwRmZ" />
@@ -132,6 +132,7 @@
       <workItem from="1663572999131" duration="9000000" />
       <workItem from="1663672328112" duration="4519000" />
       <workItem from="1663684325180" duration="9327000" />
+      <workItem from="1663757064236" duration="7381000" />
     </task>
     <servers />
   </component>

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Dreamteck.Splines;
 using Unity.VisualScripting;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class CostumerController : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class CostumerController : MonoBehaviour
     public GameObject customerPref;
     private bool flagCar;
     private bool carEnumFlag;
+    public GameObject moneyPref;
+    public GameObject moneyVector;
+    public GameObject moneyParent;
     private void Start()
     {
 
@@ -113,7 +117,38 @@ public class CostumerController : MonoBehaviour
         }
         car.GetComponent<CarController>().delivered = false;
         cs.transform.localScale = Vector3.zero;
+        moneyVector.transform.position = car.transform.position;
+        for (int i = 0; i < 12; i++)
+        {
+            GameObject money;
+            GameObject gObj = moneyVector.transform.GetChild(i).gameObject;
+            if (i < 6)
+            {
+                money = Instantiate(moneyPref, car.transform.position + new Vector3(0,1,-3f + (.6f * i)), Quaternion.Euler(30, 0, 25f));
+            }
+            else
+            {
+                money = Instantiate(moneyPref, car.transform.position + new Vector3( .5f,1,-3f + (.6f * (i % 6))), Quaternion.Euler(30, 0, 25f));   
+            }
+            money.transform.parent = moneyParent.transform;
+            StartCoroutine(moneyLayer(money));
+            money.GetComponent<Rigidbody>().AddForce(((gObj.transform.position - car.transform.position) /8f +
+                                                      new Vector3(0, 16f, 0)) * 28f,ForceMode.Force);
+            float xTorq = Random.Range(-1.2f, 1.2f);
+            float zTorq = Random.Range(-1.2f, 1.2f);
+            money.GetComponent<Rigidbody>().AddTorque(new Vector3(xTorq, 0, zTorq) * 25f);
+            //money.GetComponent<Rigidbody>().isKinematic = true;
+        }
+        StartCoroutine(gm.moneyEarn());
+        Debug.Log("Costumer get Car...!");
         carDriveAI(car,cs);
+    }
+
+    private IEnumerator moneyLayer(GameObject moneyObj)
+    {
+        moneyObj.layer = 8;
+        yield return new WaitForSecondsRealtime(1f);
+        moneyObj.layer = 0;
     }
 
     private void carDriveAI(GameObject car,GameObject cs)
@@ -143,7 +178,7 @@ public class CostumerController : MonoBehaviour
         cus.GetComponent<CustomerBehavController>().target = 0.1d;
         cus.transform.eulerAngles = customers[0].transform.eulerAngles;
     }
-
+  
     private void OnTriggerExit(Collider other)
     {
         if (other.tag == "Car")
