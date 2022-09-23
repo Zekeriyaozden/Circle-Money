@@ -16,6 +16,15 @@ public class ChibiController : MonoBehaviour
         StartCoroutine(chib());
     }
 
+    public void chibiSizer()
+    {
+        int childCount = chibiParent.transform.childCount;
+        for (int i = 0; i < childCount; i++)
+        {
+            chibiParent.transform.GetChild(i).transform.localScale *= 1.04f;
+        }
+    }
+
     public void chibiSpawner(int size)
     {
         int splIndex = 0;
@@ -82,7 +91,8 @@ public class ChibiController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.X))
         {
-            chibiSpawner(5);
+            chibiSizer();
+            //chibiSpawner(5);
         }
     }
 }
