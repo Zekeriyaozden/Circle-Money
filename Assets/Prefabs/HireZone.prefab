@@ -20671,14 +20671,14 @@ MonoBehaviour:
     useClippedPercent: 0
     keys: []
   _clipFromSample:
-    position: {x: -16.211123, y: 0, z: 118.46034}
+    position: {x: -16.581121, y: -0.14566422, z: 116.71034}
     up: {x: 0, y: 1, z: 0}
     forward: {x: -0.1662926, y: 0, z: -0.9860764}
     color: {r: 1, g: 1, b: 1, a: 1}
     size: 1
     percent: 0
   _clipToSample:
-    position: {x: -33.64125, y: 0, z: 79.13623}
+    position: {x: -34.01125, y: -0.14566422, z: 77.38623}
     up: {x: 0, y: 1, z: 0}
     forward: {x: -0.8233872, y: 0, z: -0.5674799}
     color: {r: 1, g: 1, b: 1, a: 1}
@@ -20725,14 +20725,14 @@ MonoBehaviour:
   targetRigidbody2D: {fileID: 0}
   targetTransform: {fileID: 5656953779367874747}
   _result:
-    position: {x: -16.211123, y: 0, z: 118.46034}
+    position: {x: -16.581121, y: -0.14566422, z: 116.71034}
     up: {x: 0, y: 1, z: 0}
     forward: {x: -0.1662926, y: 0, z: -0.9860764}
     color: {r: 1, g: 1, b: 1, a: 1}
     size: 1
     percent: 0
   _finalResult:
-    position: {x: -16.211123, y: 0, z: 118.46034}
+    position: {x: -16.581121, y: -0.14566422, z: 116.71034}
     up: {x: 0, y: 1, z: 0}
     forward: {x: -0.1662926, y: 0, z: -0.9860764}
     color: {r: 1, g: 1, b: 1, a: 1}

@@ -219,7 +219,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: HIRE
+  m_text: UPGRADE
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 55cd763af125dbc4cab877f9a548c967, type: 2}
   m_sharedMaterial: {fileID: -4136444394531500247, guid: 55cd763af125dbc4cab877f9a548c967, type: 2}
@@ -246,21 +246,21 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45.6
-  m_fontSizeBase: 45.6
+  m_fontSize: 33
+  m_fontSizeBase: 23.23
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 25.8
-  m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_characterSpacing: 3
+  m_wordSpacing: 0.2
+  m_lineSpacing: 1.4
   m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
+  m_paragraphSpacing: 0.98
   m_charWidthMaxAdj: 0
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
@@ -456,7 +456,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 0
+  m_SortingLayerID: 221514945
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!114 &6954802448946166871

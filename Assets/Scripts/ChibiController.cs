@@ -12,8 +12,14 @@ public class ChibiController : MonoBehaviour
     public GameObject chibiParent;
     void Start()
     {
+        chibiSpawner(120);
+        StartCoroutine(chib());
+    }
+
+    public void chibiSpawner(int size)
+    {
         int splIndex = 0;
-        for (int i = 0; i < 120; i++)
+        for (int i = 0; i < size; i++)
         {
             GameObject chb = null;
             if (i % 3 == 0)
@@ -38,7 +44,6 @@ public class ChibiController : MonoBehaviour
                 splIndex++;
             }
         }
-        StartCoroutine(chib());
     }
 
     private IEnumerator chib()
@@ -75,6 +80,9 @@ public class ChibiController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            chibiSpawner(5);
+        }
     }
 }

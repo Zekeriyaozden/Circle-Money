@@ -1,6 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class FactoryController : MonoBehaviour
 {
@@ -14,7 +17,7 @@ public class FactoryController : MonoBehaviour
     private GameManager gm;
     private GameObject CurrentCar;
     public List<GameObject> carList;
-
+    public Image slide;
     void Start()
     {
         AfterMaking = null;
@@ -22,10 +25,11 @@ public class FactoryController : MonoBehaviour
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
-    private void makeCar()
+    private void makeCar(int index)
     {
         int rand = Random.Range(0, carList.Count);
-        GameObject obj = Instantiate(carList[rand], carReferance.transform.position, carReferance.transform.rotation,carParent.transform);
+        GameObject obj = Instantiate(carList[index], carReferance.transform.position, carReferance.transform.rotation,carParent.transform);
+        obj.GetComponent<Animator>().speed *= 3f; 
         CurrentCar = obj;
         StartCoroutine(tempFlagControl());
     }
@@ -90,11 +94,25 @@ public class FactoryController : MonoBehaviour
             }
         }
     }
+
+    public void MakeCarUI()
+    {
+        if (MakeCarFlag)
+        {
+            makeCar(0);
+            MakeCarFlag = false;
+        }
+    }
     
     
     
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            MakeCarUI();
+        }
+        
         if (AfterMaking != null)
         {
             if (AfterMaking.GetComponent<CarController>().ridingCar)
@@ -103,10 +121,20 @@ public class FactoryController : MonoBehaviour
                 AfterMaking = null;
             }
         }
-        if (MakeCarFlag && gm.WorkingWorker[indexOfFactory] > 0)
+    }
+    
+
+
+    private void OnTriggerExit(Collider other)
+    {
+        
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
         {
-            makeCar();
-            MakeCarFlag = false;
+            
         }
     }
 }

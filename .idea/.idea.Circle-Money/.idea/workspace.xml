@@ -42,12 +42,10 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/ItemBezier.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/SupplierController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/HiredWorkerController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/ReverseAnimationContext.cs" />
       <option value="$PROJECT_DIR$/Assets/NiceVibrations/Common/Scripts/Editor/MMNVBuildPostProcessor.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/StackFactoryController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CustomerBehavController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CarGetIn.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/FactoryController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/HireController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ChibiController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/RagdollController.cs" />
@@ -56,7 +54,10 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/DenemeSpl.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CostumerController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/ReverseAnimationContext.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/CarColliders.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/FactoryController.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2DO9am8jkQT6TAKD6NJepPTwRmZ" />
@@ -133,6 +134,9 @@
       <workItem from="1663672328112" duration="4519000" />
       <workItem from="1663684325180" duration="9327000" />
       <workItem from="1663757064236" duration="7381000" />
+      <workItem from="1663769931004" duration="143000" />
+      <workItem from="1663846182554" duration="3032000" />
+      <workItem from="1663935535977" duration="2776000" />
     </task>
     <servers />
   </component>

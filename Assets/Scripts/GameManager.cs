@@ -7,6 +7,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    [Range(1, 4)] public float Colspeed;
     public GameObject car;
     public Material chibiDead;
     public GameObject chibiHitParticle;
