@@ -52,7 +52,6 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/SplineFollowerDeneme.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CostumerController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ReverseAnimationContext.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CarColliders.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/FactoryController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ChibiController.cs" />
@@ -60,6 +59,7 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/CarController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/DenemeSpl.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/PaintHitController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2DO9am8jkQT6TAKD6NJepPTwRmZ" />
@@ -140,7 +140,8 @@
       <workItem from="1663846182554" duration="3032000" />
       <workItem from="1663935535977" duration="3182000" />
       <workItem from="1664037031014" duration="996000" />
-      <workItem from="1664189980753" duration="956000" />
+      <workItem from="1664189980753" duration="1550000" />
+      <workItem from="1664203485447" duration="3941000" />
     </task>
     <servers />
   </component>

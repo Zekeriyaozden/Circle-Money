@@ -1361,7 +1361,7 @@ MonoBehaviour:
   texture: {fileID: 2800000, guid: b232d88a05fd2304f9ecfb0eaca4f742, type: 3}
   shape: {fileID: 0}
   shapeChannel: 3
-  color: {r: 0.080822945, g: 0, b: 1, a: 1}
+  color: {r: 0.082353115, g: 0, b: 1, a: 1}
   opacity: 1
   angle: 0
   scale: {x: 1, y: 1, z: 1}

@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using System.Threading;
 using DG.Tweening;
 using Dreamteck.Splines;
+using TMPro;
 using UnityEngine;
+using Vector3 = UnityEngine.Vector3;
 
 public class GameManager : MonoBehaviour
 {
@@ -35,11 +38,63 @@ public class GameManager : MonoBehaviour
     public float carAnimSpeed;
     public CharacterJoint ch;
     public GameObject moneyParent;
-    
+    //----------------ECONOMY------------------
+    public int money;
+    public GameObject moneyUI;
+    public Vector3 moneyUISize;
+    public TextMeshProUGUI MoneyUI;
+    //-----------------------------------------
     
     void Start()
     {
+        moneyUISize = moneyUI.transform.localScale;
+        moneyCount();
         Application.targetFrameRate = 240;
+    }
+
+    public void updateGameMoney(int size, bool isIncrease = false)
+    {
+        if (isIncrease)
+        {
+            money += size;
+        }
+        else
+        {
+            money -= size;
+        }
+        StartCoroutine(UIsizer());
+    }
+
+    private IEnumerator UIsizer()
+    {
+        float k = 0;
+        while (k < 1)
+        {
+            moneyUI.transform.localScale = Vector3.Lerp(moneyUISize, moneyUISize * 1.5f, k);
+            k += Time.deltaTime * 8f;
+            yield return new WaitForEndOfFrame();
+        }
+        k = 0;
+        Vector3 v3 = moneyUI.transform.localScale;
+        moneyCount();
+        while (k < 1)
+        {
+            moneyUI.transform.localScale = Vector3.Lerp(v3, moneyUISize, k);
+            k += Time.deltaTime * 10f;
+            yield return new WaitForEndOfFrame();
+        }
+    }
+
+    private void moneyCount()
+    {
+        if (money >= 1000)
+        {
+            MoneyUI.text = (money / 1000).ToString() + "." + ((money - ((money / 1000) * 1000)) / 100).ToString() + "K";
+        }
+        else
+        {
+            MoneyUI.text = money.ToString();
+        }
     }
 
     public IEnumerator moneyEarn()
@@ -84,14 +139,13 @@ public class GameManager : MonoBehaviour
         money.transform.localScale = Vector3.zero;
         if (isLastMoney)
         {
-            Debug.Log("asas");
             int count = moneyParent.transform.childCount;
             for (int i = 0; i < count; i++)
             {
-                Debug.Log("enterHere");
                 Destroy(moneyParent.transform.GetChild(i).gameObject);
             }
         }
+        updateGameMoney(100,true);
     }
     
     void Update()
