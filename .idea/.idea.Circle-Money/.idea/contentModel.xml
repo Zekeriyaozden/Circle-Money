@@ -1065,6 +1065,251 @@
           </e>
         </e>
         <e p="Plugins" t="Include">
+          <e p="CW" t="Include">
+            <e p="PaintIn3D" t="Include">
+              <e p="Examples" t="Include">
+                <e p="InGame" t="Include">
+                  <e p="Scripts" t="Include">
+                    <e p="P3dActionOnEnable.cs" t="Include" />
+                    <e p="P3dCommandSerialization.cs" t="Include" />
+                    <e p="P3dDestroyAfterTime.cs" t="Include" />
+                    <e p="P3dDestroyer.cs" t="Include" />
+                    <e p="P3dDragPitchYaw.cs" t="Include" />
+                    <e p="P3dGenerateMask.cs" t="Include" />
+                    <e p="P3dInputAxis.cs" t="Include" />
+                    <e p="P3dPaintFromCode.cs" t="Include" />
+                    <e p="P3dPaintMultiplayer.cs" t="Include" />
+                    <e p="P3dProceduralSetup.cs" t="Include" />
+                    <e p="P3dReadColorEvent.cs" t="Include" />
+                    <e p="P3dRotate.cs" t="Include" />
+                    <e p="P3dSpawner.cs" t="Include" />
+                    <e p="P3dSpiral.cs" t="Include" />
+                    <e p="P3dTapThrow.cs" t="Include" />
+                    <e p="P3dToggleParticles.cs" t="Include" />
+                    <e p="P3dToggleScript.cs" t="Include" />
+                    <e p="P3dTranslate.cs" t="Include" />
+                    <e p="P3dVrManager.cs" t="Include" />
+                    <e p="P3dVrTool.cs" t="Include" />
+                  </e>
+                </e>
+              </e>
+              <e p="Extras" t="Include">
+                <e p="Scripts" t="Include">
+                  <e p="P3dButtonClearAll.cs" t="Include" />
+                  <e p="P3dButtonRedoAll.cs" t="Include" />
+                  <e p="P3dButtonUndoAll.cs" t="Include" />
+                  <e p="P3dChangeCounterEvent.cs" t="Include" />
+                  <e p="P3dChangeCounterFill.cs" t="Include" />
+                  <e p="P3dChangeCounterText.cs" t="Include" />
+                  <e p="P3dChannelCounterEvent.cs" t="Include" />
+                  <e p="P3dChannelCounterFill.cs" t="Include" />
+                  <e p="P3dChannelCounterText.cs" t="Include" />
+                  <e p="P3dColorCounterEvent.cs" t="Include" />
+                  <e p="P3dColorCounterFill.cs" t="Include" />
+                  <e p="P3dColorCounterText.cs" t="Include" />
+                  <e p="P3dPaintDebug.cs" t="Include" />
+                </e>
+                <e p="Shaders" t="Include">
+                  <e p="Alpha.shader" t="Include" />
+                  <e p="Overlay.shader" t="Include" />
+                  <e p="Shield.shader" t="Include" />
+                  <e p="Solid.shader" t="Include" />
+                  <e p="Splat.shader" t="Include" />
+                  <e p="Unlit Alpha.shader" t="Include" />
+                  <e p="Unlit Overlay.shader" t="Include" />
+                  <e p="Unlit Solid.shader" t="Include" />
+                  <e p="Unlit Splat.shader" t="Include" />
+                </e>
+              </e>
+              <e p="package.json" t="Include" />
+              <e p="PaintIn3D.asmdef" t="Include" />
+              <e p="Required" t="Include">
+                <e p="Resources" t="Include">
+                  <e p="P3D Decal.cginc" t="Include" />
+                  <e p="P3D Decal.shader" t="Include" />
+                  <e p="P3D Fill.cginc" t="Include" />
+                  <e p="P3D Fill.shader" t="Include" />
+                  <e p="P3D Normal.shader" t="Include" />
+                  <e p="P3D Overlap.shader" t="Include" />
+                  <e p="P3D Premultiply.shader" t="Include" />
+                  <e p="P3D Replace Channels.shader" t="Include" />
+                  <e p="P3D Replace.shader" t="Include" />
+                  <e p="P3D Sphere.cginc" t="Include" />
+                  <e p="P3D Sphere.shader" t="Include" />
+                  <e p="P3D Texture.shader" t="Include" />
+                  <e p="P3D White.shader" t="Include" />
+                  <e p="P3dBlendModes.cginc" t="Include" />
+                  <e p="P3dExtrusions.cginc" t="Include" />
+                  <e p="P3dMasking.cginc" t="Include" />
+                  <e p="P3dOverlap.cginc" t="Include" />
+                  <e p="P3dShared.cginc" t="Include" />
+                </e>
+                <e p="Scripts" t="Include">
+                  <e p="Command" t="Include">
+                    <e p="P3dCommandDecal.cs" t="Include" />
+                    <e p="P3dCommandFill.cs" t="Include" />
+                    <e p="P3dCommandReplace.cs" t="Include" />
+                    <e p="P3dCommandReplaceChannels.cs" t="Include" />
+                    <e p="P3dCommandSphere.cs" t="Include" />
+                  </e>
+                  <e p="Hit" t="Include">
+                    <e p="P3dHitBetween.cs" t="Include" />
+                    <e p="P3dHitCache.cs" t="Include" />
+                    <e p="P3dHitCollisions.cs" t="Include" />
+                    <e p="P3dHitNearby.cs" t="Include" />
+                    <e p="P3dHitParticles.cs" t="Include" />
+                    <e p="P3dHitScreen.cs" t="Include" />
+                    <e p="P3dHitScreenBase.cs" t="Include" />
+                    <e p="P3dHitScreenFill.cs" t="Include" />
+                    <e p="P3dHitScreenLine.cs" t="Include" />
+                    <e p="P3dHitThrough.cs" t="Include" />
+                  </e>
+                  <e p="IClone.cs" t="Include" />
+                  <e p="IHit.cs" t="Include" />
+                  <e p="IHitCoord.cs" t="Include" />
+                  <e p="IHitLine.cs" t="Include" />
+                  <e p="IHitPoint.cs" t="Include" />
+                  <e p="IHitQuad.cs" t="Include" />
+                  <e p="IHitTriangle.cs" t="Include" />
+                  <e p="InEditor" t="Include">
+                    <e p="IBrowsable.cs" t="Include" />
+                    <e p="P3dContext.cs" t="Include" />
+                    <e p="P3dHitScreen_InEditor.cs" t="Include" />
+                    <e p="P3dMaterial.cs" t="Include" />
+                    <e p="P3dMeshAnalysis.cs" t="Include" />
+                    <e p="P3dPreset.cs" t="Include" />
+                    <e p="P3dSceneTool.cs" t="Include" />
+                    <e p="P3dSeamFixer.cs" t="Include" />
+                    <e p="P3dShape.cs" t="Include" />
+                    <e p="P3dTool.cs" t="Include" />
+                    <e p="P3dWindow.cs" t="Include" />
+                    <e p="P3dWindow_Browser.cs" t="Include" />
+                    <e p="P3dWindow_Config.cs" t="Include" />
+                    <e p="P3dWindow_Material.cs" t="Include" />
+                    <e p="P3dWindow_Paint.cs" t="Include" />
+                    <e p="P3dWindow_Scene.cs" t="Include" />
+                    <e p="P3dWindow_Shape.cs" t="Include" />
+                    <e p="P3dWindow_Tool.cs" t="Include" />
+                  </e>
+                  <e p="Modify" t="Include">
+                    <e p="P3dModifyAngleRandom.cs" t="Include" />
+                    <e p="P3dModifyColorRandom.cs" t="Include" />
+                    <e p="P3dModifyHardnessPressure.cs" t="Include" />
+                    <e p="P3dModifyHardnessRandom.cs" t="Include" />
+                    <e p="P3dModifyOpacityPressure.cs" t="Include" />
+                    <e p="P3dModifyOpacityRandom.cs" t="Include" />
+                    <e p="P3dModifyPositionRandom.cs" t="Include" />
+                    <e p="P3dModifyRadiusPressure.cs" t="Include" />
+                    <e p="P3dModifyRadiusRandom.cs" t="Include" />
+                    <e p="P3dModifyScaleRandom.cs" t="Include" />
+                    <e p="P3dModifyTexturePressure.cs" t="Include" />
+                    <e p="P3dModifyTextureRandom.cs" t="Include" />
+                  </e>
+                  <e p="P3dBlendMode.cs" t="Include" />
+                  <e p="P3dBlit.cs" t="Include" />
+                  <e p="P3dChangeCounter.cs" t="Include" />
+                  <e p="P3dChannel.cs" t="Include" />
+                  <e p="P3dChannelCounter.cs" t="Include" />
+                  <e p="P3dClone.cs" t="Include" />
+                  <e p="P3dCloneMirror.cs" t="Include" />
+                  <e p="P3dColor.cs" t="Include" />
+                  <e p="P3dColorCounter.cs" t="Include" />
+                  <e p="P3dCommand.cs" t="Include" />
+                  <e p="P3dCommon.cs" t="Include" />
+                  <e p="P3dCoord.cs" t="Include" />
+                  <e p="P3dCoordCopier.cs" t="Include" />
+                  <e p="P3dEditorWindow.cs" t="Include" />
+                  <e p="P3dGraduallyFade.cs" t="Include" />
+                  <e p="P3dGroup.cs" t="Include" />
+                  <e p="P3dGroupData.cs" t="Include" />
+                  <e p="P3dHash.cs" t="Include" />
+                  <e p="P3dHashedMaterial.cs" t="Include" />
+                  <e p="P3dHashedModel.cs" t="Include" />
+                  <e p="P3dHashedTexture.cs" t="Include" />
+                  <e p="P3dHit.cs" t="Include" />
+                  <e p="P3dLineConnector.cs" t="Include" />
+                  <e p="P3dMask.cs" t="Include" />
+                  <e p="P3dMaterialCloner.cs" t="Include" />
+                  <e p="P3dMeshCache.cs" t="Include" />
+                  <e p="P3dModel.cs" t="Include" />
+                  <e p="P3dModifier.cs" t="Include" />
+                  <e p="P3dModifierList.cs" t="Include" />
+                  <e p="P3dPaintable.cs" t="Include" />
+                  <e p="P3dPaintableManager.cs" t="Include" />
+                  <e p="P3dPaintableState.cs" t="Include" />
+                  <e p="P3dPaintableTexture.cs" t="Include" />
+                  <e p="P3dPaintableTextureMonitor.cs" t="Include" />
+                  <e p="P3dPaintableTextureMonitorMask.cs" t="Include" />
+                  <e p="P3dPointConnector.cs" t="Include" />
+                  <e p="P3dReadColor.cs" t="Include" />
+                  <e p="P3dReader.cs" t="Include" />
+                  <e p="P3dSerialization.cs" t="Include" />
+                  <e p="P3dSlot.cs" t="Include" />
+                  <e p="P3dStateManager.cs" t="Include" />
+                  <e p="P3dTextureHash.cs" t="Include" />
+                  <e p="Paint" t="Include">
+                    <e p="P3dPaintDecal.cs" t="Include" />
+                    <e p="P3dPaintFill.cs" t="Include" />
+                    <e p="P3dPaintReplace.cs" t="Include" />
+                    <e p="P3dPaintReplaceChannels.cs" t="Include" />
+                    <e p="P3dPaintSphere.cs" t="Include" />
+                  </e>
+                </e>
+                <e p="Shaders" t="Include">
+                  <e p="ShapeOutline.shader" t="Include" />
+                </e>
+              </e>
+            </e>
+            <e p="READ ME.txt" t="Include" />
+            <e p="Shared" t="Include">
+              <e p="Common" t="Include">
+                <e p="CW.Common.asmdef" t="Include" />
+                <e p="Examples" t="Include">
+                  <e p="Fonts" t="Include">
+                    <e p="VarelaRound-Regular.txt" t="Include" />
+                  </e>
+                  <e p="Scripts" t="Include">
+                    <e p="CwCameraLook.cs" t="Include" />
+                    <e p="CwCameraMove.cs" t="Include" />
+                    <e p="CwCameraPivot.cs" t="Include" />
+                    <e p="CwDemo.cs" t="Include" />
+                    <e p="CwDemoButton.cs" t="Include" />
+                    <e p="CwDemoButtonBuilder.cs" t="Include" />
+                    <e p="CwLightIntensity.cs" t="Include" />
+                    <e p="CwRotate.cs" t="Include" />
+                  </e>
+                  <e p="Shaders" t="Include">
+                    <e p="RimAlpha.shader" t="Include" />
+                    <e p="RimOpaque.shader" t="Include" />
+                    <e p="Skybox.shader" t="Include" />
+                  </e>
+                </e>
+                <e p="Extras" t="Include">
+                  <e p="Scripts" t="Include">
+                    <e p="CwChild.cs" t="Include" />
+                    <e p="CwDepthTextureMode.cs" t="Include" />
+                    <e p="CwFollow.cs" t="Include" />
+                    <e p="CwInputManager.cs" t="Include" />
+                    <e p="CwRenderTextureManager.cs" t="Include" />
+                    <e p="CwRoot.cs" t="Include" />
+                    <e p="CwSeedAttribute.cs" t="Include" />
+                  </e>
+                </e>
+                <e p="package.json" t="Include" />
+                <e p="Required" t="Include">
+                  <e p="Scripts" t="Include">
+                    <e p="CwCommon.cs" t="Include" />
+                    <e p="CwEditor.cs" t="Include" />
+                    <e p="CwGuide.cs" t="Include" />
+                    <e p="CwHelper.cs" t="Include" />
+                    <e p="CwInput.cs" t="Include" />
+                    <e p="CwShaderBundle.cs" t="Include" />
+                  </e>
+                </e>
+              </e>
+            </e>
+            <e p="Third-Party Notices.txt" t="Include" />
+          </e>
           <e p="Demigiant" t="Include">
             <e p="DOTween" t="Include">
               <e p="Modules" t="Include">
@@ -1097,6 +1342,7 @@
           <e p="ItemBezier.cs" t="Include" />
           <e p="ItemController.cs" t="Include" />
           <e p="LermMechanism.cs" t="Include" />
+          <e p="PaintHitController.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
           <e p="RagdollController.cs" t="Include" />
           <e p="ReverseAnimationContext.cs" t="Include" />
@@ -1144,6 +1390,7 @@
         </e>
       </e>
       <e p="Circle-Money.sln" t="IncludeFlat" />
+      <e p="CW.Common.csproj" t="IncludeRecursive" />
       <e p="Dreamteck.Splines.csproj" t="IncludeRecursive" />
       <e p="Dreamteck.Splines.Editor.csproj" t="IncludeRecursive" />
       <e p="Dreamteck.Utilities.csproj" t="IncludeRecursive" />
@@ -1157,6 +1404,7 @@
       <e p="MoreMountains.NiceVibrations.Rumble.Editor.csproj" t="IncludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="Packages" t="ExcludeRecursive" />
+      <e p="PaintIn3D.csproj" t="IncludeRecursive" />
       <e p="Temp\Bin" t="ExcludeRecursive" />
       <e p="ToonyColorsPro.Demo.Editor.csproj" t="IncludeRecursive" />
       <e p="ToonyColorsPro.Editor.csproj" t="IncludeRecursive" />

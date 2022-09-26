@@ -123,7 +123,7 @@ public class DenemeSpl : MonoBehaviour
             
             if (sf.enabled)
             {
-                other.gameObject.GetComponent<CarController>().fillTheCar(color);
+                //other.gameObject.GetComponent<CarController>().fillTheCar(color);
                 sf.spline = null;
                 sf.enabled = false;
                 setRagdoll(true);
@@ -133,22 +133,22 @@ public class DenemeSpl : MonoBehaviour
             inSpline = false;
         }
     }
-
-    /*private void OnCollisionEnter(Collision other)
+/*
+    private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag == "Car")
         {
+            Debug.Log("EnterCarFill");
+            
             if (sf.enabled)
             {
+                //other.gameObject.GetComponent<CarController>().fillTheCar(color);
                 sf.spline = null;
                 sf.enabled = false;
-                GetComponent<Animator>().enabled = false;
+                setRagdoll(true);
             }
-            setRagdoll(true);
-            rb.isKinematic = false;
-            rb.useGravity = true;
-            rb.constraints = RigidbodyConstraints.None;
-            gameObject.GetComponent<Collider>().enabled = true;
+            GetComponent<Animator>().enabled = false;
+            gameObject.GetComponent<Collider>().enabled = false;
             inSpline = false;
         }
     }*/

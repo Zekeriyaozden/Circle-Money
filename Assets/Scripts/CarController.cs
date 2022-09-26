@@ -21,8 +21,7 @@ public class CarController : MonoBehaviour
     void Start()
     {
         delivered = false;
-        mt = transform.GetChild(2).GetComponent<SkinnedMeshRenderer>().materials[0];
-        numberOfChibi = numberOfChibiBlue = numberOfChibiGreen = numberOfChibiRed = 0f;
+        //mt = transform.GetChild(2).GetComponent<SkinnedMeshRenderer>().materials[0];
         ridingCar = false;
     }
 
@@ -35,7 +34,7 @@ public class CarController : MonoBehaviour
         }
     }
 
-    public void fillTheCar(string ind)
+    /*public void fillTheCar(string ind)
     {
         if (!delivered)
         {
@@ -63,5 +62,5 @@ public class CarController : MonoBehaviour
             materials[0] = mt;
             gameObject.transform.GetChild(2).GetComponent<SkinnedMeshRenderer>().materials = materials;   
         }
-    }
+    }*/
 }
