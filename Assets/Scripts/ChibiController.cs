@@ -10,14 +10,17 @@ public class ChibiController : MonoBehaviour
     public List<SplineComputer> splines;
     public List<GameObject> chibies;
     public GameObject chibiParent;
+    public Vector3 startV3;
     void Start()
     {
+        startV3 = Vector3.one;
         chibiSpawner(120);
         StartCoroutine(chib());
     }
 
     public void chibiSizer()
     {
+        startV3 *= 1.04f;
         int childCount = chibiParent.transform.childCount;
         for (int i = 0; i < childCount; i++)
         {
@@ -47,6 +50,7 @@ public class ChibiController : MonoBehaviour
             {
                 chb.GetComponent<DenemeSpl>().isInStart = true;
                 chb.transform.position = Vector3.zero;
+                chb.transform.localScale = startV3;
                 int _splIndex = splIndex % splines.Count; 
                 SplineFollower sf = chb.GetComponent<SplineFollower>();
                 sf.spline = splines[_splIndex];
@@ -78,10 +82,16 @@ public class ChibiController : MonoBehaviour
             {
                 chb.GetComponent<DenemeSpl>().isInStart = false;
                 chb.transform.position = Vector3.zero;
+                chb.transform.localScale = startV3;
                 int _splIndex = splIndex % splines.Count; 
                 SplineFollower sf = chb.GetComponent<SplineFollower>();
                 sf.spline = splines[_splIndex];
                 splIndex++;
+            }
+
+            if (chibiParent.transform.childCount < 50)
+            {
+                chibiSpawner(50);
             }
         }
     }
@@ -89,10 +99,6 @@ public class ChibiController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            chibiSizer();
-            //chibiSpawner(5);
-        }
+
     }
 }

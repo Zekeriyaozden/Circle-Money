@@ -66,9 +66,17 @@ public class DenemeSpl : MonoBehaviour
         Destroy(gameObject);
     }
 
+    private IEnumerator partReset(GameObject objG)
+    {
+        yield return new WaitForSecondsRealtime(4f);
+        Destroy(objG);
+    }
+
     private void changeColorToDead()
     {
         GameObject ss = Instantiate(gm.chibiHitParticle,transform.position,quaternion.identity);
+        
+        StartCoroutine(partReset(ss));
         Material[] mat = new Material[1];
         mat[0] = gm.chibiDead;
         chibimat.GetComponent<SkinnedMeshRenderer>().materials = mat;
@@ -96,7 +104,10 @@ public class DenemeSpl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (sf.GetPercent() > 0.98d)
+        {
+            Destroy(gameObject);
+        }
         if (inSpline)
         {
             if (percent && isInStart)

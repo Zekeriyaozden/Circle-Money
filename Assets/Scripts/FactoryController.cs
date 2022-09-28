@@ -7,6 +7,7 @@ using Random = UnityEngine.Random;
 
 public class FactoryController : MonoBehaviour
 {
+    public GameObject[] carsUI;
     public int indexOfFactory;
     public float lerpSpeed;
     public GameObject carReferance;
@@ -27,7 +28,6 @@ public class FactoryController : MonoBehaviour
 
     private void makeCar(int index)
     {
-        int rand = Random.Range(0, carList.Count);
         GameObject obj = Instantiate(carList[index], carReferance.transform.position, carReferance.transform.rotation,carParent.transform);
         obj.GetComponent<Animator>().speed *= 3f; 
         CurrentCar = obj;
@@ -95,11 +95,11 @@ public class FactoryController : MonoBehaviour
         }
     }
 
-    public void MakeCarUI()
+    public void MakeCarUI(int index)
     {
         if (MakeCarFlag)
         {
-            makeCar(0);
+            makeCar(index);
             MakeCarFlag = false;
         }
     }
@@ -108,11 +108,20 @@ public class FactoryController : MonoBehaviour
     
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.X))
+        if (MakeCarFlag)
         {
-            MakeCarUI();
+            foreach (var carui in carsUI)
+            {
+                carui.GetComponent<Button>().interactable = true;
+            }
         }
-        
+        else
+        {
+            foreach (var carui in carsUI)
+            {
+                carui.GetComponent<Button>().interactable = false;
+            }
+        }
         if (AfterMaking != null)
         {
             if (AfterMaking.GetComponent<CarController>().ridingCar)
@@ -121,6 +130,7 @@ public class FactoryController : MonoBehaviour
                 AfterMaking = null;
             }
         }
+
     }
     
 

@@ -35,18 +35,21 @@ public class GameManager : MonoBehaviour
     public int maxPieceRequire;
     public GameObject stackItemPiecePref;
     public GameObject stackItemPaintPref;
-    public float carAnimSpeed;
-    public CharacterJoint ch;
     public GameObject moneyParent;
     //----------------ECONOMY------------------
     public int money;
     public GameObject moneyUI;
     public Vector3 moneyUISize;
     public TextMeshProUGUI MoneyUI;
+    //----------------TARGET BOOL--------------
+    public bool targetFlag1;
+    public bool targetFlag2;
     //-----------------------------------------
     
     void Start()
     {
+        targetFlag1 = true;
+        targetFlag2 = true;
         moneyUISize = moneyUI.transform.localScale;
         moneyCount();
         Application.targetFrameRate = 240;

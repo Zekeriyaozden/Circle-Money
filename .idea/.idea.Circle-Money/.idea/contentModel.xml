@@ -1332,10 +1332,12 @@
           <e p="CarController.cs" t="Include" />
           <e p="CarGetIn.cs" t="Include" />
           <e p="ChibiController.cs" t="Include" />
+          <e p="ChibiUpgradeController.cs" t="Include" />
           <e p="CostumerController.cs" t="Include" />
           <e p="CustomerBehavController.cs" t="Include" />
           <e p="DenemeSpl.cs" t="Include" />
           <e p="FactoryController.cs" t="Include" />
+          <e p="FactoryUpgrade.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
           <e p="HireController.cs" t="Include" />
           <e p="HiredWorkerController.cs" t="Include" />
@@ -1352,6 +1354,7 @@
           <e p="StackFactoryController.cs" t="Include" />
           <e p="SupplierBezier.cs" t="Include" />
           <e p="SupplierController.cs" t="Include" />
+          <e p="TutorialController.cs" t="Include" />
         </e>
         <e p="Simple city plain" t="Include">
           <e p="Read_me.txt" t="Include" />
