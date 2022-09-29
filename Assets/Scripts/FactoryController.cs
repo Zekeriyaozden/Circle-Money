@@ -18,9 +18,12 @@ public class FactoryController : MonoBehaviour
     private GameManager gm;
     private GameObject CurrentCar;
     public List<GameObject> carList;
-    public Image slide;
+    private bool firstCarMade;
+    public GameObject Tutorial;
+    private GameObject firstCar;
     void Start()
     {
+        firstCarMade = true;
         AfterMaking = null;
         MakeCarFlag = true;
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
@@ -65,6 +68,16 @@ public class FactoryController : MonoBehaviour
             {
                 break;
             }
+        }
+
+        if (firstCarMade)
+        {
+            Tutorial.GetComponent<TutorialController>().Canvas.SetActive(true);
+            Debug.Log("EnterSCNDflg!!");
+            firstCar = obj;
+            gm.targetFlag2 = true;
+            Tutorial.GetComponent<TutorialController>().targetSecond = firstCar;
+            firstCarMade = false;
         }
         obj.GetComponent<CarController>().isCarReady = true;
         MakeCarFlag = true;

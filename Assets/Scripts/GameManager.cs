@@ -44,12 +44,15 @@ public class GameManager : MonoBehaviour
     //----------------TARGET BOOL--------------
     public bool targetFlag1;
     public bool targetFlag2;
+    public bool targetFlag3;
+    public bool firstCarGet;
     //-----------------------------------------
     
     void Start()
     {
+        firstCarGet = true;
         targetFlag1 = true;
-        targetFlag2 = true;
+        targetFlag2 = false;
         moneyUISize = moneyUI.transform.localScale;
         moneyCount();
         Application.targetFrameRate = 240;

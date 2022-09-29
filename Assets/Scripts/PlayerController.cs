@@ -39,8 +39,12 @@ public class PlayerController : MonoBehaviour
     private Vector3 MoveForceFlag;
     public float denemeangle;
     //-----------------------------//
+    public bool firstGetCar;
+    public GameObject TutorialObj;
+    //-----------------------------//
     void Start()
     {
+        firstGetCar = true;
         UICore = true;
         speedOfCar = 0;
         driveCar = false;
@@ -186,6 +190,12 @@ public class PlayerController : MonoBehaviour
         speedOfCar = MoveForce.magnitude * 8f;
         if (driveCar)
         {
+            if (firstGetCar)
+            {
+                TutorialObj.GetComponent<TutorialController>().getInCar = true;
+                gm.GetComponent<GameManager>().targetFlag1 = gm.GetComponent<GameManager>().targetFlag2 = false;
+                
+            }
             if (transform.parent.transform.eulerAngles.y > 360f)
             {
                 transform.parent.transform.eulerAngles = transform.parent.transform.eulerAngles - new Vector3(0, 360f, 0);
