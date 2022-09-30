@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class CarController : MonoBehaviour
 {
+    public float animDuration;
     public GameObject playerGetOutTarget;
     public bool ridingCar;
     public bool isCarReady;

@@ -86,6 +86,7 @@ public class FactoryController : MonoBehaviour
 
     private IEnumerator tempFlagControl()
     {
+        CurrentCar.GetComponent<Animator>().speed = CurrentCar.GetComponent<CarController>().animDuration;
         while (true)
         {
             yield return new WaitForEndOfFrame();

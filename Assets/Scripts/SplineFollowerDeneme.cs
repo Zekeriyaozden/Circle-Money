@@ -25,7 +25,7 @@ public class SplineFollowerDeneme : MonoBehaviour
         isHiring = false;
         sf = GetComponent<SplineFollower>();
         doubleStart = (double)(1.0d / (double)(sf.spline.pointCount - 1));
-        sf.onNode += OnNodePassed;
+        //sf.onNode += OnNodePassed;
     }
 
     private void moveTheSpline(SplineTracer.NodeConnection nodeConnection,int index)
@@ -42,66 +42,7 @@ public class SplineFollowerDeneme : MonoBehaviour
     
     
     
-    private void OnNodePassed(List<SplineTracer.NodeConnection> passed)
-    {
-        SplineTracer.NodeConnection nodeConnection = passed[0];
-        if (nodeConnection.node.name == "NodeFirstFull")
-        {
-            if (gm.hiredWorker[0] > 5)
-            {
-                moveTheSpline(nodeConnection,1);
-            }
-            else
-            {
-                gm.hiredWorker[0]++;
-                moveTheSpline(nodeConnection,0);
-            }
-        }
-        else if (nodeConnection.node.name == "NodeSecondFull")
-        {
-            if (gm.hiredWorker[1] > 5)
-            {
-                moveTheSpline(nodeConnection,1);
-            }
-            else
-            {
-                gm.hiredWorker[1]++;
-                moveTheSpline(nodeConnection,0);
-            }
-        }
-        else if (nodeConnection.node.name == "Factory0Node")
-        {
-            if (workingFlag)
-            {
-                gm.WorkingWorker[0]++;
-                workingFlag = false;
-            }
-            moveTheSpline(nodeConnection,gm.WorkingWorker[0]);
-            idleFlag = true;
-        }
-        else if (nodeConnection.node.name == "Factory1Node")
-        {
-            if (workingFlag)
-            {
-                gm.WorkingWorker[1]++;
-                workingFlag = false;
-            }
-            moveTheSpline(nodeConnection,gm.WorkingWorker[1]);
-            idleFlag = true;
-        }
-        else if (nodeConnection.node.name == "Factory2Node")
-        {
-            if (workingFlag)
-            {
-                gm.WorkingWorker[2]++;
-                workingFlag = false;
-            }
-            moveTheSpline(nodeConnection,gm.WorkingWorker[2]);
-            idleFlag = true;
-        }
-        
 
-    }
 
     
     void Update()

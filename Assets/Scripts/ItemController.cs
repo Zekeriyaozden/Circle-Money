@@ -29,6 +29,6 @@ public class ItemController : MonoBehaviour
                 transform.DOMove(pos, lerpSpeed);
                 gameObject.transform.eulerAngles = node.transform.eulerAngles;
          
-        }*/   
+        }*/
     }
 }

@@ -1,4 +1,4 @@
-using System;
+/*using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
@@ -32,8 +32,9 @@ public class LermMechanism : MonoBehaviour
                 pos.x = node.transform.position.x;
                 pos.z = node.transform.position.z;
                 transform.DOMove(pos, lerpSpeed);
-                gameObject.transform.eulerAngles = node.transform.eulerAngles;*/
+                gameObject.transform.eulerAngles = node.transform.eulerAngles;
             }
         }
     }
 }
+*/

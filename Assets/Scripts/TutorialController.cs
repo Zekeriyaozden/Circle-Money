@@ -58,28 +58,36 @@ public class TutorialController : MonoBehaviour
     
     void Update()
     {
-        transform.position = mainPlayer.transform.position;
-        if (gm.targetFlag1)
+        if (gm.tutorialEnd)
         {
-            transform.LookAt(targetFirst.transform.position);
+           Canvas.SetActive(false);
+           Cube.SetActive(false);
         }
         else
         {
-            if (gm.targetFlag2)
+            transform.position = mainPlayer.transform.position;
+            if (gm.targetFlag1)
             {
-                transform.LookAt(targetSecond.transform.position);
+                transform.LookAt(targetFirst.transform.position);
             }
             else
             {
-                if (getInCar)
+                if (gm.targetFlag2)
                 {
-                    transform.position += new Vector3(0, 2f, 0);
-                    transform.LookAt(targetThird.transform.position);
-                    Cube.transform.localPosition = new Vector3(0, 0, 4f);
+                    transform.LookAt(targetSecond.transform.position);
                 }
                 else
                 {
-                    Canvas.SetActive(false);
+                    if (getInCar)
+                    {
+                        transform.position += new Vector3(0, 2f, 0);
+                        transform.LookAt(targetThird.transform.position);
+                        Cube.transform.localPosition = new Vector3(0, 0, 4f);
+                    }
+                    else
+                    {
+                        Canvas.SetActive(false);
+                    }
                 }
             }
         }

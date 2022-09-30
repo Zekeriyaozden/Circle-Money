@@ -15,8 +15,8 @@ public class GameManager : MonoBehaviour
     public Material chibiDead;
     public GameObject chibiHitParticle;
     //---------------------------------------
-    public List<int> hiredWorker;
-    public List<int> WorkingWorker;
+    //public List<int> hiredWorker;
+    //public List<int> WorkingWorker;
     public SplineComputer firstSpline;
     public GameObject Player;
     public GameObject PlayerReferance;
@@ -46,6 +46,7 @@ public class GameManager : MonoBehaviour
     public bool targetFlag2;
     public bool targetFlag3;
     public bool firstCarGet;
+    public bool tutorialEnd;
     //-----------------------------------------
     
     void Start()
@@ -53,6 +54,7 @@ public class GameManager : MonoBehaviour
         firstCarGet = true;
         targetFlag1 = true;
         targetFlag2 = false;
+        tutorialEnd = false;
         moneyUISize = moneyUI.transform.localScale;
         moneyCount();
         Application.targetFrameRate = 240;
