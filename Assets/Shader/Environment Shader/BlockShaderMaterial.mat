@@ -34,9 +34,18 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _AlphaClip: 0
+    - _FresnelPower: 2
+    - _NoiseScale: 61.86
     - _QueueControl: 0
     - _QueueOffset: 0
-    m_Colors: []
+    - _VoronoiCellDensity: 11.4
+    - _VoronoiDagilma: 1.08
+    - _VoronoiScale: 2
+    m_Colors:
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 0}
+    - _Speed: {r: 0, g: 0.1, b: 0, a: 0}
+    - _VoronoiSpeed: {r: 0, g: 0.18, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &6469845685532636383
 MonoBehaviour:
