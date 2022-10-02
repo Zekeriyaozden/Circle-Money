@@ -54,6 +54,7 @@ public class TutorialController : MonoBehaviour
             }
             yield return new WaitForEndOfFrame();
         }
+        carImage.GetComponent<Image>().color = new Color(255f/255f,255f/255f,255f/255f);
     }
     
     void Update()

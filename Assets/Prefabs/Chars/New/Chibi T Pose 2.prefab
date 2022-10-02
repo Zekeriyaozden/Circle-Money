@@ -848,9 +848,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 991a550016615f5418dabbcbca89e773, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chibimat: {fileID: 0}
+  chibiHitParticle: {fileID: 2289534684459675194, guid: b58a33ecea42ae24793d252de220f8f4, type: 3}
   db: 0
   isInStart: 0
   color: Green
+  doll: {fileID: 0}
 --- !u!65 &4193957378941305984
 BoxCollider:
   m_ObjectHideFlags: 0

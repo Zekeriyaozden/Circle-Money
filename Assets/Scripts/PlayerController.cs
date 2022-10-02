@@ -190,6 +190,7 @@ public class PlayerController : MonoBehaviour
         speedOfCar = MoveForce.magnitude * 8f;
         if (driveCar)
         {
+            gm.GetComponent<GameManager>().car.GetComponent<CarController>().speedOfWheels = Mathf.Lerp(0f,3f,speedOfCar/120f);
             if (firstGetCar)
             {
                 TutorialObj.GetComponent<TutorialController>().getInCar = true;

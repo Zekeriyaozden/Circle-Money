@@ -32,6 +32,7 @@ public class FactoryController : MonoBehaviour
     private void makeCar(int index)
     {
         GameObject obj = Instantiate(carList[index], carReferance.transform.position, carReferance.transform.rotation,carParent.transform);
+        obj.GetComponent<CarController>().tiresSettrue();
         obj.GetComponent<Animator>().speed *= 3f; 
         CurrentCar = obj;
         StartCoroutine(tempFlagControl());

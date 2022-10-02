@@ -1629,6 +1629,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chibimat: {fileID: 1769529246428305258}
+  chibiHitParticle: {fileID: 2289534684459675194, guid: b58a33ecea42ae24793d252de220f8f4, type: 3}
   db: 0
   isInStart: 0
   color: Green

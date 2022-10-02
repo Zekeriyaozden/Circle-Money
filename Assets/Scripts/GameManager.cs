@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     [Range(1, 4)] public float Colspeed;
     public GameObject car;
     public Material chibiDead;
-    public GameObject chibiHitParticle;
+    //public GameObject chibiHitParticle;
     //---------------------------------------
     //public List<int> hiredWorker;
     //public List<int> WorkingWorker;
@@ -48,7 +48,6 @@ public class GameManager : MonoBehaviour
     public bool firstCarGet;
     public bool tutorialEnd;
     //-----------------------------------------
-    
     void Start()
     {
         firstCarGet = true;
@@ -60,6 +59,18 @@ public class GameManager : MonoBehaviour
         Application.targetFrameRate = 240;
     }
 
+    public bool moneyCheck(int moneySpend)
+    {
+        if (money < moneySpend)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
+    
     public void updateGameMoney(int size, bool isIncrease = false)
     {
         if (isIncrease)

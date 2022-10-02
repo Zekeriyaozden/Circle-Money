@@ -10,6 +10,7 @@ using Random = UnityEngine.Random;
 public class DenemeSpl : MonoBehaviour
 {
     public GameObject chibimat;
+    public GameObject chibiHitParticle;
     private bool percent;
     private SplineFollower sf;
     public double db;
@@ -74,7 +75,7 @@ public class DenemeSpl : MonoBehaviour
 
     private void changeColorToDead()
     {
-        GameObject ss = Instantiate(gm.chibiHitParticle,transform.position,quaternion.identity);
+        GameObject ss = Instantiate(chibiHitParticle,transform.position,quaternion.identity);
         
         StartCoroutine(partReset(ss));
         Material[] mat = new Material[1];

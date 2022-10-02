@@ -22,6 +22,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ItemBezier.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/StackFactoryBezier.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ItemController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CarBuy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CameraController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SupplierController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/StackFactoryController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -53,18 +54,19 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/CarColliders.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/PaintHitController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/FactoryUpgrade.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/ChibiUpgradeController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ChibiController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/DenemeSpl.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/TutorialController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/FactoryController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/CarController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/SplineFollowerDeneme.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/LermMechanism.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ItemController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ItemBezier.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/DenemeSpl.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/TutorialController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/FactoryController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/CarController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/CarBuy.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/ChibiUpgradeController.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2DO9am8jkQT6TAKD6NJepPTwRmZ" />
@@ -152,7 +154,8 @@
       <workItem from="1664449590558" duration="3734000" />
       <workItem from="1664463629833" duration="3692000" />
       <workItem from="1664530940073" duration="1597000" />
-      <workItem from="1664547868438" duration="4460000" />
+      <workItem from="1664547868438" duration="5057000" />
+      <workItem from="1664617605288" duration="13894000" />
     </task>
     <servers />
   </component>
