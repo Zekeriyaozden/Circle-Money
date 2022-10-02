@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,7 +15,9 @@ public class ChibiUpgradeController : MonoBehaviour
     private GameManager gm;
     public GameObject chibiUI;
     public GameObject buttonSpawner;
+    public GameObject buttonSpawnerText;
     public GameObject buttonSizer;
+    public GameObject buttonSizerText;
     private void Start()
     {
         chibiSpawnerIndex = PlayerPrefs.GetInt("ChibiSpawner",0);
@@ -25,6 +28,8 @@ public class ChibiUpgradeController : MonoBehaviour
     private void saver()
     {
         PlayerPrefs.SetInt("ChibiSpawner",chibiSpawnerIndex);
+        buttonSpawnerText.GetComponent<TextMeshProUGUI>().text = chibiSpawnerMoneyList[chibiSpawnerIndex].ToString() + "$";
+        buttonSizerText.GetComponent<TextMeshProUGUI>().text = chibiSizerMoneyList[chibiSizerIndex].ToString() + "$";
         PlayerPrefs.SetInt("ChibiSizer",chibiSizerIndex);
     }
 
@@ -54,10 +59,13 @@ public class ChibiUpgradeController : MonoBehaviour
     {
         if (index == 0)
         {
+            //Debug.Log("true");
             bool check = gm.moneyCheck(chibiSpawnerMoneyList[chibiSpawnerIndex]);
+            Debug.Log(chibiSpawnerMoneyList[chibiSpawnerIndex]);
             if (check)
             {
                 chibies.GetComponent<ChibiController>().chibiSpawner(20);
+                Debug.Log("true");
                 gm.updateGameMoney(chibiSpawnerMoneyList[chibiSpawnerIndex]);
                 if (chibiSpawnerIndex - 1 < chibiSpawnerMoneyList.Count)
                 {
