@@ -48,8 +48,17 @@ public class GameManager : MonoBehaviour
     public bool firstCarGet;
     public bool tutorialEnd;
     //-----------------------------------------
+    //------------------ChibiCount-------------
+    public int chibi;
+    public GameObject ChibiCount;
+    private GameObject ChibiCountParent;
+    private Vector3 chibiUIsize;
+    public bool isDrive;
+    //-----------------------------------------
     void Start()
     {
+        ChibiCountParent = ChibiCount.transform.parent.gameObject;
+        chibiUIsize = ChibiCountParent.transform.localScale;
         firstCarGet = true;
         targetFlag1 = true;
         targetFlag2 = false;
@@ -82,6 +91,57 @@ public class GameManager : MonoBehaviour
             money -= size;
         }
         StartCoroutine(UIsizer());
+    }
+
+
+
+    public void chibiUI(bool isReset=false)
+    {
+        if (isReset)
+        {
+            ChibiCount.GetComponent<TextMeshProUGUI>().text = "0/20";
+            chibi = 0;
+        }
+        else
+        {
+            if (isDrive)
+            {
+                chibi++;
+                StartCoroutine(chibiUIsizer());   
+            }
+        }
+    }
+
+    private void chibiUIController()
+    {
+        if (chibi<=20)
+        {
+            ChibiCount.GetComponent<TextMeshProUGUI>().text = chibi.ToString() + "/20";
+        }
+        else
+        {
+            chibi = 20;
+        }
+    }
+    
+    private IEnumerator chibiUIsizer()
+    {
+        float k = 0;
+        while (k < 1)
+        {
+            ChibiCountParent.transform.localScale = Vector3.Lerp(chibiUIsize, chibiUIsize * 1.5f, k);
+            k += Time.deltaTime * 8f;
+            yield return new WaitForEndOfFrame();
+        }
+        k = 0;
+        Vector3 v3 = ChibiCountParent.transform.localScale;
+        chibiUIController();
+        while (k < 1)
+        {
+            ChibiCountParent.transform.localScale = Vector3.Lerp(v3, chibiUIsize, k);
+            k += Time.deltaTime * 10f;
+            yield return new WaitForEndOfFrame();
+        }
     }
 
     private IEnumerator UIsizer()
@@ -169,6 +229,6 @@ public class GameManager : MonoBehaviour
     
     void Update()
     {
-        
+
     }
 }

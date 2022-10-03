@@ -18,7 +18,8 @@ public class CarBuy : MonoBehaviour
 
     private void TextUpdater()
     {
-        for (int i = 1; i < priceOfCarsText.Length;i++)
+        for (int i = 1; i < priceOfCarsText.Length;i++) 
+            
         {
             if (priceOfCars[i] >= 1000)
             {

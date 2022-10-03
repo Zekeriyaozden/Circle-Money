@@ -68,6 +68,7 @@ public class PlayerController : MonoBehaviour
         _dirTemp = direction.magnitude;
         if (!inCar)
         {
+            gm.GetComponent<GameManager>().isDrive = false;
             if (direction.magnitude > 0.2f)
             {
                 gameObject.transform.DOLookAt(dir, .3f);
@@ -190,6 +191,7 @@ public class PlayerController : MonoBehaviour
         speedOfCar = MoveForce.magnitude * 8f;
         if (driveCar)
         {
+            gm.GetComponent<GameManager>().isDrive = true;
             gm.GetComponent<GameManager>().car.GetComponent<CarController>().speedOfWheels = Mathf.Lerp(0f,3f,speedOfCar/120f);
             if (firstGetCar)
             {

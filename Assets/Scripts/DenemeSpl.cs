@@ -135,6 +135,7 @@ public class DenemeSpl : MonoBehaviour
             
             if (sf.enabled)
             {
+                gm.chibiUI();
                 //other.gameObject.GetComponent<CarController>().fillTheCar(color);
                 sf.spline = null;
                 sf.enabled = false;

@@ -49,7 +49,6 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/CarGetIn.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/HireController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/RagdollController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/CostumerController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ReverseAnimationContext.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CarColliders.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/PaintHitController.cs" />
@@ -59,14 +58,15 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/LermMechanism.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ItemController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ItemBezier.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/DenemeSpl.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/TutorialController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/FactoryController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CarController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ChibiUpgradeController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CarBuy.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/DenemeSpl.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/CostumerController.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2DO9am8jkQT6TAKD6NJepPTwRmZ" />
@@ -156,7 +156,8 @@
       <workItem from="1664530940073" duration="1597000" />
       <workItem from="1664547868438" duration="5057000" />
       <workItem from="1664617605288" duration="13894000" />
-      <workItem from="1664703436068" duration="2413000" />
+      <workItem from="1664703436068" duration="3029000" />
+      <workItem from="1664794258969" duration="3304000" />
     </task>
     <servers />
   </component>

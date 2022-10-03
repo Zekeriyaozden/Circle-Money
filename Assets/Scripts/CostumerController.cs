@@ -164,6 +164,8 @@ public class CostumerController : MonoBehaviour
         sf.spline = splineCarPath;
         sf.followSpeed = 3f;
         gm.car = null;
+        gm.chibiUI(true);
+        gm.targetFlag1 = true;
     }
 
     private IEnumerator customerTarget()
@@ -194,10 +196,17 @@ public class CostumerController : MonoBehaviour
         {
             if (flagCar)
             {
-                carEnumFlag = true;
-                Debug.Log("carEnter");
-                StartCoroutine(car());
-                flagCar = false;
+                if (gm.chibi >= 20)
+                {
+                    carEnumFlag = true;
+                    Debug.Log("carEnter");
+                    StartCoroutine(car());
+                    flagCar = false;   
+                }
+                else
+                {
+                    
+                }
             }
         }
     }
